@@ -1,2 +1,3 @@
-# mikey-studio
-Portfolio website
+# mikey-studio website
+
+## GitHub Pages
