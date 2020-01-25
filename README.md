@@ -14,7 +14,7 @@
 1. in _package.json_ needed:
 ```
   "scripts": {
-    "deploy": "gh-pages -d gh-pages"
+    "deploy": "gh-pages -d dist"
   },
 ```
 
