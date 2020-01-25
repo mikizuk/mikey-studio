@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config webpack.config.js --port 3001 --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "webpack --config webpack.config.js",
-    "deploy": "gh-pages -d gh-pages"
+    "deploy": "gh-pages -d prod"
   },
   "homepage": "https://daxtersky.github.io",
   "keywords": [

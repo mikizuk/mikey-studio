@@ -1,7 +1,7 @@
 module.exports = {
-  entry: "./script.js",      // WAŻNE BY BYŁA TAM POPRAWNA ŚCIEŻKA I UTWORZONY PLIK
+  entry: "./script.js",
   output: {
-      filename: "./js/out.js"
+      filename: "./script.js"
   },
   watch: true,
   module: {
@@ -16,7 +16,8 @@ module.exports = {
           },
       ]
   },
+  mode: 'none',
   devServer: {
-      filename: './js/out.js',
+      filename: './script.js',
   }
 }
