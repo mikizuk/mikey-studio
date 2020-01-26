@@ -91,47 +91,30 @@
 "use strict";
 
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('es6 js loaded!');
 
-  // terminal: 'npm i'
-  // terminal: npm start'
-  // terminal: 'npm run bundle' for creating a understandable 'out.js' for HTML
-  // open http://localhost:3001/ in browser
+  var config = {
+    apiKey: "AIzaSyDq8sv5WWmiwbbj4RfA5-QkokqTh_uMblA",
+    authDomain: "mikey-database.firebaseapp.com",
+    databaseURL: "https://mikey-database.firebaseio.com",
+    projectId: "mikey-database",
+    storageBucket: "mikey-database.appspot.com",
+    messagingSenderId: "841627576040",
+    appId: "1:841627576040:web:0c4448f2517bf9a3094b5d",
+    measurementId: "G-6HGRS89R6Y"
 
-  var es6Variable = 'es6Variable';
-  var es6Arr = [1, 2, 3, 4, 5];
-  var es6Name = 'Mikołaj';
-  console.log(es6Variable);
-  console.log('array', es6Arr);
-  console.log('array changed with es6 map', es6Arr.map(function (item) {
-    return item * 2;
-  }));
-  console.log([].concat(_toConsumableArray(es6Name)));
-
-  ////////////////////////////////////////////////////////
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCnmUddDZ95HqJs7u_PgPgCqjE_K0MdvTU",
-    authDomain: "mikey-studio.firebaseapp.com",
-    databaseURL: "https://mikey-studio.firebaseio.com",
-    projectId: "mikey-studio",
-    storageBucket: "mikey-studio.appspot.com",
-    messagingSenderId: "954062525339",
-    appId: "1:954062525339:web:8a944267e21a7ca8f1c73e",
-    measurementId: "G-940CWL2E4T"
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  firebase.initializeApp(config);
 
-  var defaultStorage = firebase.storage();
-  var defaultFirestore = firebase.firestore();
+  var dbRefObject = firebase.database().ref().child('mikey-db');
 
-  console.log('defaultStorage', defaultStorage);
-  console.log('defaultFirestore', defaultFirestore);
+  dbRefObject.on('value', function (snap) {
+    var mikeyDb = snap.val();
+    console.log('mikeyDb', mikeyDb);
+    var firebaseText = document.getElementById('firebase-text');
+    firebaseText.innerText = mikeyDb.textOnPage;
+    firebaseText.style.color = 'red';
+  });
 });
 
 /***/ })
