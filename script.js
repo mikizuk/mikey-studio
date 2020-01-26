@@ -13,6 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log('array', es6Arr);
   console.log('array changed with es6 map', es6Arr.map(item => item * 2));
   console.log ([...es6Name]);
-
   
+
 })
