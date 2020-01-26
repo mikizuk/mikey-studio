@@ -1,6 +1,7 @@
 # GitHub Pages deployment
 
 * gh-pages deployment and hosting used as instructed in Traversy Media's video [GitHub Pages Deploy & Domain](https://www.youtube.com/watch?v=SKXkC4SqtRk&t=731s)
+* also [GiHub documentation](https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site)
 
 ### First preparation
 
