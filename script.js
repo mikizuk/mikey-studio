@@ -110,6 +110,28 @@ document.addEventListener("DOMContentLoaded", function () {
     return item * 2;
   }));
   console.log([].concat(_toConsumableArray(es6Name)));
+
+  ////////////////////////////////////////////////////////
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCnmUddDZ95HqJs7u_PgPgCqjE_K0MdvTU",
+    authDomain: "mikey-studio.firebaseapp.com",
+    databaseURL: "https://mikey-studio.firebaseio.com",
+    projectId: "mikey-studio",
+    storageBucket: "mikey-studio.appspot.com",
+    messagingSenderId: "954062525339",
+    appId: "1:954062525339:web:8a944267e21a7ca8f1c73e",
+    measurementId: "G-940CWL2E4T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  var defaultStorage = firebase.storage();
+  var defaultFirestore = firebase.firestore();
+
+  console.log('defaultStorage', defaultStorage);
+  console.log('defaultFirestore', defaultFirestore);
 });
 
 /***/ })
