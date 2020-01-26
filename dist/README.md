@@ -35,8 +35,7 @@ Host: @
 ### Steps for correct GitHub Pages deployment
 
 0. After making changes...
-1. Copy html file to **dist** folder!
-1. What about css...?
+1. Copy changes files like **html**, **css**, **js** files (and in **/assets** if changed!) to **dist** folder!
 1. `git commit`
 1. `git push`
 1. `npm run deploy`
