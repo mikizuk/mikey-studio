@@ -12,18 +12,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   };
   firebase.initializeApp(config);
-  
+  firebase.analytics();
+  firebase.analytics().logEvent('notification_received');
+
+
   const dbRefObject = firebase.database().ref().child('mikey-db');
+  const hobbies = dbRefObject.child('hobbies');
+  const firebaseText = document.getElementById('firebase-text');
+  const ulList = document.getElementById('list');
 
   dbRefObject.on('value', snap => {
     const mikeyDb = snap.val();
-    console.log('mikeyDb', mikeyDb);
-    const firebaseText = document.getElementById('firebase-text');
+    // console.log('mikeyDb', mikeyDb);
     firebaseText.innerText = mikeyDb.textOnPage;
     firebaseText.style.color = 'red';
-
   });
 
+  hobbies.on('child_added', snap => {
+    // console.log(snap.val());
+    const li = document.createElement('li');
+    li.innerText = snap.val();
+    ulList.style.color = 'blue';
+    ulList.appendChild(li);
+  });
 
 
 })

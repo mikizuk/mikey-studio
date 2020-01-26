@@ -37,8 +37,8 @@ Host: @
 0. After making changes...
 1. ~~Copy changes files like **html**, **css**, **js** files (don't forget about files changed in subfolders like **/assets**!) to **dist** folder!~~ Except .js file, just put all of your files to **/dist** and forget about copy/paste need =D
 1. in html file change to `<script src="./script.js"></script>`
+1. `npm run bundle` to update .js file
 1. `git commit`
 1. `git push`
-1. `npm run bundle` to update .js file
 1. `npm run deploy`
 

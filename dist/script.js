@@ -105,15 +105,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   };
   firebase.initializeApp(config);
+  firebase.analytics();
+  firebase.analytics().logEvent('notification_received');
 
   var dbRefObject = firebase.database().ref().child('mikey-db');
+  var hobbies = dbRefObject.child('hobbies');
+  var firebaseText = document.getElementById('firebase-text');
+  var ulList = document.getElementById('list');
 
   dbRefObject.on('value', function (snap) {
     var mikeyDb = snap.val();
-    console.log('mikeyDb', mikeyDb);
-    var firebaseText = document.getElementById('firebase-text');
+    // console.log('mikeyDb', mikeyDb);
     firebaseText.innerText = mikeyDb.textOnPage;
     firebaseText.style.color = 'red';
+  });
+
+  hobbies.on('child_added', function (snap) {
+    // console.log(snap.val());
+    var li = document.createElement('li');
+    li.innerText = snap.val();
+    ulList.style.color = 'blue';
+    ulList.appendChild(li);
   });
 });
 
