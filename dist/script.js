@@ -216,6 +216,7 @@ var catObj = {
 };
 
 function testFetch() {
+  // https://unsplash.com/documentation
   var client_id = 'c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
   var unsplashcall = 'https://api.unsplash.com/users/daxtersky/collections?client_id=' + client_id;
   var unsplashUser = 'https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
