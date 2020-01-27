@@ -1,5 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+import importedModule from './script-abc.js';
+import importModuleTwo from './script-abc2.js';
 
+document.addEventListener("DOMContentLoaded", () => {
+  getFirebaseData();
+  getUnsplashData();
+  getEmailService()
+
+  importModuleTwo.testFetch();
+})
+
+const getFirebaseData = () => {
   const config = {
     apiKey: "AIzaSyDq8sv5WWmiwbbj4RfA5-QkokqTh_uMblA",
     authDomain: "mikey-database.firebaseapp.com",
@@ -23,18 +33,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dbRefObject.on('value', snap => {
     const mikeyDb = snap.val();
-    // console.log('mikeyDb', mikeyDb);
+    console.log('firebase database', mikeyDb);
     firebaseText.innerText = mikeyDb.textOnPage;
     firebaseText.style.color = 'red';
   });
 
   hobbies.on('child_added', snap => {
-    // console.log(snap.val());
+    console.log(snap.val());
     const li = document.createElement('li');
     li.innerText = snap.val();
     ulList.style.color = 'blue';
     ulList.appendChild(li);
   });
+}
 
+const getUnsplashData = () => {
+  console.log('getUnsplashData');
 
-})
+  console.log('------------------importedModule', );
+  importedModule.importedFunction();
+  console.log('importedVar', importedModule.importedVar);
+  console.log('importedModule', importedModule);
+  console.log('------------------importedModule2', );
+  importModuleTwo.add(2, 4);
+  console.log('variable:', importModuleTwo.catVar);
+  console.log('object:', importModuleTwo.catObj.name, importModuleTwo.catObj);
+  console.log('------------------', );
+
+  // TODO fetch data from Unsplash
+  // https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
+  // https://api.unsplash.com/users/daxtersky/photos?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
+  // https://api.unsplash.com/users/daxtersky/collections?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
+  // TODO add referrals to image links: https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines
+}
+
+const getEmailService = () => {
+  // TODO use google firebase as well? Not helloRoman example?
+  // https://medium.com/@edigleyssonsilva/cloud-functions-for-firebase-sending-e-mail-1f2631d1022e
+  // https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
+  // https://softauthor.com/send-email-with-firebase-cloud-functions-firestore-http-triggers
+  // https://techtrench.org/firebase-functions-send-email/
+}
