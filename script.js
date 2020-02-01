@@ -1,3 +1,4 @@
+
 import importedModule from './script-abc.js';
 import importModuleTwo from './script-abc2.js';
 
@@ -50,15 +51,15 @@ const getFirebaseData = () => {
 const getUnsplashData = () => {
   console.log('getUnsplashData');
 
-  console.log('------------------importedModule', );
+  console.log('------------------importedModule');
   importedModule.importedFunction();
   console.log('importedVar', importedModule.importedVar);
   console.log('importedModule', importedModule);
-  console.log('------------------importedModule2', );
+  console.log('------------------importedModule2');
   importModuleTwo.add(2, 4);
   console.log('variable:', importModuleTwo.catVar);
   console.log('object:', importModuleTwo.catObj.name, importModuleTwo.catObj);
-  console.log('------------------', );
+  console.log('------------------');
 
   // TODO fetch data from Unsplash
   // https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
@@ -68,25 +69,43 @@ const getUnsplashData = () => {
 }
 
 const getEmailService = () => {
-  // TODO use google firebase as well? Not helloRoman example?
-  // https://medium.com/@edigleyssonsilva/cloud-functions-for-firebase-sending-e-mail-1f2631d1022e
-  // https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
-  // https://softauthor.com/send-email-with-firebase-cloud-functions-firestore-http-triggers
-  // https://techtrench.org/firebase-functions-send-email/
   const form = document.getElementById('form');
-  const inputId = document.getElementById('inputId');
   const inputEmail = document.getElementById('inputEmail');
-
-  // function firebasePush() {
-    //
-  // }
-
+  const inputMessage = document.getElementById('inputMessage');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      // firebase....
-      return alert('Hurray! Mail was sent successfully! :)')
-    })
-  }
+      // return alert('Hurray! Mail was sent successfully! :)')
+      const sendEmail = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + `?param1=${inputEmail.value}` + `&param2=${inputMessage.value}`;
+      const data = {
+        'param1': inputEmail.value,
+        'param2': inputMessage.value
+      };
+      console.log('data', data);
 
+      fetch(sendEmail,
+        {
+          body: JSON.stringify(data),
+          // type: "POST",
+          method: "POST",
+          dataType: 'json',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+          },
+        })
+        .then(function (resp) {
+          console.log('resp', resp);
+          return resp.json();
+        })
+        .then(function (response) {
+          console.log('response', response);
+        })
+        .catch(function (err) {
+          console.log('error', err);
+        });
+    })
+
+  }
 }
