@@ -73,4 +73,20 @@ const getEmailService = () => {
   // https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
   // https://softauthor.com/send-email-with-firebase-cloud-functions-firestore-http-triggers
   // https://techtrench.org/firebase-functions-send-email/
+  const form = document.getElementById('form');
+  const inputId = document.getElementById('inputId');
+  const inputEmail = document.getElementById('inputEmail');
+
+  // function firebasePush() {
+    //
+  // }
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // firebase....
+      return alert('Hurray! Mail was sent successfully! :)')
+    })
+  }
+
 }

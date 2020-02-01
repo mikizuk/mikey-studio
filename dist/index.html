@@ -32,7 +32,13 @@
   </span>
 
   <h2>Send email from website's form</h2>
-  <p>...</p>
+  <form id="form">
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="inputId">
+    <label for="message">Message</label>
+    <textarea name="message" id="inputEmail" placeholder="Say hello :)" cols="30" rows="10"></textarea>
+    <button type="submit">Send email</button>
+  </form>
   
 
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
@@ -41,9 +47,9 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   <!-- FILE FOR PRODUCTION -->
-  <script src="./script.js" type="module"></script>
+  <!-- <script src="./script.js" type="module"></script> -->
   <!-- FILE FOR DEVELOPMENT -->
-  <!-- <script src="../script.js"  type="module"></script>   -->
+  <script src="../script.js"  type="module"></script>  
 
 </body>
 
