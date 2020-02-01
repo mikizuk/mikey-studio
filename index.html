@@ -32,7 +32,13 @@
   </span>
 
   <h2>Send email from website's form</h2>
-  <p>...</p>
+  <form id="form">
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="inputEmail">
+    <label for="message">Message</label>
+    <textarea name="message" id="inputMessage" placeholder="Say hello :)" cols="30" rows="10"></textarea>
+    <input type="submit">Send email</input>
+  </form>
   
 
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>

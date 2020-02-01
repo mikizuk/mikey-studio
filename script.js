@@ -167,11 +167,40 @@ var getUnsplashData = function getUnsplashData() {
 };
 
 var getEmailService = function getEmailService() {
-  // TODO use google firebase as well? Not helloRoman example?
-  // https://medium.com/@edigleyssonsilva/cloud-functions-for-firebase-sending-e-mail-1f2631d1022e
-  // https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
-  // https://softauthor.com/send-email-with-firebase-cloud-functions-firestore-http-triggers
-  // https://techtrench.org/firebase-functions-send-email/
+  var form = document.getElementById('form');
+  var inputEmail = document.getElementById('inputEmail');
+  var inputMessage = document.getElementById('inputMessage');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // return alert('Hurray! Mail was sent successfully! :)')
+      var sendEmail = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
+      var data = {
+        'param1': inputEmail.value,
+        'param2': inputMessage.value
+      };
+      console.log('data', data);
+
+      fetch(sendEmail, {
+        body: JSON.stringify(data),
+        // type: "POST",
+        method: "POST",
+        dataType: 'json',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin": "*"
+        }
+      }).then(function (resp) {
+        console.log('resp', resp);
+        return resp.json();
+      }).then(function (response) {
+        console.log('response', response);
+      }).catch(function (err) {
+        console.log('error', err);
+      });
+    });
+  }
 };
 
 /***/ }),
