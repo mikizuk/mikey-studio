@@ -16,12 +16,15 @@
 
 * Images stored in Unsplash.com loaded with Fetch API
 
-### AWS Lambda Function
+### ~~Cloud Functions for Firebase~~ AWS Lambda Function
 
+* First option didn't went well ;/ because of some gmail auth problems 
 * For sending emails through form
-
-* add all articles which inspired me for these website cool features
 
 ### Mobile First
 
 * Layout design with Mobile First rule and Compound Grid
+
+### Inspirations 
+
+1. add all articles which inspired me for these website cool features
