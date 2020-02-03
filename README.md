@@ -23,7 +23,12 @@
 
 ### Mobile First
 
-* Layout design with Mobile First rule and Compound Grid
+* Layout design with Mobile First rule and 3+4 Compound Grid
+
+### Design stuff
+
+* CSS Variables
+* BEM
 
 ### Inspirations 
 
