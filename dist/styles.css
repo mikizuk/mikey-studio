@@ -1,9 +1,36 @@
 :root {
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --font-weight-extra-bold: 900;
-  --font-weight-black: 900;
+  --rokkitt-regular: 400;
+  --rokkitt-medium: 500;
+  --rokkitt-bold: 700;
+  --rokkitt-extra-bold: 900;
+  --rokkitt-black: 900;
+
+  --color-base-primary: '#2E2E2E';
+  --color-base-secondary: '#EFEFEF';
+  --color-accent: '#BE2200';
+  --color-alter-primary: '#707070';
+  --color-alter-secondary: '';
+
+  --color-base-primary: '#';
+  --color-base-secondary: '#';
+  --color-accent: '#';
+  --color-alter-primary: '#';
+  --color-alter-secondary: '#';
+
+  --color-base-primary: '#';
+  --color-base-secondary: '#';
+  --color-accent: '#';
+  --color-alter-primary: '#';
+  --color-alter-secondary: '#';
+
+  --color-base-primary: '#';
+  --color-base-secondary: '#';
+  --color-accent: '#';
+  --color-alter-primary: '#';
+  --color-alter-secondary: '#';
+
+    --main-wrapper-3cols: repeat(3, 1fr);
+  --main-wrapper-4cols: repeat(4, 1fr);
 
   --main-wrapper-margin-mobile: 31px;
   --main-wrapper-margin-tablet: 69px;
@@ -12,9 +39,6 @@
   --main-wrapper-gutter-mobile: 20px;
   --main-wrapper-gutter-tablet: 30px;
   --main-wrapper-gutter-desktop: 41px;
-
-  --main-wrapper-3cols: repeat(3, 1fr);
-  --main-wrapper-4cols: repeat(4, 1fr);
 }
 
 body {
@@ -29,18 +53,18 @@ body {
   margin: 0 var(--main-wrapper-margin-mobile);
 }
 
-.main-wrapper-3cols {
+.main-wrapper--3cols {
   grid-template-columns: var(--main-wrapper-3cols);
 }
-.main-wrapper-4cols {
+.main-wrapper--4cols {
   grid-template-columns: var(--main-wrapper-4cols);
 }
 
 /* temporary styles */
-.wrapper-item { height: 50vh }
-.main-wrapper-3cols .wrapper-item { background-color: skyblue; }
-.main-wrapper-4cols .wrapper-item { background-color: #1d7498; }
-body { color: #efefef; background-color: #199b08; font-weight: var(--font-weight-regular); font-size: 5vw; }
+.main-wrapper__item { height: 50vh }
+.main-wrapper--3cols .main-wrapper__item { background-color: skyblue; }
+.main-wrapper--4cols .main-wrapper__item { background-color: #1d7498; }
+body { color: #efefef; background-color: #199b08; font-weight: var(--rokkitt-regular); font-size: 5vw; }
 /* temporary styles */
 /* temporary styles */
 
