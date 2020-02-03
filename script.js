@@ -75,7 +75,7 @@ const getEmailService = () => {
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      // return alert('Hurray! Mail was sent successfully! :)')
+      alert('Hurray! Mail was sent successfully! :)')
       const sendEmail = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + `?param1=${inputEmail.value}` + `&param2=${inputMessage.value}`;
       const data = {
         'param1': inputEmail.value,

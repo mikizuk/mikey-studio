@@ -15,3 +15,9 @@
 ### Fetch API & Unsplash images
 
 * Images stored in Unsplash.com loaded with Fetch API
+
+### AWS Lambda Function
+
+* For sending emails through form
+
+* add all articles which inspired me for these website cool features

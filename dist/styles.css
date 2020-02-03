@@ -1,6 +1,14 @@
+:root {
+  /* color: --var-blue */
+}
+
 body {
-  margin: 0;padding: 0;
-  background-color: #efefef;
-  color: #2e2e2e
+  color: #efefef;
+  background-color: #2e2e2e;
+  font-family: 'Rokkitt', serif;
+  font-weight: 400;
+  font-size: 34px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
