@@ -21,3 +21,7 @@
 * For sending emails through form
 
 * add all articles which inspired me for these website cool features
+
+### Mobile First
+
+* Layout design with Mobile First rule and Compound Grid

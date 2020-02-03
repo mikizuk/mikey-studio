@@ -19,7 +19,7 @@ function testFetch() {
     .then(response => {
       // console.log('response', response);
       console.log('photo', response[0].urls);
-      document.getElementById('unsplash-image').src = response[0].urls.regular;
+      // document.getElementById('unsplash-image').src = response[0].urls.regular;
     }).catch(err => {
       console.log('error', err);
     })
