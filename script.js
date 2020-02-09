@@ -153,13 +153,40 @@ const getEmailService = () => {
 }
 
 const listenToObserver = () => {
+  console.log('this window height', window.clientHeight);
+  console.log('this window height', window.clientHeight - 120);
+  const navigation = document.querySelectorAll('.navigation')[0];
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
-      entry.intersectionRatio > 0
-        ? document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active')
-        : document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active')
+      if (entry.target.id === 'hero' && entry.intersectionRatio > 0) {
+        console.log('hero', );
+        navigation.style.background = 'initial'
+      } else if (entry.target.id === 'quote' && entry.intersectionRatio > 0) {
+        navigation.style.background = '#A70267'
+        console.log('quote', );
+      } else if (entry.target.id === 'parallax' && entry.intersectionRatio > 0) {
+        navigation.style.color = 'pink'
+        console.log('parallax', );
+        navigation.style.background = 'yellow'
+      } else if (entry.target.id === 'about' && entry.intersectionRatio > 0) {
+        navigation.style.background = 'white'
+        console.log('about', );
+        navigation.style.color = 'green'
+      } else if (entry.target.id === 'contact' && entry.intersectionRatio > 0) {
+        navigation.style.background = 'green'
+        console.log('contact', );
+        navigation.style.color = 'brown'
+      }
+      
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active');
+      }
     })
-  });
+  }, { rootMargin: `0px 0px -${window.innerHeight - 120}px 0px` });
   document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
+  
+
 }

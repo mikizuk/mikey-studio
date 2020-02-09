@@ -36,7 +36,7 @@
 
   --main-wrapper-margin-mobile: 31px;
   --main-wrapper-margin-tablet: 69px;
-  --main-wrapper-margin-desktop: 146px;
+  --main-wrapper-margin-desktop: 96px; /* 146px; */
 
   --main-wrapper-gutter-mobile: 20px;
   --main-wrapper-gutter-tablet: 30px;
@@ -59,7 +59,8 @@ body {
 /* ********* KEYFRAMES ********* */
 
 @keyframes moveout {
-  0% { -webkit-transform: translateX(0) }
+  0% {
+    -webkit-transform: translateX(0) }
   100% { -webkit-transform: translateX(200px) }
 }
 @keyframes movein {
@@ -83,17 +84,30 @@ body {
 /* ********* NAV ********* */
 .navigation {
   display: flex;
-  position: fixed;
+  /* position: fixed; */
+  /*  */
+  position: sticky;
+  top: 0; /* required */
+  /*  */
+  /* height: 120px; */
   width: 100%;
   padding: 10px var(--main-wrapper-margin-mobile);
-  color: var(--color-base-secondary)
+  color: var(--color-base-secondary);
+}
+
+.change {
+  color: blue;
+  background-color: #A70267;
+}
+.change2 {
+  background-color: yellow;
 }
 
 .navigation__logo {
   display: flex;
 }
 .navigation__logo-title {
-  font-size: 46px;
+  font-size: 42px;
   padding-left: 20px;
   font-weight: var(--rokkitt-extra-bold);
   text-transform: uppercase;
@@ -102,6 +116,8 @@ body {
 
 .navigation__options { /* ul */
   position: fixed;
+  /* position: sticky; */
+  /* position: absolute; */
   right: var(--main-wrapper-margin-mobile);
   top: 100px;
 }
@@ -164,8 +180,8 @@ body {
   height: 100px;
   background-color: transparent;
   border: none;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */   /* firefox bug fix */
   outline: none;
   transition: all 0.3s ease;
 }
@@ -178,6 +194,8 @@ body {
 .button-menu__burger,
 .button-menu__burger::before,
 .button-menu__burger::after {
+  display: inline-block;
+
   width: 60px;
   height: 7px;
   background-color: var(--color-base-secondary);
@@ -206,7 +224,7 @@ body {
 .section-hero { 
   color: var(--color-base-secondary);
   background-color: var(--color-base-primary);
-  height: 100vh;
+  height: 101vh;
   
   display: grid;
   padding-left: var(--main-wrapper-margin-mobile);
