@@ -45,6 +45,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Rokkitt', serif;
@@ -260,15 +263,15 @@ body {
   padding-right: var(--main-wrapper-margin-mobile);
 }
 
-
-
 /* ********* OTHER SECTIONS ********* */
 .section-quote {
   background-color: var(--color-base-secondary);
+  background-color: darkslategray;
   height: 100vh;
 }
 .section-parallax {
   height: 100vh;
+  background-color: var(--color-accent);
 }
 .section-about {
   background-color: var(--color-base-primary);
@@ -276,6 +279,7 @@ body {
 }
 .section-contact {
   background-color: var(--color-base-secondary);
+  background-color: orangered;
   height: 100vh;
 }
 
@@ -289,9 +293,6 @@ body {
   }
   .navigation {
     padding: 10px var(--main-wrapper-margin-tablet);
-  }
-  .navigation__item {
-    /* transform: translateX(180px); */
   }
 }
 
