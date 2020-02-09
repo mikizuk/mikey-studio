@@ -38,8 +38,15 @@ const setNavigationMenu = () => {
 
   navButton.addEventListener('click', () => toggleNavigationButton(isNavButtonOpen))
   document.addEventListener('click', (e) => {
-    if (isNavButtonOpen && e.target.className === 'navigation__link') { // TODO || e.target.className === 'navigation__logo-title' || e.target.className !== 'button-menu button-menu-open')
-      toggleNavigationButton(true);
+    // console.log(e.target.className, 'isNavButtonOpen', isNavButtonOpen);
+    if (isNavButtonOpen) {
+      if (e.target.className === 'navigation__link' || (e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger')) {
+        toggleNavigationButton(true);
+      }
+      // if (e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger') {
+        // console.log('!???', );
+        // toggleNavigationButton(true);
+      // }
     }
   })
 
