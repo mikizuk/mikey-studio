@@ -119,17 +119,14 @@ const setNavigationMenu = () => {
   const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
     if (isNavButtonOpen) {
       for (let i = 0; i < navigationItems.length; i++) {
+        navigationItems[i].classList.add('navigation__item--movein');
         navigationItems[i].classList.remove('navigation__item--hidden');
       }
     } else {
       for (let i = 0; i < navigationItems.length; i++) {
         navigationItems[i].classList.add('navigation__item--hidden');
+        navigationItems[i].classList.remove('navigation__item--movein');
       }
-    }
-  }
-  const hideMenuItemsWhenDesktop = () => {
-    if (window.innerWidth < 1440) {
-      toggleVisibilityMenuItems(navigationItems, isNavButtonOpen);
     }
   }
   const toggleNavigationButton = (buttonState) => {
@@ -138,15 +135,11 @@ const setNavigationMenu = () => {
     toggleVisibilityMenuItems(navigationItems, isNavButtonOpen);
   }
 
-  hideMenuItemsWhenDesktop();
   navButton.addEventListener('click', () => toggleNavigationButton(isNavButtonOpen))
-
   document.addEventListener('click', (e) => {
     if (isNavButtonOpen && e.target.className === 'navigation__link') { // TODO || e.target.className === 'navigation__logo-title' || e.target.className !== 'button-menu button-menu-open')
       toggleNavigationButton(true);
     }
   })
-
-
 
 }
