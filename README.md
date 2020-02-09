@@ -33,3 +33,4 @@
 ### Inspirations 
 
 1. add all articles which inspired me for these website cool features
+1. https://www.webkrytyk.pl/2020/01/31/wpadki-i-wypadki-10/#more-1372

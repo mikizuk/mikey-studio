@@ -3,11 +3,13 @@ import importedModule from './script-abc.js';
 import importModuleTwo from './script-abc2.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 1
+  setNavigationMenu();
+  // 2?
   getFirebaseData();
   getUnsplashData();
   getEmailService()
 
-  importModuleTwo.testFetch();
 })
 
 const getFirebaseData = () => {
@@ -108,4 +110,43 @@ const getEmailService = () => {
     })
 
   }
+}
+
+const setNavigationMenu = () => {
+  const navButton = document.getElementsByClassName('button-menu')[0];
+  const navigationItems = document.getElementsByClassName('navigation__item');
+  let isNavButtonOpen = false;
+  const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
+    if (isNavButtonOpen) {
+      for (let i = 0; i < navigationItems.length; i++) {
+        navigationItems[i].classList.remove('navigation__item--hidden');
+      }
+    } else {
+      for (let i = 0; i < navigationItems.length; i++) {
+        navigationItems[i].classList.add('navigation__item--hidden');
+      }
+    }
+  }
+  const hideMenuItemsWhenDesktop = () => {
+    if (window.innerWidth < 1440) {
+      toggleVisibilityMenuItems(navigationItems, isNavButtonOpen);
+    }
+  }
+  const toggleNavigationButton = (buttonState) => {
+    isNavButtonOpen = !buttonState;
+    navButton.classList.toggle('button-menu-open', isNavButtonOpen);
+    toggleVisibilityMenuItems(navigationItems, isNavButtonOpen);
+  }
+
+  hideMenuItemsWhenDesktop();
+  navButton.addEventListener('click', () => toggleNavigationButton(isNavButtonOpen))
+
+  document.addEventListener('click', (e) => {
+    if (isNavButtonOpen && e.target.className === 'navigation__link') { // TODO || e.target.className === 'navigation__logo-title' || e.target.className !== 'button-menu button-menu-open')
+      toggleNavigationButton(true);
+    }
+  })
+
+
+
 }
