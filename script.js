@@ -1,19 +1,22 @@
 
 import importedModule from './script-abc.js';
 import importModuleTwo from './script-abc2.js';
+import unsplashApi from './unsplash-api.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1
-  setNavigationMenu();
+  listenerNavEvents();
   // 2?
   getFirebaseData();
   getUnsplashData();
   getEmailService()
   // 3
   listenToObserver();
+  //
+  // playWithJsImports();
 })
 
-const setNavigationMenu = () => {
+const listenerNavEvents = () => {
   const navButton = document.getElementsByClassName('button-menu')[0];
   const navigationItems = document.getElementsByClassName('navigation__item');
   let isNavButtonOpen = false;
@@ -90,25 +93,7 @@ const getFirebaseData = () => {
   // });
 }
 
-const getUnsplashData = () => {
-  console.log('getUnsplashData');
-
-  console.log('------------------importedModule');
-  importedModule.importedFunction();
-  console.log('importedVar', importedModule.importedVar);
-  console.log('importedModule', importedModule);
-  console.log('------------------importedModule2');
-  importModuleTwo.add(2, 4);
-  console.log('variable:', importModuleTwo.catVar);
-  console.log('object:', importModuleTwo.catObj.name, importModuleTwo.catObj);
-  console.log('------------------');
-
-  // TODO fetch data from Unsplash
-  // https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-  // https://api.unsplash.com/users/daxtersky/photos?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-  // https://api.unsplash.com/users/daxtersky/collections?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-  // TODO add referrals to image links: https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines
-}
+const getUnsplashData = () => unsplashApi.fetchUnsplashApi();
 
 const getEmailService = () => {
   const form = document.getElementById('form');
@@ -153,40 +138,52 @@ const getEmailService = () => {
 }
 
 const listenToObserver = () => {
-  console.log('this window height', window.clientHeight);
-  console.log('this window height', window.clientHeight - 120);
   const navigation = document.querySelectorAll('.navigation')[0];
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
-      if (entry.target.id === 'hero' && entry.intersectionRatio > 0) {
-        console.log('hero', );
-        navigation.style.background = 'initial'
-      } else if (entry.target.id === 'quote' && entry.intersectionRatio > 0) {
-        navigation.style.background = '#A70267'
-        console.log('quote', );
-      } else if (entry.target.id === 'parallax' && entry.intersectionRatio > 0) {
-        navigation.style.color = 'pink'
-        console.log('parallax', );
-        navigation.style.background = 'yellow'
-      } else if (entry.target.id === 'about' && entry.intersectionRatio > 0) {
-        navigation.style.background = 'white'
-        console.log('about', );
-        navigation.style.color = 'green'
-      } else if (entry.target.id === 'contact' && entry.intersectionRatio > 0) {
-        navigation.style.background = 'green'
-        console.log('contact', );
-        navigation.style.color = 'brown'
-      }
-      
+      // console.log(entry);
       if (entry.intersectionRatio > 0) {
         document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
+        // if (entry.target.id === 'hero') {
+        //   navigation.style.background = 'initial';
+        //   navigation.style.color = '#BE2200';
+        // } else if (entry.target.id === 'quote') {
+        //   navigation.style.background = '#A70267';
+        // } else if (entry.target.id === 'parallax') {
+        //   navigation.style.color = 'pink';
+        //   navigation.style.background = 'yellow';
+        // } else if (entry.target.id === 'projects') {
+        //   navigation.style.color = 'green'
+        //   navigation.style.background = 'yellow';
+        // } else if (entry.target.id === 'about') {
+        //   navigation.style.background = 'white';
+        //   navigation.style.color = 'green';
+        // } else if (entry.target.id === 'contact') {
+        //   navigation.style.background = 'green';
+        //   navigation.style.color = 'brown';
+        // }
       } else {
         document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active');
       }
+
     })
-  }, { rootMargin: `0px 0px -${window.innerHeight - 120}px 0px` });
+  }, { rootMargin: `${window.innerHeight - 118}px 0px -${window.innerHeight - 120}px 0px` });
   document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
   
 
+
+
+}
+
+const playWithJsImports = () => {
+  console.log('------------------importedModule');
+  importedModule.importedFunction();
+  console.log('importedVar', importedModule.importedVar);
+  console.log('importedModule', importedModule);
+  console.log('------------------importedModule2');
+  importModuleTwo.add(2, 4);
+  console.log('variable:', importModuleTwo.catVar);
+  console.log('object:', importModuleTwo.catObj.name, importModuleTwo.catObj);
+  console.log('------------------');
 }

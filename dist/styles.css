@@ -95,14 +95,6 @@ body {
   color: var(--color-base-secondary);
 }
 
-.change {
-  color: blue;
-  background-color: #A70267;
-}
-.change2 {
-  background-color: yellow;
-}
-
 .navigation__logo {
   display: flex;
 }
@@ -150,6 +142,10 @@ body {
 .navigation__item:nth-of-type(5),
 .navigation__item.navigation__item--hidden:nth-of-type(5) {
   animation-delay: 0.3s;
+}
+.navigation__item:nth-of-type(6),
+.navigation__item.navigation__item--hidden:nth-of-type(6) {
+  animation-delay: 0.4s;
 }
 
 .navigation__link { /* a */
@@ -269,6 +265,10 @@ body {
 .section-parallax {
   height: 100vh;
   background-color: var(--color-accent);
+}
+.section-projects {
+  height: 100vh;
+  background-color: goldenrod;
 }
 .section-about {
   background-color: var(--color-base-primary);
