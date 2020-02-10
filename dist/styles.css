@@ -262,10 +262,21 @@ body {
   background-color: darkslategray;
   height: 100vh;
 }
+
+/* ********* PARALLAX ********* */
+
 .section-parallax {
-  height: 100vh;
-  background-color: var(--color-accent);
+  height: 60vh;
+  /* background: url('./assets/parallax_6812.jpg'); */
+  background: url('./assets/parallax_8002.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  /* filter: grayscale(100%); */
 }
+
+/* ********* OTHER ********* */
 .section-projects {
   height: 100vh;
   background-color: goldenrod;
