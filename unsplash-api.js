@@ -26,11 +26,11 @@ function fetchUnsplashApi() {
   fetch(unsplashUserPhotos)
     .then(resp => resp.json())
     .then(response => {
-      console.log('response', response);
-      console.log('photo', response[0].urls);
+      // console.log('response', response);
+      // console.log('photo', response[0].urls);
       // document.getElementById('unsplash-image').src = response[0].urls.regular;
     }).catch(err => {
-      console.log('error', err);
+      // console.log('error', err);
     })
 
 
