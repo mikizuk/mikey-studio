@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "keyPoints": [
+      "inspiration",
+      "idea",
+      "concept",
+      "emotion",
+      "plan",
+      "process",
+      "focus",
+      "repetition",
+      "discipline",
+      "habit",
+      "failure, success",
+      "repeat"
+    ],
+    "title": "Software Developer",
+    "intro": "Junior Software Developer with peculiar set of skills. After disappointment of computer science on studies, it took over a decade to realize how fascinating field it is. However, with solid experience gained meantime in human resources and project management, I bring to Software Development a quite fresh perspective. With a thirst for knowledge, diligence and dedication, each day, I am becoming a better developer. Let me show you!"
+  },
+  "quotes": [
+    {
+      "quote": "",
+      "author": "",
+      "link": ""
+    },
+    {
+      "quote": "",
+      "author": "",
+      "link": ""
+    },
+    {
+      "quote": "",
+      "author": "",
+      "link": ""
+    },
+    {
+      "quote": "",
+      "author": "",
+      "link": ""
+    }
+  ],
+  "projects": [
+    {
+      "title": "",
+      "header": "",
+      "description": "",
+      "demoLink": "",
+      "repoLink": "",
+      "hashtags": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "title": "",
+      "header": "",
+      "description": "",
+      "demoLink": "",
+      "repoLink": "",
+      "hashtags": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "title": "",
+      "header": "",
+      "description": "",
+      "demoLink": "",
+      "repoLink": "",
+      "hashtags": [
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "infoAboutList": [
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    },
+    {
+      "title": "",
+      "description": "",
+      "size": 2
+    }
+  ],
+  "techStack": [
+    {
+      "id": 1,
+      "technology": "",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "technology": "",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "technology": "",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "technology": "",
+      "description": ""
+    }
+  ],
+  "contact": {
+    "socialWebsites": [
+      {
+        "name": "",
+        "link": ""
+      },
+      {
+        "name": "",
+        "link": ""
+      },
+      {
+        "name": "",
+        "link": ""
+      },
+      {
+        "name": "",
+        "link": ""
+      },
+      {
+        "name": "",
+        "link": ""
+      }
+    ],
+    "repoLink": "",
+    "sizeMobile": "767px",
+    "sizeTablet": "1440px",
+    "sizeDesktop": "1920px"
+  }
+}
