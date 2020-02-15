@@ -4,13 +4,15 @@ import firebaseApi from './script-firebase-api.js';
 import awsLambda from './script-awslambda-api.js';
 import intersectionObserver from './script-intersection-observer.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+let quotes = null;
 
+document.addEventListener("DOMContentLoaded", () => {
+  const navButton = document.getElementsByClassName('button-menu')[0];
+  const navigationItems = document.getElementsByClassName('navigation__item');
+  const buttonQuote = document.getElementsByClassName('button--quote')[0];
+  let isNavButtonOpen = false;
 
   const getDomListener = () => { // domListener.listenNavEvents();
-    const navButton = document.getElementsByClassName('button-menu')[0];
-    const navigationItems = document.getElementsByClassName('navigation__item');
-    let isNavButtonOpen = false;
     const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
       if (isNavButtonOpen) {
         for (let i = 0; i < navigationItems.length; i++) {
@@ -37,12 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.className === 'navigation__link' || (e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger')) {
           toggleNavigationButton(true);
         }
-        // if (e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger') {
-        // console.log('!???', );
-        // toggleNavigationButton(true);
-        // }
       }
     });
+    
+    buttonQuote.addEventListener('click', () => getRandomQuote(quotes))
   }
 
   const getFirebaseData = () => { // firebaseApi.firebaseApi();
@@ -59,9 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-    const firebaseDatabase = firebase.database().ref();
-    firebaseDatabase.on('value', snap => {
-      console.log('3 mikeyStudioData', snap.val());
+    firebase.database().ref().on('value', snap => {
+      const firebaseDatabase = snap.val();
+      quotes = firebaseDatabase && firebaseDatabase.quotes;
+      quotes && getRandomQuote(quotes);
     });
   }
 
@@ -76,3 +77,38 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const getIntersectionObserver = () => intersectionObserver.listenToObserver();
+
+const getRandomQuote = (quotes) => {
+  const randomNumber = Math.floor(Math.random() * quotes.length)
+  const randomQuote = quotes[randomNumber];
+  showNewQuote(randomQuote);
+}
+
+const showNewQuote = (randomQuote) => {
+  const quoteDom = document.getElementsByClassName('quote')[0];
+  const quoteAuthorDom = document.getElementsByClassName('quote-author')[0];
+  const quoteLinkDom = document.getElementsByClassName('quote-link')[0];
+
+  // TODO sizes for tablet only ;)
+  // character counter https://www.charactercountonline.com/
+  if (randomQuote.quote.length > 300) {
+    quoteDom.style.fontSize = '50px';
+  } else if (randomQuote.quote.length > 200) {
+    quoteDom.style.fontSize = '64px';
+  } else if (randomQuote.quote.length > 150) {
+    quoteDom.style.fontSize = '75px';
+  } else if (randomQuote.quote.length > 100) {
+    quoteDom.style.fontSize = '80px';
+  }
+  quoteDom.innerText = `"${randomQuote.quote}"`;
+  quoteAuthorDom.innerText = randomQuote.author || '';
+  if (randomQuote.link) {
+    quoteLinkDom.style.fontSize = '30px'
+    quoteLinkDom.innerText = 'link';
+    quoteLinkDom.setAttribute('href', randomQuote.link);
+  } else {
+    quoteLinkDom.style.fontSize = '14px'
+    quoteLinkDom.innerText = '';
+    quoteLinkDom.removeAttribute('href');
+  }
+}
