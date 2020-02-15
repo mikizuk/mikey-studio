@@ -256,7 +256,6 @@ body {
 /* ********* OTHER SECTIONS ********* */
 .section-quote {
   background-color: var(--color-base-secondary);
-  background-color: darkslategray;
   height: 100vh;
 }
 

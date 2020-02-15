@@ -18,27 +18,43 @@
     "intro": "Junior Software Developer with peculiar set of skills. After disappointment of computer science on studies, it took over a decade to realize how fascinating field it is. However, with solid experience gained meantime in human resources and project management, I bring to Software Development a quite fresh perspective. With a thirst for knowledge, diligence and dedication, each day, I am becoming a better developer. Let me show you!"
   },
   "quotes": [
-    {
-      "quote": "",
-      "author": "",
-      "link": ""
-    },
-    {
-      "quote": "",
-      "author": "",
-      "link": ""
-    },
-    {
-      "quote": "",
-      "author": "",
-      "link": ""
-    },
-    {
-      "quote": "",
-      "author": "",
-      "link": ""
-    }
+    { "author": "Timothy Leary", "quote": "If you want to change the way people respond to you, change the way you respond to people.", "link": ""  },
+    { "author": "Carl Jung", "quote": "Your vision will become clear only when you can look into your own head. Who look outside, dreams, who looks inside, awakes.", "link": ""  },
+    { "author": "", "quote": "Let them be them.", "link": ""  },
+    { "author": "Erin Hanson", "quote": "What if I fall? ...what if you fly?”.", "link": ""  },
+    { "author": "Cus D'Amato", "quote": "The hero and the coward both feel the same thing, but the hero uses his fear, projects it onto his opponent, while the coward runs. It's the same thing, fear, but it's what you do with it that matters.", "link": ""  },
+    { "author": "Mongolian proverb", "quote": "While your father is alive, make as many friends as you can. While your horse is alive, visit as many countries a you can.", "link": ""  },
+    { "author": "Abraham Lincoln", "quote": "Nearly all men can stand adversity, but if you want to test a man's character, give him power.", "link": ""  },
+    { "author": "", "quote": "When you’re going through hell, don’t stop.", "link": ""  },
+    { "author": "Fyodor Dostoevsky", "quote": "Suffering is the sole origin of consciousness.", "link": ""  },
+    { "author": "T. S Eliot", "quote": "Only those who will risk going too far can possibly find out how far they can go.", "link": ""  },
+    { "author": "Socrates", "quote": "The children now love luxury; they have bad manners, contempt for authority; they show disrespect for elders and love chatter in place of exercise. Children are now tyrants, not the servants of their households. They no longer rise when elders enter the room. They contradict their parents, chatter before company, gobble up dainties at the table, cross their legs, and tyrannize their teachers.", "link": ""  },
+    { "author": "Wisława Szymborska", "quote": "We know ourselves only as far as we've been tested", "link": ""  },
+    { "author": "", "quote": "Better an 'ooops' than a 'what if'", "link": ""  },
+    { "author": "Chinese proverb", "quote": "The best time to plant a tree was 20 years ago. Second best time is now.", "link": ""  },
+    { "author": "", "quote": "Worrying is praying of not to want.", "link": ""  },
+    { "author": "Abraham Lincoln", "quote": "Don't believe everything you read on the internet.", "link": ""  },
+    { "author": "Angkor Wat writing", "quote": "Wiseman knows that life is only a little flame pulled by storm.", "link": ""  },
+    { "author": "Confucius", "quote": "By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest.", "link": ""  },
+    { "author": "Frank DeVito", "quote": "If it won't challenge you it won't change you.", "link": ""  },
+    { "author": "Alex Honnold", "quote": "Nothing good happens in the world by being happy and cosy. Nobody achieves anything great because they’re happy and cosy.", "link": ""  },
+    { "author": "Socrates", "quote": "Beware the barrenness of a busy life.", "link": ""  },
+    { "author": "Robin Sharma", "quote": "Stop managing your time. Start managing your focus.", "link": ""  },
+    { "author": "Jim Rohn", "quote": "Formal education will make you a living; self-education will make you a fortune.", "link": ""  },
+    { "author": "", "quote": "Your good ends where a hurt of others starts.", "link": ""  },
+    { "author": "Nelson Mandela", "quote": "May your choices reflect your hopes, not your fears.", "link": ""  },
+    { "author": "", "quote": "Life isn't perfect, but it has perfect moments.", "link": "https://www.linkedin.com/feed/update/urn:li:activity:6603746338670727168/"  },
+    { "author": "Confucius", "quote": "It does not matter how slowly you go as long as you do not stop.", "link": ""  },
+    { "author": "", "quote": "Do more of what makes you happy.", "link": ""  },
+    { "author": "Bruce Lee", "quote": "Be water my friend.", "link": ""  },
+    { "author": "Captain Jack Sparrow", "quote": "The problem is not the problem. The problem is your attitude about the problem.", "link": ""  },
+    { "author": "John Burroughs", "quote": "The smallest deed is better than the greatest intention.", "link": ""  },
+    { "author": "", "quote": "Being human is to try finding sense in our existence.", "link": ""  },
+    { "author": "Ralph Waldo Emerson", "quote": "People do not seem to realize that their opinion of the world is also a confession of character.", "link": ""  },
+    { "author": "", "quote": "Living well is the best revenge", "link": ""  },
+    { "author": "Tim Ferriss", "quote": "“Peace isn’t found through understanding; peace isn’t found through more striving; peace isn’t found through more achieving; peace is found through greater acceptance.", "link": "https://podcastnotes.org/2020/02/01/tim-ferriss-kevin-rose-random-show-resolutions-relationships" }
   ],
+  "landscapeImages" : ["", ""],
   "projects": [
     {
       "title": "",
@@ -46,30 +62,7 @@
       "description": "",
       "demoLink": "",
       "repoLink": "",
-      "hashtags": [
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "title": "",
-      "header": "",
-      "description": "",
-      "demoLink": "",
-      "repoLink": "",
-      "hashtags": [
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "title": "",
-      "header": "",
-      "description": "",
-      "demoLink": "",
-      "repoLink": "",
+      "smallProject": false,
       "hashtags": [
         "",
         "",
@@ -82,43 +75,9 @@
       "title": "",
       "description": "",
       "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
-    },
-    {
-      "title": "",
-      "description": "",
-      "size": 2
     }
   ],
+  "infoAboutPictures": ["", ""],
   "techStack": [
     {
       "id": 1,

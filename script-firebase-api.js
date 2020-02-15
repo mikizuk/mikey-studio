@@ -1,39 +1,23 @@
-const getFirebaseData = () => {
-  const config = {
-    apiKey: "AIzaSyDq8sv5WWmiwbbj4RfA5-QkokqTh_uMblA",
-    authDomain: "mikey-database.firebaseapp.com",
-    databaseURL: "https://mikey-database.firebaseio.com",
-    projectId: "mikey-database",
-    storageBucket: "mikey-database.appspot.com",
-    messagingSenderId: "841627576040",
-    appId: "1:841627576040:web:0c4448f2517bf9a3094b5d",
-    measurementId: "G-6HGRS89R6Y"
-
+// const firebaseApi = () => {
+  const firebaseConfig = {
+    apiKey: "AIzaSyCB7kZlwhT3XJodzViuuRRP9ggDysOqSxY",
+    authDomain: "fir-database-mikey.firebaseapp.com",
+    databaseURL: "https://fir-database-mikey.firebaseio.com",
+    projectId: "fir-database-mikey",
+    storageBucket: "fir-database-mikey.appspot.com",
+    messagingSenderId: "299569566671",
+    appId: "1:299569566671:web:5b22d2ab28ec77479db8ba",
+    measurementId: "G-LM0GHJJ6VX"
   };
-  firebase.initializeApp(config);
-  firebase.analytics();
-  firebase.analytics().logEvent('notification_received');
 
+//   firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
 
-  const dbRefObject = firebase.database().ref().child('mikey-db');
-  // const hobbies = dbRefObject.child('hobbies');
-  // const firebaseText = document.getElementById('firebase-text');
-  // const ulList = document.getElementById('list');
+//   const firebaseDatabase = firebase.database().ref();
+//     firebaseDatabase.on('value', snap => {
+//     mikeyStudioData = snap.val()
+//     console.log('3 mikeyStudioData', mikeyStudioData);
+//   });
+// }
 
-  dbRefObject.on('value', snap => {
-    const mikeyDb = snap.val();
-    // console.log('firebase database', mikeyDb); // important console.log!
-  //   firebaseText.innerText = mikeyDb.textOnPage;
-  //   firebaseText.style.color = 'red';
-  });
-
-  // hobbies.on('child_added', snap => {
-  //   console.log(snap.val());
-  //   const li = document.createElement('li');
-  //   li.innerText = snap.val();
-  //   ulList.style.color = 'blue';
-  //   ulList.appendChild(li);
-  // });
-}
-
-export default { getFirebaseData }
+export default { firebaseConfig }
