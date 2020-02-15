@@ -1,5 +1,5 @@
 const getAwsLambdaFunctions = () => {
-  console.log('aws lambda loading');
+  // console.log('aws lambda loading');
   const form = document.getElementById('form');
   const inputEmail = document.getElementById('inputEmail');
   const inputMessage = document.getElementById('inputMessage');

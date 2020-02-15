@@ -22,7 +22,7 @@ const getFirebaseData = () => {
 
   dbRefObject.on('value', snap => {
     const mikeyDb = snap.val();
-    console.log('firebase database', mikeyDb);
+    // console.log('firebase database', mikeyDb); // important console.log!
   //   firebaseText.innerText = mikeyDb.textOnPage;
   //   firebaseText.style.color = 'red';
   });

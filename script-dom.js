@@ -29,8 +29,8 @@ const listenNavEvents = () => {
         toggleNavigationButton(true);
       }
       // if (e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger') {
-        // console.log('!???', );
-        // toggleNavigationButton(true);
+      // console.log('!???', );
+      // toggleNavigationButton(true);
       // }
     }
   })

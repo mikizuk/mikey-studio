@@ -1,13 +1,20 @@
 const listenToObserver = () => {
-  console.log('listenToObserver', );
+  console.log('listenToObserver');
 
   const navigation = document.querySelectorAll('.navigation')[0];
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
+
       // console.log(entry);
+     
       if (entry.intersectionRatio > 0) {
         document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
+        // 
+        if (entry.target.id === 'quote') {
+          navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
+        }
+
         // if (entry.target.id === 'hero') {
         //   navigation.style.background = 'initial';
         //   navigation.style.color = '#BE2200';
