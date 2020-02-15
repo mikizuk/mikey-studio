@@ -41,3 +41,5 @@ const getAwsLambdaFunctions = () => {
 
   }
 }
+
+export default { getAwsLambdaFunctions }
