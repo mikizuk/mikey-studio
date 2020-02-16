@@ -20,7 +20,7 @@ const listenToObserver = () => {
         //   navigation.style.color = '#BE2200';
         // } else if (entry.target.id === 'section-quote') {
         //   navigation.style.background = '#A70267';
-        // } else if (entry.target.id === 'parallax') {
+        // } else if (entry.target.id === 'landscape') {
         //   navigation.style.color = 'pink';
         //   navigation.style.background = 'yellow';
         // } else if (entry.target.id === 'projects') {
