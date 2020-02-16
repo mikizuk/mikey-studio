@@ -15,10 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroTitle = document.getElementsByClassName('hero__title')[0];
   const heroDesc = document.getElementsByClassName('hero__desc')[0];
   /* ********* QUOTE ********* */
-
   const buttonQuote = document.getElementsByClassName('button--quote')[0];
   let isNavButtonOpen = false;
-
+  /* ********* PROJECTS ********* */
+  const projectWrapper = document.getElementsByClassName('projects-wrapper')[0];
+  /* ********* - ********* */
   const getDomListener = () => { // domListener.listenNavEvents();
     const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
       if (isNavButtonOpen) {
@@ -71,11 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log('firebaseDatabase', firebaseDatabase);
       if (firebaseDatabase) {
         /* ********* HERO ********* */
-        firebaseDatabase.hero.keyPoints.forEach(word => {
-          const keyItem = document.createElement('li');
-          heroList.appendChild(keyItem);
-          keyItem.innerText = word;
-        });
+        if (firebaseDatabase.hero && firebaseDatabase.hero.keyPoints) {
+          firebaseDatabase.hero.keyPoints.forEach(word => {
+            const keyItem = document.createElement('li');
+            heroList.appendChild(keyItem);
+            keyItem.innerText = word;
+          });
+        }
         heroDesc.innerText = firebaseDatabase.hero.intro;
         heroTitle.innerText = firebaseDatabase.hero.title;
         /* ********* QUOTE ********* */
@@ -83,6 +86,79 @@ document.addEventListener("DOMContentLoaded", () => {
           quotes = firebaseDatabase.quotes;
           getRandomQuote(firebaseDatabase.quotes);
         }
+        /* ********* PROJECTS ********* */
+        if (firebaseDatabase.projects) {
+          firebaseDatabase.projects.forEach(project => {
+            // console.log('project', project);
+            const projectElem = document.createElement('div');
+            projectElem.classList.add('project');
+            projectWrapper.appendChild(projectElem);
+            const projectImage = document.createElement('img');
+            projectImage.classList.add('project__image');
+            if (project.id === 0) {
+              projectImage.setAttribute('src', './assets/project-trop-1920x1088.jpg');
+            } else if (project.id === 1) {
+              projectImage.setAttribute('src', './assets/project-wydawca-1920x1088.jpg');
+            } else if (project.id === 2) {
+              projectImage.setAttribute('src', './assets/project-mikeystudio-1920x1088.jpg');
+            }
+            projectElem.appendChild(projectImage);
+            const projectTitle = document.createElement('div');
+            projectTitle.classList.add('project__title');
+            projectTitle.innerText = project.title;
+
+            projectElem.appendChild(projectTitle);
+            // TODO header
+            const projectDesc = document.createElement('div');
+            projectDesc.classList.add('project__description');
+            projectDesc.innerText = project.description;
+            projectElem.appendChild(projectDesc);
+            // TODO projectHashtag
+            if (project.hashtags) {
+              const projectHashtags = document.createElement('div');
+              projectHashtags.classList.add('project__hashtags');
+              projectElem.appendChild(projectHashtags);
+              project.hashtags.forEach(hashItem => {
+                const hashElem = document.createElement('span');
+                hashElem.classList.add('project__hashtag');
+                hashElem.innerText = `#${hashItem}`;
+                projectHashtags.appendChild(hashElem);
+              });
+            }
+            // if (project.hashtags2) {
+            //   const projectHashtags = document.createElement('div');
+            //   projectHashtags.classList.add('project__hashtags2');
+            //   projectElem.appendChild(projectHashtags);
+            //   project.hashtags2.forEach(hashItem => {
+            //     const hashElem = document.createElement('span');
+            //     hashElem.classList.add('project__hashtag2');
+            //     hashElem.innerText = `#${hashItem}`;
+            //     projectHashtags.appendChild(hashElem);
+            //   });
+            // }
+            ////////////
+            const projectButtons = document.createElement('div');
+            projectButtons.classList.add('project__buttons');
+            projectElem.appendChild(projectButtons);
+            if (project.websiteLink) {
+              const websiteLink = document.createElement('a');
+              projectButtons.appendChild(websiteLink);
+              websiteLink.classList.add('button', 'button--alter');
+              websiteLink.setAttribute('target', '_blank');
+              websiteLink.innerText = 'Website';
+              websiteLink.setAttribute('href', project.websiteLink);
+            }
+            if (project.repoLink) {
+              const repoLink = document.createElement('a');
+              projectButtons.appendChild(repoLink);
+              repoLink.classList.add('button', 'button--alter');
+              repoLink.setAttribute('target', '_blank');
+              repoLink.innerText = 'Repo'
+              repoLink.setAttribute('href', project.repoLink)
+            }
+          });
+        }
+        /* ********* - ********* */
       }
     });
   }

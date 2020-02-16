@@ -62,6 +62,7 @@
   ],
   "projects": [
     {
+      "id": 0,
       "websiteLink": "https://trackyourtops.herokuapp.com/",
       "description": "App Created By Newbie Python Developer And Styles By Newbie Junior Frontend Developer, Me. Our Own First Project, And Yes I Am Ashamed Of It's Look. Before Looking Make Sure You Are Sitting. You Were Warned.",
       "hashtags": [
@@ -75,6 +76,7 @@
       "title": "TROP"
     },
     {
+      "id": 1,
       "websiteLink": "https://wydawca.com.pl/",
       "description": "I provide complete technical work for this Wordpress website. Working with database migrations, plugins causin' errors, shameful CSS hacks and learning to maintain professional calmness with my first client.",
       "hashtags": [
@@ -88,17 +90,31 @@
       "title": "Wydawca.com.pl"
     },
     {
-      "websiteLink": "https://wydawca.com.pl/",
-      "description": "Portfolio website which I've spend crazy number of hours on design and conceptual part. This couldn't have been less than perfect. Portfolio website which I've spend crazy number of hours on design and conceptual part.",
+      "id": 2,
+      "websiteLink": "",
+      "description": "Portfolio website which I've spend crazy number of hours on design and conceptual part. This couldn't have been less than perfect.",
       "hashtags": [
         "adobeXD",
         "adobePS",
         "BEM",
         "CSS",
-        "JavaScript",
+        "JavaScript"
+      ],
+      "hashtags2": [
         "GithubPages",
         "IntersectionObserver",
         "UnsplashAPI",
+        "FirebaseAPI",
+        "AWSLambdaFunctions"
+      ],
+      "hashtags3": [
+        "GithubPages",
+        "IntersectionObserver",
+        "UnsplashAPI",
+        "FirebaseAPI",
+        "AWSLambdaFunctions"
+      ],
+      "hashtags4": [
         "FirebaseAPI",
         "AWSLambdaFunctions"
       ],
