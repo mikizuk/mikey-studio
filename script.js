@@ -7,8 +7,15 @@ import intersectionObserver from './script-intersection-observer.js';
 let quotes = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* ********* NAV ********* */
   const navButton = document.getElementsByClassName('button-menu')[0];
   const navigationItems = document.getElementsByClassName('navigation__item');
+  /* ********* HERO ********* */
+  const heroList = document.getElementsByClassName('hero__list')[0];
+  const heroTitle = document.getElementsByClassName('hero__title')[0];
+  const heroDesc = document.getElementsByClassName('hero__desc')[0];
+  /* ********* QUOTE ********* */
+
   const buttonQuote = document.getElementsByClassName('button--quote')[0];
   let isNavButtonOpen = false;
 
@@ -61,8 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
     firebase.analytics();
     firebase.database().ref().on('value', snap => {
       const firebaseDatabase = snap.val();
-      quotes = firebaseDatabase && firebaseDatabase.quotes;
-      quotes && getRandomQuote(quotes);
+      console.log('firebaseDatabase', firebaseDatabase);
+      if (firebaseDatabase) {
+        /* ********* HERO ********* */
+        firebaseDatabase.hero.keyPoints.forEach(word => {
+          const keyItem = document.createElement('li');
+          heroList.appendChild(keyItem);
+          keyItem.innerText = word;
+        });
+        heroDesc.innerText = firebaseDatabase.hero.intro;
+        heroTitle.innerText = firebaseDatabase.hero.title;
+        /* ********* QUOTE ********* */
+        if (firebaseDatabase.quotes) {
+          quotes = firebaseDatabase.quotes;
+          getRandomQuote(firebaseDatabase.quotes);
+        }
+      }
     });
   }
 
@@ -99,15 +120,15 @@ const showNewQuote = (randomQuote) => {
     quoteDom.style.fontSize = '75px';
   } else if (randomQuote.quote.length > 100) {
     quoteDom.style.fontSize = '80px';
+  } else {
+    quoteDom.style.fontSize = '85px';
   }
   quoteDom.innerText = `"${randomQuote.quote}"`;
   quoteAuthorDom.innerText = randomQuote.author || '';
   if (randomQuote.link) {
-    quoteLinkDom.style.fontSize = '30px'
     quoteLinkDom.innerText = 'link';
     quoteLinkDom.setAttribute('href', randomQuote.link);
   } else {
-    quoteLinkDom.style.fontSize = '14px'
     quoteLinkDom.innerText = '';
     quoteLinkDom.removeAttribute('href');
   }
