@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
-    
+
     buttonQuote.addEventListener('click', () => getRandomQuote(quotes))
   }
 
@@ -106,37 +106,32 @@ document.addEventListener("DOMContentLoaded", () => {
             const projectTitle = document.createElement('div');
             projectTitle.classList.add('project__title');
             projectTitle.innerText = project.title;
-
             projectElem.appendChild(projectTitle);
-            // TODO header
+            const projectHeader = document.createElement('div');
+            projectHeader.classList.add('project__header');
+            projectHeader.innerText = project.header;
+            projectElem.appendChild(projectHeader);
             const projectDesc = document.createElement('div');
             projectDesc.classList.add('project__description');
             projectDesc.innerText = project.description;
             projectElem.appendChild(projectDesc);
-            // TODO projectHashtag
+
             if (project.hashtags) {
-              const projectHashtags = document.createElement('div');
-              projectHashtags.classList.add('project__hashtags');
-              projectElem.appendChild(projectHashtags);
-              project.hashtags.forEach(hashItem => {
-                const hashElem = document.createElement('span');
-                hashElem.classList.add('project__hashtag');
-                hashElem.innerText = `#${hashItem}`;
-                projectHashtags.appendChild(hashElem);
-              });
+              const projectHashtagsDiv = document.createElement('div');
+              projectHashtagsDiv.classList.add('project__hashtags');
+              projectElem.appendChild(projectHashtagsDiv);
+              for (let i = 0; i < project.hashtags.length; i++) {
+                const hashtagSpan = document.createElement('span');
+                hashtagSpan.classList.add('project__hashtag');
+                hashtagSpan.innerText = project.hashtags[i];
+                projectHashtagsDiv.appendChild(hashtagSpan);
+                if ((i + 1) % 3 === 0) {
+                  projectHashtagsDiv.appendChild(document.createElement('br'));
+                  projectHashtagsDiv.appendChild(document.createElement('br'));
+                }
+              };
             }
-            // if (project.hashtags2) {
-            //   const projectHashtags = document.createElement('div');
-            //   projectHashtags.classList.add('project__hashtags2');
-            //   projectElem.appendChild(projectHashtags);
-            //   project.hashtags2.forEach(hashItem => {
-            //     const hashElem = document.createElement('span');
-            //     hashElem.classList.add('project__hashtag2');
-            //     hashElem.innerText = `#${hashItem}`;
-            //     projectHashtags.appendChild(hashElem);
-            //   });
-            // }
-            ////////////
+
             const projectButtons = document.createElement('div');
             projectButtons.classList.add('project__buttons');
             projectElem.appendChild(projectButtons);

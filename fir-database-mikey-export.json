@@ -93,7 +93,31 @@
       "id": 2,
       "websiteLink": "",
       "description": "Portfolio website which I've spend crazy number of hours on design and conceptual part. This couldn't have been less than perfect.",
+      "hashtagsObjects": [
+        {
+          "row": 1,
+          "hashtags": [ "adobeXD", "adobePS", "BEM", "CSS", "JavaScript" ]
+        }, {
+          "row": 2,
+          "hashtags": [ "GithubPages", "IntersectionObserver", "UnsplashAPI" ]
+        }, {
+          "row": 3,
+          "hashtags": [ "FirebaseAPI", "AWSLambdaFunctions" ]
+        }
+      ],
       "hashtags": [
+        "adobeXD",
+        "adobePS",
+        "BEM",
+        "CSS",
+        "JavaScript",
+        "GithubPages",
+        "IntersectionObserver",
+        "UnsplashAPI",
+        "FirebaseAPI",
+        "AWSLambdaFunctions"
+      ],
+      "hashtags1": [
         "adobeXD",
         "adobePS",
         "BEM",
@@ -103,18 +127,9 @@
       "hashtags2": [
         "GithubPages",
         "IntersectionObserver",
-        "UnsplashAPI",
-        "FirebaseAPI",
-        "AWSLambdaFunctions"
+        "UnsplashAPI"
       ],
       "hashtags3": [
-        "GithubPages",
-        "IntersectionObserver",
-        "UnsplashAPI",
-        "FirebaseAPI",
-        "AWSLambdaFunctions"
-      ],
-      "hashtags4": [
         "FirebaseAPI",
         "AWSLambdaFunctions"
       ],

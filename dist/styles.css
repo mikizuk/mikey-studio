@@ -408,6 +408,10 @@ body {
   font-weight: var(--rokkitt-medium);
   grid-column: 1/-1;
 }
+.project__header {
+  font-size: 60px;
+  grid-column: 1/-1;
+}
 .project__description {
   font-size: 40px;
   grid-column: 1/-1;
@@ -419,10 +423,14 @@ body {
   align-items: center;
 }
 .project__hashtags {
-  /* display: flex; */
-  /* width: 100%; */
-  /* border: 3px solid red; */
+  grid-column: 1/-1;
 }
+/* .project__hashtags2 {
+  grid-column: 1/-1;
+}
+.project__hashtags3 {
+  grid-column: 1/-1;
+} */
 .project:nth-of-type(2n ) .project__hashtag {
   color: var(--color-base-primary);
   background-color: var(--color-base-secondary);
@@ -434,7 +442,7 @@ body {
   font-size: 34px;
   font-weight: var(--rokkitt-bold);
   padding: 10px;
-  margin-right: 12px;
+  margin-right: 8px;
   border-radius: 8px;
 }
 
