@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isNavButtonOpen = false;
   /* ********* PROJECTS ********* */
   const projectWrapper = document.getElementsByClassName('projects-wrapper')[0];
+  /* ********* ABOUT ********* */
+  const aboutWrapper = document.getElementsByClassName('about-grid')[0];
   /* ********* - ********* */
   const getDomListener = () => { // domListener.listenNavEvents();
     const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
@@ -89,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
         /* ********* PROJECTS ********* */
         if (firebaseDatabase.projects) {
           firebaseDatabase.projects.forEach(project => {
-            // console.log('project', project);
             const projectElem = document.createElement('div');
             projectElem.classList.add('project');
             projectWrapper.appendChild(projectElem);
@@ -115,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
             projectDesc.classList.add('project__description');
             projectDesc.innerText = project.description;
             projectElem.appendChild(projectDesc);
-
             if (project.hashtags) {
               const projectHashtagsDiv = document.createElement('div');
               projectHashtagsDiv.classList.add('project__hashtags');
@@ -131,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
               };
             }
-
             const projectButtons = document.createElement('div');
             projectButtons.classList.add('project__buttons');
             projectElem.appendChild(projectButtons);
@@ -151,6 +150,20 @@ document.addEventListener("DOMContentLoaded", () => {
               repoLink.innerText = 'Repo'
               repoLink.setAttribute('href', project.repoLink)
             }
+          });
+        }
+        /* ********* ABOUT ********* */
+        if (firebaseDatabase.aboutList) {
+          (firebaseDatabase.aboutList).forEach(aboutItem => {
+            const aboutSection = document.createElement('div');
+            const aboutHeader = document.createElement('h6');
+            const aboutDescription = document.createElement('p');
+            aboutSection.classList.add(`${aboutItem.className}`);
+            aboutDescription.innerText = aboutItem.description;
+            aboutHeader.innerText = aboutItem.header;
+            aboutSection.appendChild(aboutHeader);
+            aboutSection.appendChild(aboutDescription);
+            aboutWrapper.appendChild(aboutSection);
           });
         }
         /* ********* - ********* */

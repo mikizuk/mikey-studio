@@ -448,7 +448,6 @@ body {
 
 /* ********* ABOUT ********* */
 .section-about {
-  height: 400px;
   color: white;
   position: relative;
 }
@@ -462,6 +461,43 @@ body {
   transform: skewY(-10deg);
   z-index: -1;
 }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  grid-template-areas:
+    "pic-1 intro intro intro"
+    "challenge challenge developer developer"
+    "challenge challenge pic-2 pic-2"
+    "podcast podcast sport sport"
+    "pic-3 pic-3 sport sport"
+    "inbox inbox inbox inbox"
+    "gamer gamer pic-4 pic-4"
+    "goal goal goal goal"
+    "pic-5 pic-5 music music"
+    "photo photo pic-6 pic-6"
+    "book book pic-6 pic-6";
+  grid-gap: var(--main-wrapper-gutter-mobile);
+  padding: 0 var(--main-wrapper-margin-mobile);
+}
+.pic-1 { grid-area: pic-1; }
+.intro { grid-area: intro; }
+.challenge { grid-area: challenge; }
+.developer { grid-area: developer; }
+.pic-2 { grid-area: pic-2; }
+.podcast { grid-area: podcast; }
+.sport { grid-area: sport; }
+.pic-3 { grid-area: pic-3; }
+.inbox { grid-area: inbox; }
+.gamer { grid-area: gamer; }
+.pic-4 { grid-area: pic-4; }
+.goal { grid-area: goal; }
+.music { grid-area: music; }
+.photo { grid-area: photo; }
+.book { grid-area: book; }
+.pic-5 { grid-area: pic-5; }
+.pic-6 { grid-area: pic-6; }
 /* ********* CONTACT ********* */
 .section-contact {
   color: var(--color-base-primary);

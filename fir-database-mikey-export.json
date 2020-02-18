@@ -1,341 +1,225 @@
 {
-  "contact": {
-    "repoLink": "",
-    "sizeDesktop": "1920px",
-    "sizeMobile": "767px",
-    "sizeTablet": "1440px",
-    "socialWebsites": [
-      {
-        "link": "",
-        "name": ""
-      },
-      {
-        "link": "",
-        "name": ""
-      },
-      {
-        "link": "",
-        "name": ""
-      },
-      {
-        "link": "",
-        "name": ""
-      },
-      {
-        "link": "",
-        "name": ""
-      }
-    ]
+  "contact" : {
+    "repoLink" : "",
+    "sizeDesktop" : "1920px",
+    "sizeMobile" : "767px",
+    "sizeTablet" : "1440px",
+    "socialWebsites" : [ {
+      "link" : "",
+      "name" : ""
+    }, {
+      "link" : "",
+      "name" : ""
+    }, {
+      "link" : "",
+      "name" : ""
+    }, {
+      "link" : "",
+      "name" : ""
+    }, {
+      "link" : "",
+      "name" : ""
+    } ]
   },
-  "hero": {
-    "intro": "Junior Software Developer with peculiar set of skills. After disappointment of computer science on studies, it took over a decade to realize how fascinating field it is. However, with solid experience gained meantime in human resources and project management, I bring to Software Development a quite fresh perspective. With a thirst for knowledge, diligence and dedication, each day, I am becoming a better developer.\n\nLet me show you!",
-    "keyPoints": [
-      "inspiration",
-      "idea",
-      "concept",
-      "emotion",
-      "plan",
-      "process",
-      "focus",
-      "repetition",
-      "discipline",
-      "habit",
-      "failure, success",
-      "repeat"
-    ],
-    "title": "Software Developer"
+  "hero" : {
+    "intro" : "Junior Software Developer with peculiar set of skills. After disappointment of computer science on studies, it took over a decade to realize how fascinating field it is. However, with solid experience gained meantime in human resources and project management, I bring to Software Development a quite fresh perspective. With a thirst for knowledge, diligence and dedication, each day, I am becoming a better developer.\n\nLet me show you!",
+    "keyPoints" : [ "inspiration", "idea", "concept", "emotion", "plan", "process", "focus", "repetition", "discipline", "habit", "failure, success", "repeat" ],
+    "title" : "Software Developer"
   },
-  "infoAboutList": [
-    {
-      "description": "",
-      "size": 2,
-      "title": ""
-    }
+  "aboutList" : [
+    { "className": "intro", "description" : "Junior Software Developer with peculiar set of skills. After disappointment of computer science on studies, it took over a decade to realize how fascinating field it is. However, with solid experience gained meantime in human resources and project management, I bring to Software Development a quite fresh perspective.", "header" : "Intro" },
+    { "className": "photo", "description" : "As you haven't already noticed, I love making nature photos. Definitely more making than later watching them. But not only. Just to let you know, all pictures here are my own.", "header" : "Photo amateur" },
+    { "className": "developer", "description" : "I'm a junior software developer and I love my job! It's the ideal place to be if you wanna challenge your brain! The most fascinating part of it is the process of creation. Maybe it sounds nerdy but, a combination of creating new designs showing algorithmically generated data is what makes me tick! ", "header" : "Junior Software developer" },
+    { "className": "challenge", "description" : "I love adventures, thrill, collecting new experiences and memories. Ride on the roof of a Nepalese bus in Himalaya, bungee jump, get lost and found in winter High Tatra mountains, parachute jump, solo motorbike travel in the Alps, rock & mountain climbing, white water rafting or live my life behind and get a job in new country. Fortune favours the bold. ", "header" : "Challenge seeker" },
+    { "className": "sport", "description" : "If I had a second chance in my childhood decisions I'd be world class footballer and Poland would have won the FIFA World Cup by now. Instead I'm having a great time at running (marathon in '19!), weight lifting, snowboard, yoga and climbing. Sport equal happiness =).", "header" : "Sport addict" },
+    { "className": "book", "description" : "Books, even more than cinema, can put us in someone else perception. They give us a chance to live many lives, see the distant see times forever… Recent rec.: - 'Grit: The Power of Passion and Perseverance', Angela Duckworth - 'So Good They Can't Ignore You', Cal Newport - 'Flourish', Martin Seligman", "header" : "Book reader" },
+    { "className": "gamer", "description" : "I love games, can't do anything about it. Top 3 on PS4: The Witcher 3, Red Dead Redemption 2, God Of War. On PC I adore Battlefield and Total War series.", "header" : "Gamer" },
+    { "className": "inbox", "description" : "Tidiness in my digital life exists not only in my mailboxes, but among all my ssd's, hdd's and cloud spaces. Feedly and Pocket keeps my FOMO at acceptable level. Bear, Firefox bookmarks give me additional RAM memory to my brain. ", "header" : "Inbox zero enthusiast" },
+    { "className": "podcast", "description" : "I listen to some IT podcasts but those like The Tim Ferris show or Jacko Podcast are just unique. Highly recommended.", "header" : "Podcast listener" },
+    { "className": "music", "description" : "Music accompanies us in our life, brings back memories, the good ones, and the bad. Last years passionate about chillout and synthwave.", "header" : "Music listener" },
+    { "className": "goal", "description" : "Our dreams can be achieved with two factors: motivation and action. Believe, dedication, effort, grid, perseverance, you name it. With that any dream can be changed to goal, waiting to be achieved.", "header" : "Goal oriented" }
   ],
-  "infoAboutPictures": [
-    "",
-    ""
-  ],
-  "landscapeImages": [
-    "",
-    ""
-  ],
-  "projects": [
-    {
-      "id": 0,
-      "websiteLink": "https://trackyourtops.herokuapp.com/",
-      "description": "App Created By Newbie Python Developer And Styles By Newbie Junior Frontend Developer, Me. Our Own First Project, And Yes I Am Ashamed Of It's Look. Before Looking Make Sure You Are Sitting. You Were Warned.",
-      "hashtags": [
-        "HTML5",
-        "SCSS",
-        "Bootstrap"
-      ],
-      "header": "app for climbers",
-      "repoLink": "https://github.com/wrymaszewski/trop",
-      "smallProject": false,
-      "title": "TROP"
-    },
-    {
-      "id": 1,
-      "websiteLink": "https://wydawca.com.pl/",
-      "description": "I provide complete technical work for this Wordpress website. Working with database migrations, plugins causin' errors, shameful CSS hacks and learning to maintain professional calmness with my first client.",
-      "hashtags": [
-        "Wordpress",
-        "CSS",
-        "databasemigrationnightmares"
-      ],
-      "header": "news website for Polish book publishing market",
-      "repoLink": "",
-      "smallProject": false,
-      "title": "Wydawca.com.pl"
-    },
-    {
-      "id": 2,
-      "websiteLink": "",
-      "description": "Portfolio website which I've spend crazy number of hours on design and conceptual part. This couldn't have been less than perfect.",
-      "hashtagsObjects": [
-        {
-          "row": 1,
-          "hashtags": [ "adobeXD", "adobePS", "BEM", "CSS", "JavaScript" ]
-        }, {
-          "row": 2,
-          "hashtags": [ "GithubPages", "IntersectionObserver", "UnsplashAPI" ]
-        }, {
-          "row": 3,
-          "hashtags": [ "FirebaseAPI", "AWSLambdaFunctions" ]
-        }
-      ],
-      "hashtags": [
-        "adobeXD",
-        "adobePS",
-        "BEM",
-        "CSS",
-        "JavaScript",
-        "GithubPages",
-        "IntersectionObserver",
-        "UnsplashAPI",
-        "FirebaseAPI",
-        "AWSLambdaFunctions"
-      ],
-      "hashtags1": [
-        "adobeXD",
-        "adobePS",
-        "BEM",
-        "CSS",
-        "JavaScript"
-      ],
-      "hashtags2": [
-        "GithubPages",
-        "IntersectionObserver",
-        "UnsplashAPI"
-      ],
-      "hashtags3": [
-        "FirebaseAPI",
-        "AWSLambdaFunctions"
-      ],
-      "header": "portfolio website",
-      "repoLink": "https://github.com/daxtersky/mikey-studio",
-      "smallProject": false,
-      "title": "Mikey Studio"
-    }
-  ],
-  "quotes": [
-    {
-      "author": "Timothy Leary",
-      "link": "",
-      "quote": "If you want to change the way people respond to you, change the way you respond to people."
-    },
-    {
-      "author": "Carl Jung",
-      "link": "",
-      "quote": "Your vision will become clear only when you can look into your own head. Who look outside, dreams, who looks inside, awakes."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Let them be them."
-    },
-    {
-      "author": "Erin Hanson",
-      "link": "",
-      "quote": "What if I fall? ...what if you fly?"
-    },
-    {
-      "author": "Cus D'Amato",
-      "link": "",
-      "quote": "The hero and the coward both feel the same thing, but the hero uses his fear, projects it onto his opponent, while the coward runs. It's the same thing, fear, but it's what you do with it that matters."
-    },
-    {
-      "author": "Mongolian proverb",
-      "link": "",
-      "quote": "While your father is alive, make as many friends as you can. While your horse is alive, visit as many lands a you can."
-    },
-    {
-      "author": "Abraham Lincoln",
-      "link": "",
-      "quote": "Nearly all men can stand adversity, but if you want to test a man's character, give him power."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "When you’re going through hell, don’t stop."
-    },
-    {
-      "author": "Fyodor Dostoevsky",
-      "link": "",
-      "quote": "Suffering is the sole origin of consciousness."
-    },
-    {
-      "author": "T. S Eliot",
-      "link": "",
-      "quote": "Only those who will risk going too far can possibly find out how far they can go."
-    },
-    {
-      "author": "Socrates",
-      "link": "",
-      "quote": "The children now love luxury; they have bad manners, contempt for authority; they show disrespect for elders and love chatter in place of exercise. Children are now tyrants, not the servants of their households. They no longer rise when elders enter the room. They contradict their parents, chatter before company, gobble up dainties at the table, cross their legs, and tyrannize their teachers."
-    },
-    {
-      "author": "Wisława Szymborska",
-      "link": "",
-      "quote": "We know ourselves only as far as we've been tested."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Better an 'ooops' than a 'what if'."
-    },
-    {
-      "author": "Chinese proverb",
-      "link": "",
-      "quote": "The best time to plant a tree was 20 years ago. Second best time is now."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Worrying is praying of not to want."
-    },
-    {
-      "author": "Abraham Lincoln",
-      "link": "",
-      "quote": "Don't believe everything you read on the internet."
-    },
-    {
-      "author": "Angkor Wat writing",
-      "link": "",
-      "quote": "Wiseman knows that life is only a little flame pulled by storm."
-    },
-    {
-      "author": "Confucius",
-      "link": "",
-      "quote": "By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest."
-    },
-    {
-      "author": "Frank DeVito",
-      "link": "",
-      "quote": "If it won't challenge you, it won't change you."
-    },
-    {
-      "author": "Alex Honnold",
-      "link": "",
-      "quote": "Nothing good happens in the world by being happy and cosy. Nobody achieves anything great because they’re happy and cosy."
-    },
-    {
-      "author": "Socrates",
-      "link": "",
-      "quote": "Beware the barrenness of a busy life."
-    },
-    {
-      "author": "Robin Sharma",
-      "link": "",
-      "quote": "Stop managing your time. Start managing your focus."
-    },
-    {
-      "author": "Jim Rohn",
-      "link": "",
-      "quote": "Formal education will make you a living; self-education will make you a fortune."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Your good ends where a hurt of others starts."
-    },
-    {
-      "author": "Nelson Mandela",
-      "link": "",
-      "quote": "May your choices reflect your hopes, not your fears."
-    },
-    {
-      "author": "",
-      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6603746338670727168/",
-      "quote": "Life isn't perfect, but it has perfect moments."
-    },
-    {
-      "author": "Confucius",
-      "link": "",
-      "quote": "It does not matter how slowly you go as long as you do not stop."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Do more of what makes you happy."
-    },
-    {
-      "author": "Bruce Lee",
-      "link": "",
-      "quote": "Empty your mind, be formless, shapeless, like water. If you put water into a cup, it becomes the cup. You put water into a bottle and it becomes the bottle. You put it in a teapot it becomes the teapot. Now, water can flow or it can crash. Be water my friend."
-    },
-    {
-      "author": "Captain Jack Sparrow",
-      "link": "",
-      "quote": "The problem is not the problem. The problem is your attitude about the problem."
-    },
-    {
-      "author": "John Burroughs",
-      "link": "",
-      "quote": "The smallest deed is better than the greatest intention."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Being human is to try finding sense in our existence."
-    },
-    {
-      "author": "Ralph Waldo Emerson",
-      "link": "",
-      "quote": "People do not seem to realize that their opinion of the world is also a confession of character."
-    },
-    {
-      "author": "",
-      "link": "",
-      "quote": "Living well is the best revenge."
-    },
-    {
-      "author": "Tim Ferriss",
-      "link": "https://podcastnotes.org/2020/02/01/tim-ferriss-kevin-rose-random-show-resolutions-relationships",
-      "quote": "Peace isn’t found through understanding; peace isn’t found through more striving; peace isn’t found through more achieving; peace is found through greater acceptance."
-    }
-  ],
-  "techStack": [
-    {
-      "description": "",
-      "id": 1,
-      "technology": ""
-    },
-    {
-      "description": "",
-      "id": 2,
-      "technology": ""
-    },
-    {
-      "description": "",
-      "id": 3,
-      "technology": ""
-    },
-    {
-      "description": "",
-      "id": 4,
-      "technology": ""
-    }
-  ]
+  "projects" : [ {
+    "description" : "App Created By Newbie Python Developer And Styles By Newbie Junior Frontend Developer, Me. Our Own First Project, And Yes I Am Ashamed Of It's Look. Before Looking Make Sure You Are Sitting. You Were Warned.",
+    "hashtags" : [ "HTML5", "SCSS", "Bootstrap" ],
+    "header" : "App for climbers",
+    "id" : 0,
+    "repoLink" : "https://github.com/wrymaszewski/trop",
+    "smallProject" : false,
+    "title" : "TROP",
+    "websiteLink" : "https://trackyourtops.herokuapp.com/"
+  }, {
+    "description" : "I provide complete technical work for this Wordpress website. Working with database migrations, plugins causin' errors, shameful CSS hacks and learning to maintain professional calmness with my first client.",
+    "hashtags" : [ "Wordpress", "CSS", "databasemigrationnightmares" ],
+    "header" : "News website for Polish book publishing market",
+    "id" : 1,
+    "repoLink" : "",
+    "smallProject" : false,
+    "title" : "Wydawca.com.pl",
+    "websiteLink" : "https://wydawca.com.pl/"
+  }, {
+    "description" : "Portfolio website which I've spend crazy number of hours on design and conceptual part. This couldn't have been less than perfect.",
+    "hashtags" : [ "adobeXD", "adobePS", "BEM", "CSS", "JavaScript", "GithubPages", "IntersectionObserver", "UnsplashAPI", "FirebaseAPI", "AWSLambdaFunctions", "MobileFirst" ],
+    "header" : "Portfolio website",
+    "id" : 2,
+    "repoLink" : "https://github.com/daxtersky/mikey-studio",
+    "smallProject" : false,
+    "title" : "Mikey Studio",
+    "websiteLink" : ""
+  } ],
+  "quotes" : [ {
+    "author" : "Timothy Leary",
+    "link" : "",
+    "quote" : "If you want to change the way people respond to you, change the way you respond to people."
+  }, {
+    "author" : "Carl Jung",
+    "link" : "",
+    "quote" : "Your vision will become clear only when you can look into your own head. Who look outside, dreams, who looks inside, awakes."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Let them be them."
+  }, {
+    "author" : "Erin Hanson",
+    "link" : "",
+    "quote" : "What if I fall? ...what if you fly?"
+  }, {
+    "author" : "Cus D'Amato",
+    "link" : "",
+    "quote" : "The hero and the coward both feel the same thing, but the hero uses his fear, projects it onto his opponent, while the coward runs. It's the same thing, fear, but it's what you do with it that matters."
+  }, {
+    "author" : "Mongolian proverb",
+    "link" : "",
+    "quote" : "While your father is alive, make as many friends as you can. While your horse is alive, visit as many lands a you can."
+  }, {
+    "author" : "Abraham Lincoln",
+    "link" : "",
+    "quote" : "Nearly all men can stand adversity, but if you want to test a man's character, give him power."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "When you’re going through hell, don’t stop."
+  }, {
+    "author" : "Fyodor Dostoevsky",
+    "link" : "",
+    "quote" : "Suffering is the sole origin of consciousness."
+  }, {
+    "author" : "T. S Eliot",
+    "link" : "",
+    "quote" : "Only those who will risk going too far can possibly find out how far they can go."
+  }, {
+    "author" : "Socrates",
+    "link" : "",
+    "quote" : "The children now love luxury; they have bad manners, contempt for authority; they show disrespect for elders and love chatter in place of exercise. Children are now tyrants, not the servants of their households. They no longer rise when elders enter the room. They contradict their parents, chatter before company, gobble up dainties at the table, cross their legs, and tyrannize their teachers."
+  }, {
+    "author" : "Wisława Szymborska",
+    "link" : "",
+    "quote" : "We know ourselves only as far as we've been tested."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Better an 'ooops' than a 'what if'."
+  }, {
+    "author" : "Chinese proverb",
+    "link" : "",
+    "quote" : "The best time to plant a tree was 20 years ago. Second best time is now."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Worrying is praying of not to want."
+  }, {
+    "author" : "Abraham Lincoln",
+    "link" : "",
+    "quote" : "Don't believe everything you read on the internet."
+  }, {
+    "author" : "Angkor Wat writing",
+    "link" : "",
+    "quote" : "Wiseman knows that life is only a little flame pulled by storm."
+  }, {
+    "author" : "Confucius",
+    "link" : "",
+    "quote" : "By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest."
+  }, {
+    "author" : "Frank DeVito",
+    "link" : "",
+    "quote" : "If it won't challenge you, it won't change you."
+  }, {
+    "author" : "Alex Honnold",
+    "link" : "",
+    "quote" : "Nothing good happens in the world by being happy and cosy. Nobody achieves anything great because they’re happy and cosy."
+  }, {
+    "author" : "Socrates",
+    "link" : "",
+    "quote" : "Beware the barrenness of a busy life."
+  }, {
+    "author" : "Robin Sharma",
+    "link" : "",
+    "quote" : "Stop managing your time. Start managing your focus."
+  }, {
+    "author" : "Jim Rohn",
+    "link" : "",
+    "quote" : "Formal education will make you a living; self-education will make you a fortune."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Your good ends where a hurt of others starts."
+  }, {
+    "author" : "Nelson Mandela",
+    "link" : "",
+    "quote" : "May your choices reflect your hopes, not your fears."
+  }, {
+    "author" : "",
+    "link" : "https://www.linkedin.com/feed/update/urn:li:activity:6603746338670727168/",
+    "quote" : "Life isn't perfect, but it has perfect moments."
+  }, {
+    "author" : "Confucius",
+    "link" : "",
+    "quote" : "It does not matter how slowly you go as long as you do not stop."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Do more of what makes you happy."
+  }, {
+    "author" : "Bruce Lee",
+    "link" : "",
+    "quote" : "Empty your mind, be formless, shapeless, like water. If you put water into a cup, it becomes the cup. You put water into a bottle and it becomes the bottle. You put it in a teapot it becomes the teapot. Now, water can flow or it can crash. Be water my friend."
+  }, {
+    "author" : "Captain Jack Sparrow",
+    "link" : "",
+    "quote" : "The problem is not the problem. The problem is your attitude about the problem."
+  }, {
+    "author" : "John Burroughs",
+    "link" : "",
+    "quote" : "The smallest deed is better than the greatest intention."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Being human is to try finding sense in our existence."
+  }, {
+    "author" : "Ralph Waldo Emerson",
+    "link" : "",
+    "quote" : "People do not seem to realize that their opinion of the world is also a confession of character."
+  }, {
+    "author" : "",
+    "link" : "",
+    "quote" : "Living well is the best revenge."
+  }, {
+    "author" : "Tim Ferriss",
+    "link" : "https://podcastnotes.org/2020/02/01/tim-ferriss-kevin-rose-random-show-resolutions-relationships",
+    "quote" : "Peace isn’t found through understanding; peace isn’t found through more striving; peace isn’t found through more achieving; peace is found through greater acceptance."
+  }, {
+    "author" : "Benjamin Clementine",
+    "link" : "https://www.youtube.com/watch?v=JQ4mFaI17pk",
+    "quote" : "And for those who hate me, the more you hate me./n The more you help me./n And for those who love me, the more you love me./n The more you hurt me."
+  } ],
+  "techStack" : [
+  { "description" : "I try to remember about semantics and love <canvas>.", "id" : 1, "technology" : "HTML5" },
+  { "description" : "Working on BEM despite Atomic preferred.", "id" : 2, "technology" : "CSS3" },
+  { "description" : "The one and only.", "id" : 3, "technology" : "JavaScript" },
+  { "description" : "Types are great help!", "id" : 4, "technology" : "TypeScript" },
+  { "description" : "Learned basics at coding bootcamp.", "id" : 5, "technology" : "ReactJS" },
+  { "description" : "Love it for standardization, hate it for modularity.", "id" : 6, "technology" : "Angular" },
+  { "description" : "Everything's perfect until my HEAD get's lost somewhere...", "id" : 7, "technology" : "GIT" },
+  { "description" : "Not favourite platform, but super friendly.", "id" : 8, "technology" : "Wordpress" },
+  { "description" : "Starting with serverless options first. ", "id" : 9, "technology" : "Backend" }]
 }
