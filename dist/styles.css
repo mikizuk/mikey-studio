@@ -469,10 +469,9 @@ body {
   grid-template-areas:
     "pic-1 intro intro intro"
     "challenge challenge developer developer"
-    "challenge challenge pic-2 pic-2"
-    "podcast podcast sport sport"
+    "podcast podcast pic-2 pic-2"
+    "inbox inbox sport sport"
     "pic-3 pic-3 pic-3 pic-3" /* "pic-3 pic-3 sport sport" */
-    "inbox inbox inbox inbox"
     "gamer gamer pic-4 pic-4"
     "goal goal goal goal"
     "pic-5 pic-5 music music"
@@ -481,37 +480,51 @@ body {
   grid-gap: var(--main-wrapper-gutter-mobile);
   /* padding: 0 var(--main-wrapper-margin-mobile); */
 
-  font-size: 36px;
+  font-size: 40px;
   font-weight: var(--rokkitt-medium);
   text-align: justify;
   text-justify: inter-character; /* text-justify: inter-word; */
+}
+
+/* both */
+.goal,
+.inbox {
+  padding-right: var(--main-wrapper-margin-mobile);
+  padding-left: var(--main-wrapper-margin-mobile);
+  padding-top: 10px;
 }
 
 /* right */
 .intro,
 .developer,
 .sport,
-.inbox,
-.goal,
 .music {
   padding-right: var(--main-wrapper-margin-mobile);
-
+  padding-left: 5px;
+  padding-top: 10px;
 }
 
 /* left */
 .challenge,
 .podcast,
-.inbox,
 .gamer,
-.goal,
 .photo,
 .book {
   padding-left: var(--main-wrapper-margin-mobile);
+  padding-right: 5px;
+  padding-top: 10px;
 }
 
 
+.pic-2, .pic-4, .pic-6 {
+  background-image: url('./assets/parallax_6812.jpg');
+  
+}
+.pic-1, .pic-3, .pic-5 {
+  background-image: url('./assets/parallax_8002.jpg');
+  
+}
 .pic-1, .pic-2, .pic-3, .pic-4, .pic-5, .pic-6 {
-  background-image: url('./assets/hero1.jpg');
   background-size: cover;
 }
 

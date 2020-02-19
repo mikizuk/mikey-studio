@@ -163,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
             aboutHeader.innerText = aboutItem.header;
             aboutSection.appendChild(aboutHeader);
             aboutSection.appendChild(document.createElement('br'));
-            aboutSection.appendChild(document.createElement('br'));
             aboutSection.appendChild(aboutDescription);
             aboutWrapper.appendChild(aboutSection);
           });
