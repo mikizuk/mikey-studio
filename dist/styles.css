@@ -465,7 +465,7 @@ body {
 .about-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(11, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   grid-template-areas:
     "pic-1 intro intro intro"
     "challenge challenge developer developer"
@@ -545,6 +545,18 @@ body {
 .pic-4 { grid-area: pic-4;  }
 .pic-5 { grid-area: pic-5;  }
 .pic-6 { grid-area: pic-6;  }
+
+/* ********* STACK ********* */
+.stack-grid {
+  padding-left: var(--main-wrapper-margin-mobile);
+  padding-right: var(--main-wrapper-margin-mobile);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  grid-row-gap: var(--main-wrapper-gutter-mobile);
+  display: grid;
+}
+
+
 /* ********* CONTACT ********* */
 .section-contact {
   color: var(--color-base-primary);

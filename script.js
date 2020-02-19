@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectWrapper = document.getElementsByClassName('projects-wrapper')[0];
   /* ********* ABOUT ********* */
   const aboutWrapper = document.getElementsByClassName('about-grid')[0];
+  /* ********* STACK ********* */
+  const stackGrid = document.getElementsByClassName('stack-grid')[0];
   /* ********* - ********* */
   const getDomListener = () => { // domListener.listenNavEvents();
     const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
@@ -167,7 +169,22 @@ document.addEventListener("DOMContentLoaded", () => {
             aboutWrapper.appendChild(aboutSection);
           });
         }
-        /* ********* - ********* */
+        /* ********* STACK ********* */
+        if (firebaseDatabase.techStack) {
+          const svg = document.getElementsByTagName('svg');
+          for (let i = 0; i < svg.length; i++) {
+            const svgClasses = [...svg[i].classList];
+            firebaseDatabase.techStack.forEach(tech => {
+              if (svgClasses.includes(tech.className)) {
+                console.log('tech', tech);
+              }
+            });
+
+          }
+
+
+        }
+          /* ********* - ********* */
       }
     });
   }
