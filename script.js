@@ -172,11 +172,23 @@ document.addEventListener("DOMContentLoaded", () => {
         /* ********* STACK ********* */
         if (firebaseDatabase.techStack) {
           const svg = document.getElementsByTagName('svg');
+          // console.log('svg', svg);
           for (let i = 0; i < svg.length; i++) {
+            const svgItem = svg[i];
+            console.log('svgItem', svgItem);
             const svgClasses = [...svg[i].classList];
             firebaseDatabase.techStack.forEach(tech => {
               if (svgClasses.includes(tech.className)) {
-                console.log('tech', tech);
+                const techItem = document.createElement('span');
+                techItem.classList.add('stack-technology');
+                const techDescription = document.createElement('span');
+                techDescription.classList.add('stack-description');
+                techItem.innerText = tech.technology;
+                techDescription.innerText = tech.description;
+                svgItem.parentNode.insertBefore(techItem, svgItem.nextSibling);
+                techItem.parentNode.insertBefore(techDescription, techItem.nextSibling);
+
+
               }
             });
 
@@ -184,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         }
-          /* ********* - ********* */
+        /* ********* - ********* */
       }
     });
   }

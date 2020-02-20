@@ -552,10 +552,21 @@ body {
   padding-right: var(--main-wrapper-margin-mobile);
   padding-top: 100px;
   padding-bottom: 100px;
-  grid-row-gap: var(--main-wrapper-gutter-mobile);
+  grid-gap: var(--main-wrapper-gutter-mobile);
   display: grid;
+  grid-template-columns: auto max-content 2fr;
+
 }
 
+.stack-technology {
+  align-self: center;
+  justify-self: left;
+  font-size: 40px;
+  font-weight: var(--rokkitt-medium);
+}
+.stack-description {
+  align-self: center;
+}
 
 /* ********* CONTACT ********* */
 .section-contact {
