@@ -172,10 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
         /* ********* STACK ********* */
         if (firebaseDatabase.techStack) {
           const svg = document.getElementsByTagName('svg');
-          // console.log('svg', svg);
           for (let i = 0; i < svg.length; i++) {
             const svgItem = svg[i];
-            console.log('svgItem', svgItem);
             const svgClasses = [...svg[i].classList];
             firebaseDatabase.techStack.forEach(tech => {
               if (svgClasses.includes(tech.className)) {
@@ -209,6 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
   getUnsplashData();
   getEmailService()
   getIntersectionObserver();
+
+  // handleForm()
 })
 
 const getIntersectionObserver = () => intersectionObserver.listenToObserver();
@@ -245,5 +245,42 @@ const showNewQuote = (randomQuote) => {
   } else {
     quoteLinkDom.innerText = '';
     quoteLinkDom.removeAttribute('href');
+  }
+}
+
+const handleForm = () => {
+  var form = document.getElementById('form');
+  var inputEmail = document.getElementById('inputEmail');
+  var inputMessage = document.getElementById('inputMessage');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // return alert('Hurray! Mail was sent successfully! :)')
+      var sendEmail = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
+      var data = {
+        'param1': inputEmail.value,
+        'param2': inputMessage.value
+      };
+      console.log('data', data);
+
+      fetch(sendEmail, {
+        body: JSON.stringify(data),
+        // type: "POST",
+        method: "POST",
+        dataType: 'json',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin": "*"
+        }
+      }).then(function (resp) {
+        console.log('resp', resp);
+        return resp.json();
+      }).then(function (response) {
+        console.log('response', response);
+      }).catch(function (err) {
+        console.log('error', err);
+      });
+    });
   }
 }
