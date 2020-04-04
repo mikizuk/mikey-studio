@@ -64,5 +64,6 @@ notes.md
 # Parcel files
 .cache/
 dist/*
+!dist/CNAME
 
 

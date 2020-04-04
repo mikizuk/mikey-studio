@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bundle": "webpack --config webpack.config.js",
-    "deploy": "gh-pages -d gh-pages-dist"
+    "deploy": "gh-pages -d dist"
   },
   "homepage": "https://daxtersky.github.io",
   "keywords": [
@@ -20,6 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "cssnano": "^4.1.10",
     "gh-pages": "^2.2.0"
   },
   "dependencies": {},
