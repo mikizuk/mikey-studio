@@ -7,6 +7,9 @@ import intersectionObserver from './script-intersection-observer.js';
 let quotes = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  console.log('PARCEL!', );
+
   /* ********* NAV ********* */
   const navButton = document.getElementsByClassName('button-menu')[0];
   const navigationItems = document.getElementsByClassName('navigation__item');

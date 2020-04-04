@@ -4,10 +4,8 @@
   "description": "Mikey Studio website",
   "main": "index.js",
   "scripts": {
-    "commented out code ......... to be deleted! start": "webpack-dev-server --config webpack.config.js --port 3001 --hot --inline",
-    "commented out code ......... to be deleted! test": "echo \"Error: no test specified\" && exit 1",
-    "commented out code ......... to be deleted! bundle": "webpack --config webpack.config.js",
-    "deploy": "gh-pages -d dist"
+    "bundle": "webpack --config webpack.config.js",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://daxtersky.github.io",
   "keywords": [
