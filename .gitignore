@@ -60,3 +60,5 @@ typings/
 #my private notes related to this project
 notes.md
 .vscode/
+
+.cashe
