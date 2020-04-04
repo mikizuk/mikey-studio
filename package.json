@@ -4,9 +4,9 @@
   "description": "Mikey Studio website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --port 3001 --hot --inline",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --config webpack.config.js",
+    "commented out code ......... to be deleted! start": "webpack-dev-server --config webpack.config.js --port 3001 --hot --inline",
+    "commented out code ......... to be deleted! test": "echo \"Error: no test specified\" && exit 1",
+    "commented out code ......... to be deleted! bundle": "webpack --config webpack.config.js",
     "deploy": "gh-pages -d dist"
   },
   "homepage": "https://daxtersky.github.io",
@@ -21,15 +21,16 @@
   "author": "Mikołaj Klarżuk",
   "license": "ISC",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "@fortawesome/fontawesome-free": "^5.13.0"
   },
   "dependencies": {
     "gh-pages": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daxtersky/mikey-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daxtersky/mikey-studio/issues"
   }
 }
