@@ -8,7 +8,7 @@ This is information about....
 
 1.  GitHub Pages
 
-    * GitHub Pages [deployment procedure explained to my future me](GITHUB-PARCEL.md)
+    * GitHub Pages [deployment procedure explained to my future me =D](README-GITHUB-PARCEL.md)
 
 1. Google Firebase Database
 
