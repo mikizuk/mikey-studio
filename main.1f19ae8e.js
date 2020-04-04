@@ -380,7 +380,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var quotes = null;
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('PARCEL!');
+  console.log('PARCEL in gh-pages-dist!!');
   /* ********* NAV ********* */
 
   var navButton = document.getElementsByClassName('button-menu')[0];
@@ -727,7 +727,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64839" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49736" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
