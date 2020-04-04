@@ -64,10 +64,5 @@ notes.md
 # Parcel files
 .cache/
 dist/*
-!dist/assets
-!dist/CNAME
-!dist/README.md
-!dist/index.html
-!dist/main.js
-!dist/styles.css
+
 

@@ -8,7 +8,7 @@ let quotes = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  console.log('PARCEL!', );
+  console.log('PARCEL in gh-pages-dist!!');
 
   /* ********* NAV ********* */
   const navButton = document.getElementsByClassName('button-menu')[0];
