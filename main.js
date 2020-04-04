@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const projectImage = document.createElement('img');
             projectImage.classList.add('project__image');
             if (project.id === 0) {
-              projectImage.setAttribute('src', './assets/project-trop-1920x1088.jpg');
+              projectImage.setAttribute('src', './project-trop-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
             } else if (project.id === 1) {
-              projectImage.setAttribute('src', './assets/project-wydawca-1920x1088.jpg');
+              projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
             } else if (project.id === 2) {
-              projectImage.setAttribute('src', './assets/project-mikeystudio-1920x1088.jpg');
+              projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
             }
             projectElem.appendChild(projectImage);
             const projectTitle = document.createElement('div');

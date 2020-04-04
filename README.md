@@ -1,38 +1,43 @@
 # mikey-studio website
 
-### Live version
+## Intro - [link to mikey-studio.xyz](https://mikey-studio.xyz)
 
-* [Mikey studio](https://mikey-studio.xyz)
+This is information about....
 
-### GitHub Pages
+## Tech stack / code conventions
 
-* gh-pages notes in `./dist/README.md`
+1.  GitHub Pages
 
-### Google Firebase Database
+    * GitHub Pages [deployment procedure explained to my future me](GITHUB-PARCEL.md)
 
-* Except hero section all text is stored in Firebase database
+1. Google Firebase Database
 
-### Fetch API & Unsplash images
+    * All content (except hero section...?) is stored in Firebase database
 
-* Images stored in Unsplash.com loaded with Fetch API
+1. Fetch API & Unsplash images
 
-### ~~Cloud Functions for Firebase~~ AWS Lambda Function
+    * All images are stored in Unsplash.com loaded with Unsplash API
 
-* First option didn't went well ;/ because of some gmail auth problems 
-* For sending emails through form
+1. AWS Lambda Function ~~Firebase Cloud Functions~~
 
-### Mobile First
+    * Google Firebase Cloud Functions have some auth problems with Google mails 🤣 so instead I've used AWS Lambda Functions
 
-* Layout design with Mobile First rule and 3+4 Compound Grid
+1. Mobile First
 
-### Design stuff
+    * Layout design with Mobile First rule and 3+4 Compound Grid
 
-* CSS Variables
-* BEM
+1. Design stuff
 
-### Intersection Observer
+    * CSS Variables
+    * BEM
 
-### Inspirations 
+1. Intersection Observer
 
-1. add all articles which inspired me for these website cool features
-1. https://www.webkrytyk.pl/2020/01/31/wpadki-i-wypadki-10/#more-1372
+## Inspirations 
+
+1. add all articles which inspired me for these website cool features!
+1. [one](https://www.webkrytyk.pl/2020/01/31/wpadki-i-wypadki-10/#more-1372)
+1. [two](https://css-tricks.com/why-parcel-has-become-my-go-to-bundler-for-development/)
+
+
+  
