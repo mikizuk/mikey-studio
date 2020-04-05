@@ -15,16 +15,16 @@
 
   <nav class="navigation">
     <div class="navigation__logo">
-      <img class="navigation__logo-image" src="./assets/mikey-logo-circle-small.png" height="100" alt="">
-      <div class="navigation__logo-title">mikey studio</div>
+      <img class="navigation__image" src="./assets/mikey-logo-circle-small.png" height="100" alt="Avatar">
+      <div class="navigation__title">mikey studio</div>
     </div>
     <button class="button-menu">
       <span class="button-menu__burger"></span>
     </button>
     <ul class="navigation__options">
       <li class="navigation__item"><a class="navigation__link" href="#hero">Colors</a></li>
-      <li class="navigation__item"><a class="navigation__link" href="#section-quote">Quotes</a></li>
-      <li class="navigation__item"><a class="navigation__link" href="#landscape">Landscape</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="#quote">Quotes</a></li>
+      <!-- <li class="navigation__item"><a class="navigation__link" href="#landscape">Landscape</a></li> -->
       <li class="navigation__item"><a class="navigation__link" href="#projects">Projects</a></li>
       <li class="navigation__item"><a class="navigation__link" href="#about">About</a></li>
       <li class="navigation__item"><a class="navigation__link" href="#contact">Contact</a></li>
@@ -32,37 +32,37 @@
   </nav>
 
   <section id="hero" class="section-hero">
-    <div class="hero-wrapper">
-      <div class="hero__key-points">
+    <div class="section-hero__wrapper">
+      <div class="section-hero__key-points">
         <ul class="hero__list"></ul>
       </div>
-      <div class="hero__image"></div>
+      <div class="section-hero__image-wrapper">
+        <img class="section-hero__image" src="./assets/hero1.jpg" alt="Photo of a laptop" />
+      </div>
       <h1 class="hero__title"></h1>
       <article class="hero__desc"></article>
     </div>
   </section>
 
-  <section id="section-quote">
+  <section id="quote" class="section-quote">
     <h2 class="section__header">Quote</h2>
     <button class="button button--quote">New quote</button>
-    <h3 class="quote"></h3>
-    <p class="quote-author"></p>
-    <a class="quote-link" href="" target="_blank"></a>
+    <h3 class="section-quote__text"></h3>
+    <p class="section-quote__author"></p>
+    <a class="section-quote__link" href="" target="_blank"></a>
   </section>
 
-  <section id="landscape">
-    <div class="section-landscape"></div>
-  </section>
+  <section id="landscape" class="section-landscape"></section>
 
   <section id="projects" class="section-projects">
     <h2 class="section__header">Projects</h2>
-    <div class="projects-wrapper"></div>
+    <div class="section-projects__wrapper"></div>
   </section>
 
   <section id="about" class="section-about">
     <h2 class="section__header">About</h2>
     <div class="projects-wrapper">
-      <div class="about-grid">
+      <div class="section-about__about-grid">
         <div class="pic-1"></div>
         <div class="pic-2"></div>
         <div class="pic-3"></div>
@@ -70,8 +70,8 @@
         <div class="pic-5"></div>
         <div class="pic-6"></div>
       </div>
-      <h2 class="section__header" style="padding-top: 150px;">Tech stack</h2>
-      <div class="stack-grid">
+      <h2 class="section__header section__header--subsection">Tech stack</h2>
+      <div class="section-about__stack-grid">
         <i class="stack-html fab fa-html5 fa-3x"></i>
         <i class="stack-css fab fa-css3-alt fa-3x"></i>
         <i class="stack-js fab fa-js-square fa-3x"></i>
@@ -88,53 +88,48 @@
 
   <section id="contact" class="section-contact">
     <h2 class="section__header" style="padding-top: 50px;">Contact</h2>
-    <!-- <div class="projects-wrapper"> -->
-    <div class="contact-grid">
-      <div class="social">
-        <div class="social__item">
-          <a href="#" class="social__link"><i class="fab fa-github fa-2x"></i><span
+    <div class="section-contact__contact-grid">
+      <div class="section-contact__social-wrapper">
+        <div class="section-contact__social__item">
+          <a href="#" class="section-contact__social__link"><i class="fab fa-github fa-2x"></i><span
               style="padding-left: 12px ">github</span></a>
         </div>
-        <div class="social__item">
-          <a href="#" class="social__link"><i class="fab fa-linkedin fa-2x"></i><span
+        <div class="section-contact__social__item">
+          <a href="#" class="section-contact__social__link"><i class="fab fa-linkedin fa-2x"></i><span
               style="padding-left: 12px ">linkedin</span></a>
         </div>
-        <div class="social__item">
-          <a href="#" class="social__link"><i class="fab fa-codepen fa-2x"></i><span
+        <div class="section-contact__social__item">
+          <a href="#" class="section-contact__social__link"><i class="fab fa-codepen fa-2x"></i><span
               style="padding-left: 12px ">codepen</span></a>
         </div>
-        <div class="social__item">
-          <a href="#" class="social__link"><i class="fab fa-stack-overflow fa-2x"></i><span
+        <div class="section-contact__social__item">
+          <a href="#" class="section-contact__social__link"><i class="fab fa-stack-overflow fa-2x"></i><span
               style="padding-left: 12px ">stackoverflow</span></a>
         </div>
-        <div class="social__item">
-          <a href="#" class="social__link"><i class="fab fa-instagram fa-2x"></i><span
+        <div class="section-contact__social__item">
+          <a href="#" class="section-contact__social__link"><i class="fab fa-instagram fa-2x"></i><span
               style="padding-left: 12px ">instagram</span></a>
         </div>
-        <div class="social__item">
-          <a href="#" class="social__link"><i class="fab fa-github-alt fa-2x"></i><span
+        <div class="section-contact__social__item">
+          <a href="#" class="section-contact__social__link"><i class="fab fa-github-alt fa-2x"></i><span
               style="padding-left: 12px ">github</span></a>
         </div>
-        <div class="social__item">
+        <div class="section-contact__social__item">
           <i class="fas fa-paint-brush fa-2x"></i><span>paint</span>
         </div>
-        <div class="social__item">
-          <i class="social__item fas fa-mobile-alt fa-2x"></i><span>mobile</span>
+        <div class="section-contact__social__item">
+          <i class="section-contact__social__item fas fa-mobile-alt fa-2x"></i><span>mobile</span>
         </div>
       </div>
-      <div class="contact-zone">
+      <div class="section-contact__contact-wrapper">
         <form id="form">
-          <!-- <label for="email">E-mail</label> -->
-          <input type="email" name="email" id="inputEmail" class="input-email">
-          <!-- <label for="message">Message</label> -->
-          <textarea name="message" id="inputMessage" placeholder="Say hello :)" cols="20" rows="10"
-            class="text-area"></textarea>
+          <input type="email" id="inputEmail" class="form__email">
+          <textarea id="inputMessage" placeholder="Say hello :)" cols="20" rows="10"
+            class="form__text-area"></textarea>
           <button class="button button--quote" type="submit">Send email</button>
-          <!-- <input type="submit">Send email</input> -->
         </form>
       </div>
     </div>
-    <!-- </div> -->
   </section>
 
   <footer class="footer"></footer>

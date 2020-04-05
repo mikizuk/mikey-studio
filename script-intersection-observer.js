@@ -11,14 +11,14 @@ const listenToObserver = () => {
       if (entry.intersectionRatio > 0) {
         document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
         // 
-        if (entry.target.id === 'section-quote') {
+        if (entry.target.id === 'quote') {
           navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
         }
 
         // if (entry.target.id === 'hero') {
         //   navigation.style.background = 'initial';
         //   navigation.style.color = '#BE2200';
-        // } else if (entry.target.id === 'section-quote') {
+        // } else if (entry.target.id === 'quote') {
         //   navigation.style.background = '#A70267';
         // } else if (entry.target.id === 'landscape') {
         //   navigation.style.color = 'pink';

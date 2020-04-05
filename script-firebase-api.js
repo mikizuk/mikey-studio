@@ -39,10 +39,10 @@ const fetchFirebaseApi = () => {
       if (firebaseDatabase.projects) {
         firebaseDatabase.projects.forEach(project => {
           const projectElem = document.createElement('div');
-          projectElem.classList.add('project');
+          projectElem.classList.add('section-project__project');
           domElement.projectWrapper.appendChild(projectElem);
           const projectImage = document.createElement('img');
-          projectImage.classList.add('project__image');
+          projectImage.classList.add('section-project__image');
           if (project.id === 0) {
             projectImage.setAttribute('src', './project-trop-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
           } else if (project.id === 1) {
@@ -52,24 +52,24 @@ const fetchFirebaseApi = () => {
           }
           projectElem.appendChild(projectImage);
           const projectTitle = document.createElement('div');
-          projectTitle.classList.add('project__title');
+          projectTitle.classList.add('section-project__title');
           projectTitle.innerText = project.title;
           projectElem.appendChild(projectTitle);
           const projectHeader = document.createElement('div');
-          projectHeader.classList.add('project__header');
+          projectHeader.classList.add('section-project__header');
           projectHeader.innerText = project.header;
           projectElem.appendChild(projectHeader);
           const projectDesc = document.createElement('div');
-          projectDesc.classList.add('project__description');
+          projectDesc.classList.add('section-project__description');
           projectDesc.innerText = project.description;
           projectElem.appendChild(projectDesc);
           if (project.hashtags) {
             const projectHashtagsDiv = document.createElement('div');
-            projectHashtagsDiv.classList.add('project__hashtags');
+            projectHashtagsDiv.classList.add('section-project__hashtags');
             projectElem.appendChild(projectHashtagsDiv);
             for (let i = 0; i < project.hashtags.length; i++) {
               const hashtagSpan = document.createElement('span');
-              hashtagSpan.classList.add('project__hashtag');
+              hashtagSpan.classList.add('section-project__hashtag');
               hashtagSpan.innerText = project.hashtags[i];
               projectHashtagsDiv.appendChild(hashtagSpan);
               if ((i + 1) % 3 === 0) {
@@ -79,7 +79,7 @@ const fetchFirebaseApi = () => {
             };
           }
           const projectButtons = document.createElement('div');
-          projectButtons.classList.add('project__buttons');
+          projectButtons.classList.add('section-project__buttons');
           projectElem.appendChild(projectButtons);
           if (project.websiteLink) {
             const websiteLink = document.createElement('a');
@@ -123,9 +123,9 @@ const fetchFirebaseApi = () => {
           firebaseDatabase.techStack.forEach(tech => {
             if (svgClasses.includes(tech.className)) {
               const techItem = document.createElement('span');
-              techItem.classList.add('stack-technology');
+              techItem.classList.add('section-about__stack-technology');
               const techDescription = document.createElement('span');
-              techDescription.classList.add('stack-description');
+              techDescription.classList.add('section-about__stack-description');
               techItem.innerText = tech.technology;
               techDescription.innerText = tech.description;
               svgItem.parentNode.insertBefore(techItem, svgItem.nextSibling);

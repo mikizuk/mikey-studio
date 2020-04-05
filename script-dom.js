@@ -13,11 +13,11 @@ export const heroDesc = document.querySelector('.hero__desc');
 export const buttonQuote = document.querySelector('.button--quote');
 export let isNavButtonOpen = false;
 /* *** PROJECTS *** */
-export const projectWrapper = document.querySelector('.projects-wrapper');
+export const projectWrapper = document.querySelector('.section-projects__wrapper');
 /* *** ABOUT *** */
-export const aboutWrapper = document.querySelector('.about-grid');
+export const aboutWrapper = document.querySelector('.section-about__about-grid');
 /* *** STACK *** */
-export const stackGrid = document.querySelector('.stack-grid');
+export const stackGrid = document.querySelector('.section-about__stack-grid');
 /* *** CONTACT *** */
 const form = document.getElementById('form');
 const inputEmail = document.getElementById('inputEmail');
@@ -43,7 +43,7 @@ const toggleVisibilityMenuItems = (navigationItems, isNavButtonOpen) => {
 
 const toggleNavigationButton = (buttonState) => {
   isNavButtonOpen = !buttonState;
-  navButton.classList.toggle('button-menu-open', isNavButtonOpen);
+  navButton.classList.toggle('button-menu--opened', isNavButtonOpen);
   toggleVisibilityMenuItems(navigationItems, isNavButtonOpen);
 }
 
@@ -51,7 +51,7 @@ navButton.addEventListener('click', () => toggleNavigationButton(isNavButtonOpen
 
 document.addEventListener('click', (e) => {
   if (isNavButtonOpen) {
-    if (e.target.className === 'navigation__link' || (e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger')) {
+    if (e.target.className === 'navigation__link' || (e.target.className !== 'button-menu button-menu--opened' && e.target.className !== 'button-menu__burger')) {
       toggleNavigationButton(true);
     }
   }
@@ -70,9 +70,9 @@ export const getRandomQuote = (quotes) => {
 }
 
 const showNewQuote = (randomQuote) => {
-  const quoteDom = document.querySelector('.quote');
-  const quoteAuthorDom = document.querySelector('.quote-author');
-  const quoteLinkDom = document.querySelector('.quote-link');
+  const quoteDom = document.querySelector('.section-quote__text');
+  const quoteAuthorDom = document.querySelector('.section-quote__author');
+  const quoteLinkDom = document.querySelector('.section-quote__link');
 
   // TODO sizes will work for mobile only ;)
   // character counter https://www.charactercountonline.com/

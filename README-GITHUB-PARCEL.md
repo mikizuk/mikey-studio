@@ -58,9 +58,9 @@ parcel index.html
 
 
 0. After making changes...
-1. Detele files in **dist** folder.... exceptions:
-    1. CNAME
-    1. All images loaded from JavaScript
+1. ~~Detele files in **dist** folder.... exceptions:~~
+    1. ~~CNAME~~
+    1. ~~All images loaded from JavaScript~~
 1. Run
 ```
 parcel build index.html --no-source-maps
