@@ -262,6 +262,7 @@ body {
   height: 100vh;
   color: var(--color-base-secondary);
 
+
   display: grid;
   grid-column-gap: var(--main-wrapper-gutter-mobile);
   margin-left: var(--main-wrapper-margin-mobile);
@@ -278,13 +279,14 @@ body {
   font-size: 47px;
   font-weight: var(--rokkitt-regular);
 }
-.hero__image  {
+.hero-image-wrapper {
   grid-area: 1 / 2 / 2 / 3;
-  background-image: url('/hero1.7157b30e.jpg');
-  background-size: cover;
-  background-position: 15%;
-  z-index: -2; /* po co to? */
-  position: relative; /* po co to? */
+  overflow: hidden;
+  max-width: 100vw;
+  height: 100%;
+}
+.hero-image {
+  /* height: 300px; */
 }
 .hero__title  {
   grid-area: 2 / 1 / 3 / 3;
@@ -354,7 +356,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */ /* bug on mobile devices! */
+  /* background-attachment: fixed; */ /* bug on mobile devices! However if parallax effect applied that shouldn't matter */
   z-index: -2;
   filter: grayscale(100%);
 }

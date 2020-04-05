@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./assets\\hero1.jpg":[["hero1.7157b30e.jpg","assets/hero1.jpg"],"assets/hero1.jpg"],"./assets\\parallax_8002.jpg":[["parallax_8002.0d5bc930.jpg","assets/parallax_8002.jpg"],"assets/parallax_8002.jpg"],"./assets\\parallax_6812.jpg":[["parallax_6812.60d338c0.jpg","assets/parallax_6812.jpg"],"assets/parallax_6812.jpg"],"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./assets\\parallax_8002.jpg":[["parallax_8002.0d5bc930.jpg","assets/parallax_8002.jpg"],"assets/parallax_8002.jpg"],"./assets\\parallax_6812.jpg":[["parallax_6812.60d338c0.jpg","assets/parallax_6812.jpg"],"assets/parallax_6812.jpg"],"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60329" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60596" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
