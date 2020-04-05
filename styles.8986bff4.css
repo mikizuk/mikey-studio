@@ -348,17 +348,13 @@ body {
 
 /* ********* LANDSCAPE ********* */
 .section-landscape {
-  height: 70vh;
+  height: 50vh; /* 70vh */
   position: relative;
   background: url('/parallax_8002.0d5bc930.jpg');
   background-size: cover;
   background-position: center;
-  background-size: cover;
-  /* background-position: center center;
-  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; */
-  /*
+  background-attachment: scroll; /* fixed */
   /* background: url('./assets/parallax_8002.jpg') center center / cover no-repeat fixed; */
   /* */
   z-index: -2;
