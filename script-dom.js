@@ -3,21 +3,21 @@ import * as firebase from './script-firebase-api.js';
 /* ************ DOM elements ************ */
 
 /* *** NAV *** */
-export const navButton = document.getElementsByClassName('button-menu')[0];
+export const navButton = document.querySelector('.button-menu');
 export const navigationItems = document.getElementsByClassName('navigation__item');
 /* *** HERO *** */
-export const heroList = document.getElementsByClassName('hero__list')[0];
-export const heroTitle = document.getElementsByClassName('hero__title')[0];
-export const heroDesc = document.getElementsByClassName('hero__desc')[0];
+export const heroList = document.querySelector('.hero__list');
+export const heroTitle = document.querySelector('.hero__title');
+export const heroDesc = document.querySelector('.hero__desc');
 /* *** QUOTE *** */
-export const buttonQuote = document.getElementsByClassName('button--quote')[0];
+export const buttonQuote = document.querySelector('.button--quote');
 export let isNavButtonOpen = false;
 /* *** PROJECTS *** */
-export const projectWrapper = document.getElementsByClassName('projects-wrapper')[0];
+export const projectWrapper = document.querySelector('.projects-wrapper');
 /* *** ABOUT *** */
-export const aboutWrapper = document.getElementsByClassName('about-grid')[0];
+export const aboutWrapper = document.querySelector('.about-grid');
 /* *** STACK *** */
-export const stackGrid = document.getElementsByClassName('stack-grid')[0];
+export const stackGrid = document.querySelector('.stack-grid');
 /* *** CONTACT *** */
 const form = document.getElementById('form');
 const inputEmail = document.getElementById('inputEmail');
@@ -70,13 +70,15 @@ export const getRandomQuote = (quotes) => {
 }
 
 const showNewQuote = (randomQuote) => {
-  const quoteDom = document.getElementsByClassName('quote')[0];
-  const quoteAuthorDom = document.getElementsByClassName('quote-author')[0];
-  const quoteLinkDom = document.getElementsByClassName('quote-link')[0];
+  const quoteDom = document.querySelector('.quote');
+  const quoteAuthorDom = document.querySelector('.quote-author');
+  const quoteLinkDom = document.querySelector('.quote-link');
 
   // TODO sizes will work for mobile only ;)
   // character counter https://www.charactercountonline.com/
-  if (randomQuote.quote.length > 300) {
+  if (randomQuote.quote.length > 400) {
+    quoteDom.style.fontSize = '45px';
+  } else if (randomQuote.quote.length > 300) {
     quoteDom.style.fontSize = '50px';
   } else if (randomQuote.quote.length > 200) {
     quoteDom.style.fontSize = '64px';
