@@ -195,15 +195,15 @@ var isNavButtonOpen = false;
 /* *** PROJECTS *** */
 
 exports.isNavButtonOpen = isNavButtonOpen;
-var projectWrapper = document.querySelector('.projects-wrapper');
+var projectWrapper = document.querySelector('.section-projects__wrapper');
 /* *** ABOUT *** */
 
 exports.projectWrapper = projectWrapper;
-var aboutWrapper = document.querySelector('.about-grid');
+var aboutWrapper = document.querySelector('.section-about__about-grid');
 /* *** STACK *** */
 
 exports.aboutWrapper = aboutWrapper;
-var stackGrid = document.querySelector('.stack-grid');
+var stackGrid = document.querySelector('.section-about__stack-grid');
 /* *** CONTACT *** */
 
 exports.stackGrid = stackGrid;
@@ -260,9 +260,9 @@ var getRandomQuote = function getRandomQuote(quotes) {
 exports.getRandomQuote = getRandomQuote;
 
 var showNewQuote = function showNewQuote(randomQuote) {
-  var quoteDom = document.querySelector('.quote');
-  var quoteAuthorDom = document.querySelector('.quote-author');
-  var quoteLinkDom = document.querySelector('.quote-link'); // TODO sizes will work for mobile only ;)
+  var quoteDom = document.querySelector('.section-quote__text');
+  var quoteAuthorDom = document.querySelector('.section-quote__author');
+  var quoteLinkDom = document.querySelector('.section-quote__link'); // TODO sizes will work for mobile only ;)
   // character counter https://www.charactercountonline.com/
 
   if (randomQuote.quote.length > 400) {
@@ -388,10 +388,10 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
       if (firebaseDatabase.projects) {
         firebaseDatabase.projects.forEach(function (project) {
           var projectElem = document.createElement('div');
-          projectElem.classList.add('project');
+          projectElem.classList.add('section-project__project');
           domElement.projectWrapper.appendChild(projectElem);
           var projectImage = document.createElement('img');
-          projectImage.classList.add('project__image');
+          projectImage.classList.add('section-project__image');
 
           if (project.id === 0) {
             projectImage.setAttribute('src', './project-trop-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
@@ -403,26 +403,26 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
 
           projectElem.appendChild(projectImage);
           var projectTitle = document.createElement('div');
-          projectTitle.classList.add('project__title');
+          projectTitle.classList.add('section-project__title');
           projectTitle.innerText = project.title;
           projectElem.appendChild(projectTitle);
           var projectHeader = document.createElement('div');
-          projectHeader.classList.add('project__header');
+          projectHeader.classList.add('section-project__header');
           projectHeader.innerText = project.header;
           projectElem.appendChild(projectHeader);
           var projectDesc = document.createElement('div');
-          projectDesc.classList.add('project__description');
+          projectDesc.classList.add('section-project__description');
           projectDesc.innerText = project.description;
           projectElem.appendChild(projectDesc);
 
           if (project.hashtags) {
             var projectHashtagsDiv = document.createElement('div');
-            projectHashtagsDiv.classList.add('project__hashtags');
+            projectHashtagsDiv.classList.add('section-project__hashtags');
             projectElem.appendChild(projectHashtagsDiv);
 
             for (var i = 0; i < project.hashtags.length; i++) {
               var hashtagSpan = document.createElement('span');
-              hashtagSpan.classList.add('project__hashtag');
+              hashtagSpan.classList.add('section-project__hashtag');
               hashtagSpan.innerText = project.hashtags[i];
               projectHashtagsDiv.appendChild(hashtagSpan);
 
@@ -436,7 +436,7 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           }
 
           var projectButtons = document.createElement('div');
-          projectButtons.classList.add('project__buttons');
+          projectButtons.classList.add('section-project__buttons');
           projectElem.appendChild(projectButtons);
 
           if (project.websiteLink) {
@@ -489,9 +489,9 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           firebaseDatabase.techStack.forEach(function (tech) {
             if (svgClasses.includes(tech.className)) {
               var techItem = document.createElement('span');
-              techItem.classList.add('stack-technology');
+              techItem.classList.add('section-about__stack-technology');
               var techDescription = document.createElement('span');
-              techDescription.classList.add('stack-description');
+              techDescription.classList.add('section-about__stack-description');
               techItem.innerText = tech.technology;
               techDescription.innerText = tech.description;
               svgItem.parentNode.insertBefore(techItem, svgItem.nextSibling);
@@ -532,12 +532,12 @@ var listenToObserver = function listenToObserver() {
       if (entry.intersectionRatio > 0) {
         document.querySelector("nav ul li a[href=\"#".concat(id, "\"]")).parentElement.classList.add('active'); // 
 
-        if (entry.target.id === 'section-quote') {
+        if (entry.target.id === 'quote') {
           navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
         } // if (entry.target.id === 'hero') {
         //   navigation.style.background = 'initial';
         //   navigation.style.color = '#BE2200';
-        // } else if (entry.target.id === 'section-quote') {
+        // } else if (entry.target.id === 'quote') {
         //   navigation.style.background = '#A70267';
         // } else if (entry.target.id === 'landscape') {
         //   navigation.style.color = 'pink';
@@ -625,7 +625,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56782" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54508" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
