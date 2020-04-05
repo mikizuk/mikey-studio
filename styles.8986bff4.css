@@ -348,17 +348,15 @@ body {
 
 /* ********* LANDSCAPE ********* */
 .section-landscape {
-  height: 50vh; /* 70vh */
+  height: 70vh;
   position: relative;
   background: url('/parallax_8002.0d5bc930.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* fixed */
-  /* background: url('./assets/parallax_8002.jpg') center center / cover no-repeat fixed; */
-  /* */
+  /* background-attachment: fixed; */ /* bug on mobile devices! */
   z-index: -2;
-  /* filter: grayscale(100%); */
+  filter: grayscale(100%);
 }
 
 /* ********* PROJECTS ********* */
