@@ -231,7 +231,7 @@ var toggleVisibilityMenuItems = function toggleVisibilityMenuItems(navigationIte
 
 var toggleNavigationButton = function toggleNavigationButton(buttonState) {
   exports.isNavButtonOpen = isNavButtonOpen = !buttonState;
-  navButton.classList.toggle('button-menu-open', isNavButtonOpen);
+  navButton.classList.toggle('button-menu--opened', isNavButtonOpen);
   toggleVisibilityMenuItems(navigationItems, isNavButtonOpen);
 };
 
@@ -240,7 +240,7 @@ navButton.addEventListener('click', function () {
 });
 document.addEventListener('click', function (e) {
   if (isNavButtonOpen) {
-    if (e.target.className === 'navigation__link' || e.target.className !== 'button-menu button-menu-open' && e.target.className !== 'button-menu__burger') {
+    if (e.target.className === 'navigation__link' || e.target.className !== 'button-menu button-menu--opened' && e.target.className !== 'button-menu__burger') {
       toggleNavigationButton(true);
     }
   }
@@ -625,7 +625,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60596" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56782" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
