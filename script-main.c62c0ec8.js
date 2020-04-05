@@ -423,12 +423,11 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
             for (var i = 0; i < project.hashtags.length; i++) {
               var hashtagSpan = document.createElement('span');
               hashtagSpan.classList.add('section-project__hashtag');
-              hashtagSpan.innerText = project.hashtags[i];
+              hashtagSpan.innerText = "#".concat(project.hashtags[i]);
               projectHashtagsDiv.appendChild(hashtagSpan);
 
               if ((i + 1) % 3 === 0) {
-                projectHashtagsDiv.appendChild(document.createElement('br'));
-                projectHashtagsDiv.appendChild(document.createElement('br'));
+                projectHashtagsDiv.appendChild(document.createElement('br')); // projectHashtagsDiv.appendChild(document.createElement('br'));
               }
             }
 
@@ -625,7 +624,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54508" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62344" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
