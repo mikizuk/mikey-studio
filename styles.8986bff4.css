@@ -352,7 +352,8 @@ body {
   position: relative;
   background: url('/parallax_8002.0d5bc930.jpg');
   background-size: cover;
-  background-position: 15%;
+  background-position: center;
+  background-size: cover;
   /* background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
