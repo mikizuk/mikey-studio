@@ -103,13 +103,9 @@ const fetchFirebaseApi = () => {
       if (firebaseDatabase.aboutList) {
         (firebaseDatabase.aboutList).forEach(aboutItem => {
           const aboutSection = document.createElement('div');
-          // const aboutHeader = document.createElement('h6');
           const aboutDescription = document.createElement('p');
-          aboutSection.classList.add(`${aboutItem.className}`);
+          aboutSection.classList.add(`section-about__description`, `${aboutItem.className}`); // TODO move it to domelem js file!?!
           aboutDescription.innerText = aboutItem.description;
-          // aboutHeader.innerText = aboutItem.header;
-          // aboutSection.appendChild(aboutHeader);
-          // aboutSection.appendChild(document.createElement('br'));
           aboutSection.appendChild(aboutDescription);
           domElement.aboutWrapper.appendChild(aboutSection);
         });

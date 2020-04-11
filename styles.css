@@ -1,4 +1,5 @@
 /* ********* GENERAL ********* */
+
 :root {
   --rokkitt-regular: 400;
   --rokkitt-medium: 500;
@@ -55,7 +56,9 @@ body {
   font-size: 32px;
   scroll-behavior: smooth; /* TODO does it makes better for chrome mobile */
 }
+
 /* ********* GRID ********* */
+
 /* .main-wrapper {
   display: grid;
   grid-column-gap: var(--main-wrapper-gutter-mobile);
@@ -69,6 +72,7 @@ body {
 } */
 
 /* ********* NAV ********* */
+
 .navigation {
   display: flex;
   position: fixed;  /* not sticky! */
@@ -202,7 +206,9 @@ body {
 .button-menu--opened .button-menu__burger::after {
   transform: rotate(90deg)
 }
+
 /* ********* BUTTON ********* */
+
 .button {
   font-family: 'Rokkitt', serif;
   min-width: 250px;
@@ -223,7 +229,9 @@ body {
   color: var(--color-base-secondary);
   background-color: var(--color-base-primary);
 }
+
 /* ********* SECTIONS ********* */
+
 .section__header {
   font-size: 110px;
   font-weight: var(--rokkitt-bold);
@@ -272,7 +280,9 @@ body {
   background-color: var(--color-base-secondary);
   height: 62vh;
 }
+
 /* ********* HERO ********* */
+
 .section-hero {
   height: 100vh;
 }
@@ -318,6 +328,7 @@ body {
 }
 
 /* ********* QUOTE ********* */
+
 .section-quote {
   height: 68vh;
   position: relative;
@@ -336,7 +347,6 @@ body {
 .section-quote__text {
   font-size: 85px;
   font-weight: var(--rokkitt-medium);
-  /* padding: calc(var(--main-wrapper-margin-mobile) * 4) 0; */
   grid-column: 1 / -1;
   align-self: center;
 }
@@ -351,7 +361,9 @@ body {
   height: 50px;
   width: 90px;
 }
+
 /* ********* LANDSCAPE ********* */
+
 #landscape {
   height: 70vh;
 }
@@ -361,11 +373,13 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */ /* bug on mobile devices! However if parallax effect applied that shouldn't matter */
+  /* background-attachment: fixed; */ /* TODO bug on mobile devices! However if parallax effect applied that shouldn't matter */
   z-index: -2;
   filter: grayscale(100%);
 }
+
 /* ********* PROJECTS ********* */
+
 .section-projects {
   position: relative;
   padding-top: calc(var(--main-wrapper-margin-mobile) * 6);
@@ -419,7 +433,9 @@ body {
   margin-right: 8px;
   color: var(--color-base-primary);
 }
+
 /* ********* ABOUT ********* */
+
 .section-about {
   color: white;
   position: relative;
@@ -429,64 +445,19 @@ body {
   padding-top: calc(var(--main-wrapper-margin-mobile) * 5);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 650px);
   grid-template-areas:
-    "pic-1 intro intro intro"
-    "challenge challenge developer developer"
-    "podcast podcast pic-2 pic-2"
-    "inbox inbox sport sport"
-    "pic-3 pic-3 pic-3 pic-3" /* "pic-3 pic-3 sport sport" */
-    "gamer gamer pic-4 pic-4"
-    "goal goal goal goal"
+    "pic-1 pic-1 intro intro"
+    "sport sport pic-2 pic-2"
+    "pic-3 pic-3 developer developer"
+    "pic-3 pic-3 inbox inbox"
+    "gamer gamer podcast podcast"
+    "challenge challenge pic-4 pic-4"
+    "challenge challenge photo photo"
     "pic-5 pic-5 music music"
-    "photo photo pic-6 pic-6"
+    "goal goal pic-6 pic-6"
     "book book pic-6 pic-6";
   grid-gap: var(--main-wrapper-gutter-mobile);
-  /* padding: 0 var(--main-wrapper-margin-mobile); */
-
-  font-size: 40px;
-  font-weight: var(--rokkitt-medium);
-  text-align: justify;
-  text-justify: inter-character; /* text-justify: inter-word; */
-}
-/* both */
-.goal,
-.inbox {
-  padding-right: var(--main-wrapper-margin-mobile);
-  padding-left: var(--main-wrapper-margin-mobile);
-  padding-top: 10px;
-}
-/* right */
-.intro,
-.developer,
-.sport,
-.music {
-  padding-right: var(--main-wrapper-margin-mobile);
-  padding-left: 5px;
-  padding-top: 10px;
-  /* background-color: lightblue; */
-}
-/* left */
-.challenge,
-.podcast,
-.gamer,
-.photo,
-.book {
-  padding-left: var(--main-wrapper-margin-mobile);
-  padding-right: 5px;
-  padding-top: 10px;
-  /* background-color: lightblue; */
-}
-/* .pic-2, .pic-4, .pic-6 {
-  background-image: url('./assets/parallax_6812.jpg');
-}
-.pic-1, .pic-3, .pic-5 {
-  background-image: url('./assets/parallax_8002.jpg');
-} */
-.pic-1, .pic-2, .pic-3, .pic-4, .pic-5, .pic-6 {
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%);
 }
 .intro { grid-area: intro; }
 .challenge { grid-area: challenge; }
@@ -505,6 +476,21 @@ body {
 .pic-4 { grid-area: pic-4;  }
 .pic-5 { grid-area: pic-5;  }
 .pic-6 { grid-area: pic-6;  }
+
+.section-about__description {
+  font-size: 1rem;
+  padding: calc(var(--main-wrapper-margin-mobile) / 2);
+  font-weight: var(--rokkitt-medium);
+  text-align: justify;
+  text-justify: inter-character; /* text-justify: inter-word; */
+}
+.section-about__images {
+  background-size: cover;
+  background-position: center;
+  margin: calc(var(--main-wrapper-margin-mobile) / 2);
+  filter: grayscale(100%);
+}
+
 /* ********* STACK ********* */
 
 .section-about__stack-grid {
@@ -528,7 +514,9 @@ body {
   align-self: center;
   font-size: 20px;
 }
+
 /* ********* CONTACT ********* */
+
 .section-contact {
   color: var(--color-base-primary);
   padding-top: calc(var(--main-wrapper-margin-mobile) * 6);
@@ -591,7 +579,9 @@ body {
   /* text-indent: 10px; */
   /* border-left: 4px solid var(--color-base-primary); */
 }
+
 /* ********* FOOTER ********* */
+
 .footer {
   display: flex;
   align-items: center;
