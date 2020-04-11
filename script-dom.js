@@ -77,20 +77,20 @@ const showNewQuote = (randomQuote) => {
   const quoteAuthorDom = document.querySelector('.section-quote__author');
   const quoteLinkDom = document.querySelector('.section-quote__link');
 
-  // TODO sizes will work for mobile only ;)
+  // TODO these sizes will work for mobile only ;)
   // character counter https://www.charactercountonline.com/
   if (randomQuote.quote.length > 400) {
-    quoteDom.style.fontSize = '45px';
+    quoteDom.style.fontSize = '2.8rem';
   } else if (randomQuote.quote.length > 300) {
-    quoteDom.style.fontSize = '50px';
+    quoteDom.style.fontSize = '3.3rem';
   } else if (randomQuote.quote.length > 200) {
-    quoteDom.style.fontSize = '64px';
+    quoteDom.style.fontSize = '3.8rem';
   } else if (randomQuote.quote.length > 150) {
-    quoteDom.style.fontSize = '75px';
+    quoteDom.style.fontSize = '4.1rem';
   } else if (randomQuote.quote.length > 100) {
-    quoteDom.style.fontSize = '80px';
+    quoteDom.style.fontSize = '4.5rem';
   } else {
-    quoteDom.style.fontSize = '85px';
+    quoteDom.style.fontSize = '5.1rem';
   }
   quoteDom.innerText = `"${randomQuote.quote}"`;
   quoteAuthorDom.innerText = randomQuote.author || '';
