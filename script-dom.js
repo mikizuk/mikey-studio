@@ -79,18 +79,19 @@ const showNewQuote = (randomQuote) => {
 
   // TODO these sizes will work for mobile only ;)
   // character counter https://www.charactercountonline.com/
+  console.log('randomQuote.quote.length', randomQuote.quote.length);
   if (randomQuote.quote.length > 400) {
-    quoteDom.style.fontSize = '2.8rem';
+    quoteDom.style.fontSize = '.7rem'; // 2.8rem
   } else if (randomQuote.quote.length > 300) {
-    quoteDom.style.fontSize = '3.3rem';
+    quoteDom.style.fontSize = '1rem'; // 3.3rem
   } else if (randomQuote.quote.length > 200) {
-    quoteDom.style.fontSize = '3.8rem';
+    quoteDom.style.fontSize = '1.3rem'; // 3.8rem
   } else if (randomQuote.quote.length > 150) {
-    quoteDom.style.fontSize = '4.1rem';
+    quoteDom.style.fontSize = '1.6rem'; // 4.1rem
   } else if (randomQuote.quote.length > 100) {
-    quoteDom.style.fontSize = '4.5rem';
+    quoteDom.style.fontSize = '1.9rem'; // 4.5rem
   } else {
-    quoteDom.style.fontSize = '5.1rem';
+    quoteDom.style.fontSize = '2.2rem';
   }
   quoteDom.innerText = `"${randomQuote.quote}"`;
   quoteAuthorDom.innerText = randomQuote.author || '';
