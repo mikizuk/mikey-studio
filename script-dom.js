@@ -9,6 +9,8 @@ export const navigationItems = document.getElementsByClassName('navigation__item
 export const heroList = document.querySelector('.hero__list');
 export const heroTitle = document.querySelector('.hero__title');
 export const heroDesc = document.querySelector('.hero__desc');
+/* *** LANDSCAPE *** */
+export const landscape = document.querySelector('.section-landscape');
 /* *** QUOTE *** */
 export const buttonQuote = document.querySelector('.button--quote');
 export let isNavButtonOpen = false;
@@ -16,6 +18,7 @@ export let isNavButtonOpen = false;
 export const projectWrapper = document.querySelector('.section-projects__wrapper');
 /* *** ABOUT *** */
 export const aboutWrapper = document.querySelector('.section-about__about-grid');
+export const aboutImages = document.querySelectorAll('.section-about__images');
 /* *** STACK *** */
 export const stackGrid = document.querySelector('.section-about__stack-grid');
 /* *** CONTACT *** */

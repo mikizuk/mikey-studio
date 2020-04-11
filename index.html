@@ -52,7 +52,9 @@
     <a class="section-quote__link" href="" target="_blank"></a>
   </section>
 
-  <section id="landscape" class="section-landscape"></section>
+  <section id="landscape">
+    <div class="section-landscape"></div>
+  </section>
 
   <section id="projects" class="section-projects">
     <h2 class="section__header">Projects</h2>
@@ -63,25 +65,25 @@
     <h2 class="section__header">About</h2>
     <div class="projects-wrapper">
       <div class="section-about__about-grid">
-        <div class="pic-1"></div>
-        <div class="pic-2"></div>
-        <div class="pic-3"></div>
-        <div class="pic-4"></div>
-        <div class="pic-5"></div>
-        <div class="pic-6"></div>
+        <div class="section-about__images pic-1"></div>
+        <div class="section-about__images pic-2"></div>
+        <div class="section-about__images pic-3"></div>
+        <div class="section-about__images pic-4"></div>
+        <div class="section-about__images pic-5"></div>
+        <div class="section-about__images pic-6"></div>
       </div>
       <h2 class="section__header section__header--subsection">Tech stack</h2>
       <div class="section-about__stack-grid">
-        <i class="stack-html fab fa-html5 fa-3x"></i>
-        <i class="stack-css fab fa-css3-alt fa-3x"></i>
-        <i class="stack-js fab fa-js-square fa-3x"></i>
-        <i class="stack-ts fab fa-js-square fa-3x"></i>
-        <i class="stack-react fab fa-react fa-3x"></i>
-        <i class="stack-angular fab fa-angular fa-3x"></i>
-        <i class="stack-git fab fa-git-square fa-3x"></i>
+        <i class="stack-html fab fa-html5 fa-4x"></i>
+        <i class="stack-css fab fa-css3-alt fa-4x"></i>
+        <i class="stack-js fab fa-js-square fa-4x"></i>
+        <i class="stack-ts fab fa-js-square fa-4x"></i>
+        <i class="stack-react fab fa-react fa-4x"></i>
+        <i class="stack-angular fab fa-angular fa-4x"></i>
+        <i class="stack-git fab fa-git-square fa-4x"></i>
         <!-- <i class="fab fa-git-alt"></i> -->
-        <i class="stack-wordpress fab fa-wordpress fa-3x"></i>
-        <i class="stack-backend fas fa-server fa-3x"></i>
+        <i class="stack-wordpress fab fa-wordpress fa-4x"></i>
+        <i class="stack-backend fas fa-server fa-4x"></i>
       </div>
     </div>
   </section>
@@ -90,41 +92,39 @@
     <h2 class="section__header" style="padding-top: 50px;">Contact</h2>
     <div class="section-contact__contact-grid">
       <div class="section-contact__social-wrapper">
-        <div class="section-contact__social__item">
-          <a href="#" class="section-contact__social__link"><i class="fab fa-github fa-2x"></i><span
-              style="padding-left: 12px ">github</span></a>
+        <div class="section-contact__social-item">
+          <i class="fab fa-github fa-2x"></i>
+          <a href="#" class="section-contact__social-link">Github</a>
         </div>
-        <div class="section-contact__social__item">
-          <a href="#" class="section-contact__social__link"><i class="fab fa-linkedin fa-2x"></i><span
-              style="padding-left: 12px ">linkedin</span></a>
+        <div class="section-contact__social-item">
+          <i class="fab fa-linkedin fa-2x"></i>
+          <a href="#" class="section-contact__social-link">LinkedIn</a>
         </div>
-        <div class="section-contact__social__item">
-          <a href="#" class="section-contact__social__link"><i class="fab fa-codepen fa-2x"></i><span
-              style="padding-left: 12px ">codepen</span></a>
+        <div class="section-contact__social-item">
+          <i class="fab fa-codepen fa-2x"></i>
+          <a href="#" class="section-contact__social-link">Codepen</a>
         </div>
-        <div class="section-contact__social__item">
-          <a href="#" class="section-contact__social__link"><i class="fab fa-stack-overflow fa-2x"></i><span
-              style="padding-left: 12px ">stackoverflow</span></a>
+        <div class="section-contact__social-item">
+          <i class="fab fa-stack-overflow fa-2x"></i>
+          <a href="#" class="section-contact__social-link">Stackoverflow</a>
         </div>
-        <div class="section-contact__social__item">
-          <a href="#" class="section-contact__social__link"><i class="fab fa-instagram fa-2x"></i><span
-              style="padding-left: 12px ">instagram</span></a>
+        <div class="section-contact__social-item">
+          <i class="fab fa-instagram fa-2x"></i>
+          <a href="#" class="section-contact__social-link">Instagram</a>
         </div>
-        <div class="section-contact__social__item">
-          <a href="#" class="section-contact__social__link"><i class="fab fa-github-alt fa-2x"></i><span
-              style="padding-left: 12px ">github</span></a>
+        <div class="section-contact__social-item">
+          <i class="fab fa-github-alt fa-2x"></i>
+          <a href="#" class="section-contact__social-link">GitHub</a>
         </div>
-        <div class="section-contact__social__item">
-          <i class="fas fa-paint-brush fa-2x"></i><span>paint</span>
-        </div>
-        <div class="section-contact__social__item">
-          <i class="section-contact__social__item fas fa-mobile-alt fa-2x"></i><span>mobile</span>
+        <div class="section-contact__social-item">
+          <i class="fas fa-tint fa-2x"></i>
+          <a href="#" class="section-contact__social-link">[] [] []</a>
         </div>
       </div>
       <div class="section-contact__contact-wrapper">
         <form id="form">
-          <input type="email" id="inputEmail" class="form__email">
-          <textarea id="inputMessage" placeholder="Say hello :)" cols="20" rows="10"
+          <input type="email" id="inputEmail" class="form__email" placeholder="Your mail!">
+          <textarea id="inputMessage" placeholder="Drop me a message!" cols="20" rows="10"
             class="form__text-area"></textarea>
           <button class="button button--quote" type="submit">Send email</button>
         </form>
@@ -132,7 +132,9 @@
     </div>
   </section>
 
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <div class="footer__size">&lt; 767px &lt; 1439px &lt; 1920px</div>
+  </footer>
 
   <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
@@ -141,7 +143,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   <script src="script-main.js" type="module"></script>
-  
+
 </body>
 
 </html>

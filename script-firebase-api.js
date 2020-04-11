@@ -70,11 +70,11 @@ const fetchFirebaseApi = () => {
             for (let i = 0; i < project.hashtags.length; i++) {
               const hashtagSpan = document.createElement('span');
               hashtagSpan.classList.add('section-project__hashtag');
-              hashtagSpan.innerText = project.hashtags[i];
+              hashtagSpan.innerText = `#${project.hashtags[i]}`;
               projectHashtagsDiv.appendChild(hashtagSpan);
               if ((i + 1) % 3 === 0) {
                 projectHashtagsDiv.appendChild(document.createElement('br'));
-                projectHashtagsDiv.appendChild(document.createElement('br'));
+                // projectHashtagsDiv.appendChild(document.createElement('br'));
               }
             };
           }
@@ -103,13 +103,13 @@ const fetchFirebaseApi = () => {
       if (firebaseDatabase.aboutList) {
         (firebaseDatabase.aboutList).forEach(aboutItem => {
           const aboutSection = document.createElement('div');
-          const aboutHeader = document.createElement('h6');
+          // const aboutHeader = document.createElement('h6');
           const aboutDescription = document.createElement('p');
           aboutSection.classList.add(`${aboutItem.className}`);
           aboutDescription.innerText = aboutItem.description;
-          aboutHeader.innerText = aboutItem.header;
-          aboutSection.appendChild(aboutHeader);
-          aboutSection.appendChild(document.createElement('br'));
+          // aboutHeader.innerText = aboutItem.header;
+          // aboutSection.appendChild(aboutHeader);
+          // aboutSection.appendChild(document.createElement('br'));
           aboutSection.appendChild(aboutDescription);
           domElement.aboutWrapper.appendChild(aboutSection);
         });

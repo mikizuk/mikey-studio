@@ -5,11 +5,12 @@ const listenToObserver = () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
+      const sectionId = document.querySelector(`nav ul li a[href="#${id}"]`);
 
       // console.log(entry);
      
-      if (entry.intersectionRatio > 0) {
-        document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
+      if (entry.intersectionRatio > 0 && sectionId) {
+        sectionId.parentElement.classList.add('active');
         // 
         if (entry.target.id === 'quote') {
           navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
@@ -33,8 +34,8 @@ const listenToObserver = () => {
         //   navigation.style.background = 'green';
         //   navigation.style.color = 'brown';
         // }
-      } else {
-        document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active');
+      } else if (sectionId) {
+        sectionId.parentElement.classList.remove('active');
       }
 
     })
