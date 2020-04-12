@@ -21,6 +21,7 @@ export const aboutWrapper = document.querySelector('.section-about__about-grid')
 export const aboutImages = document.querySelectorAll('.section-about__images');
 /* *** STACK *** */
 export const stackGrid = document.querySelector('.section-about__stack-grid');
+export const landscape2 = document.querySelector('.landscape2');
 /* *** CONTACT *** */
 const form = document.getElementById('form');
 const inputEmail = document.getElementById('inputEmail');
@@ -82,7 +83,7 @@ const showNewQuote = (randomQuote) => {
   // console.log('randomQuote.quote.length', randomQuote.quote.length);
 
   if (deviceWidth > 765) {
-    // tablet
+    // tablet * desktop
     if (randomQuote.quote.length > 400) {
       quoteDom.style.fontSize = '2.2rem';
     } else if (randomQuote.quote.length > 300) {
@@ -97,8 +98,7 @@ const showNewQuote = (randomQuote) => {
       quoteDom.style.fontSize = '4rem';
     }
   } else if (deviceWidth > 1440) {
-    // desktop
-    quoteDom.style.fontSize = '.5rem';
+    // 
   } else {
     // mobile
     if (randomQuote.quote.length > 400) {

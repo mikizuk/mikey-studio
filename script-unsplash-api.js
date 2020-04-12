@@ -32,6 +32,7 @@ function fetchUnsplashApi() {
       // console.log('allUnsplashPhotos', allUnsplashPhotos);
       /* ********* LANDSCAPE ********* */
       domElement.landscape.style.backgroundImage = `url(${allUnsplashPhotos[0]})`;
+      domElement.landscape2.style.backgroundImage = `url(${allUnsplashPhotos[0]})`;
       /* ********* ABOUT ********* */
       if (domElement.aboutImages.length > 0 && allUnsplashPhotos.length > 0) {
         const randomIntegers = getRandomIntegers(domElement.aboutImages.length, allUnsplashPhotos.length);
