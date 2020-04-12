@@ -85,6 +85,9 @@ body {
 
 .navigation__logo {
   display: flex;
+  text-decoration: none;
+  color: var(--color-base-secondary);
+
 }
 .navigation__title {
   font-size: 1.2rem;
@@ -531,7 +534,6 @@ body {
   padding: calc(var(--main-wrapper-gutter-mobile) / 5) 0;
 }
 .section-contact__social-link {
-  /* font-size: 2.8rem; */
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -539,13 +541,14 @@ body {
 }
 
 .form__email {
+  font-size: 1rem;
   font-family: inherit;
   height: 30px;
   width: 100%;
   background-color: transparent;
   border: 0;
   border: 2px solid var(--color-base-primary);
-  text-indent: 10px;
+  text-indent: 6px;
   border-radius: 4px;
   /* border-left: 4px solid var(--color-base-primary); */
   
@@ -558,8 +561,8 @@ body {
   background-color: transparent;
   border: 0;
   border: 2px solid var(--color-base-primary);
-  padding-top: 10px;
-  padding-left: 10px;
+  padding-top: 4px;
+  padding-left: 6px;
   border-radius: 4px;
 }
 
