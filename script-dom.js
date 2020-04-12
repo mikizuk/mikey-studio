@@ -73,25 +73,47 @@ export const getRandomQuote = (quotes) => {
 }
 
 const showNewQuote = (randomQuote) => {
+  const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
   const quoteDom = document.querySelector('.section-quote__text');
   const quoteAuthorDom = document.querySelector('.section-quote__author');
   const quoteLinkDom = document.querySelector('.section-quote__link');
 
-  // TODO these sizes will work for mobile only ;)
   // character counter https://www.charactercountonline.com/
-  console.log('randomQuote.quote.length', randomQuote.quote.length);
-  if (randomQuote.quote.length > 400) {
-    quoteDom.style.fontSize = '.7rem'; // 2.8rem
-  } else if (randomQuote.quote.length > 300) {
-    quoteDom.style.fontSize = '1rem'; // 3.3rem
-  } else if (randomQuote.quote.length > 200) {
-    quoteDom.style.fontSize = '1.3rem'; // 3.8rem
-  } else if (randomQuote.quote.length > 150) {
-    quoteDom.style.fontSize = '1.6rem'; // 4.1rem
-  } else if (randomQuote.quote.length > 100) {
-    quoteDom.style.fontSize = '1.9rem'; // 4.5rem
+  // console.log('randomQuote.quote.length', randomQuote.quote.length);
+
+  if (deviceWidth > 765) {
+    // tablet
+    if (randomQuote.quote.length > 400) {
+      quoteDom.style.fontSize = '2.2rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '2.6rem';
+    } else if (randomQuote.quote.length > 200) {
+      quoteDom.style.fontSize = '3.1rem';
+    } else if (randomQuote.quote.length > 150) {
+      quoteDom.style.fontSize = '3.4rem';
+    } else if (randomQuote.quote.length > 100) {
+      quoteDom.style.fontSize = '3.7rem';
+    } else {
+      quoteDom.style.fontSize = '4rem';
+    }
+  } else if (deviceWidth > 1440) {
+    // desktop
+    quoteDom.style.fontSize = '.5rem';
   } else {
-    quoteDom.style.fontSize = '2.2rem';
+    // mobile
+    if (randomQuote.quote.length > 400) {
+      quoteDom.style.fontSize = '.7rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '1rem';
+    } else if (randomQuote.quote.length > 200) {
+      quoteDom.style.fontSize = '1.3rem';
+    } else if (randomQuote.quote.length > 150) {
+      quoteDom.style.fontSize = '1.6rem';
+    } else if (randomQuote.quote.length > 100) {
+      quoteDom.style.fontSize = '1.9rem';
+    } else {
+      quoteDom.style.fontSize = '2.2rem';
+    }
   }
   quoteDom.innerText = `"${randomQuote.quote}"`;
   quoteAuthorDom.innerText = randomQuote.author || '';
