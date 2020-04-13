@@ -96,7 +96,7 @@ body {
 
 }
 .navigation__title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-left: calc(var(--gap-mobile) / 2);
   font-weight: var(--rokkitt-extra-bold);
   text-transform: uppercase;
@@ -283,17 +283,16 @@ body {
   color: var(--color-base-secondary);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 2fr auto 1.2fr;
+  grid-template-rows: 300px auto 1.2fr;
   margin-left: var(--gap-mobile);
   grid-column-gap: var(--gutter-mobile);
   grid-row-gap: var(--gap-mobile);
 }
 .section-hero__image {
-  /* height: 947px; */ /* TODO not needed because we should have that height in html... what about RWD? */
-  height: 344px;
+  height: 280px; /* TODO not needed because we should have that height in html... what about RWD? */
   object-position: -28px;
 }
-.section-hero__key-points  {
+.section-hero__key-points {
   grid-area: 1 / 1 / 2 / 2;
   align-self: end;
   justify-self: end;
@@ -614,7 +613,7 @@ body {
   .section-hero__image {
     height: 470px;
   }
-  .section-hero__key-points  {
+  .section-hero__key-points {
     font-size: 1.9rem;
   }
   .hero__title  {
@@ -1215,7 +1214,7 @@ body {
     grid-column-gap: var(--gutter-desktop-hd);
     grid-row-gap: var(--gap-desktop-hd);
   }
-  .section-hero__key-points  {
+  .section-hero__key-points {
     grid-area: auto;
     font-size: 2.5rem;
   }
