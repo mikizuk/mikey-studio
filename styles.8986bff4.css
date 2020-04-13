@@ -101,7 +101,6 @@ body {
   font-weight: var(--rokkitt-extra-bold);
   text-transform: uppercase;
   align-self: center;
-  border: 1px solid red;
   min-width: 180px;
 }
 .navigation__options {
@@ -285,7 +284,7 @@ body {
   color: var(--color-base-secondary);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 300px auto 1.2fr;
+  grid-template-rows: 280px auto 1fr;
   margin-left: var(--gap-mobile);
   grid-column-gap: var(--gutter-mobile);
   grid-row-gap: var(--gap-mobile);
@@ -310,7 +309,7 @@ body {
 }
 .hero__title  {
   grid-area: 2 / 1 / 3 / 3;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: var(--rokkitt-bold);
   text-transform: uppercase;
   align-self: center;
