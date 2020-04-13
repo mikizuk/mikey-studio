@@ -540,6 +540,7 @@ body {
   margin: calc(var(--gutter-mobile) / 2) 0;
   background-color: transparent;
   border: 0;
+  font-size: 1rem;
   border: 2px solid var(--color-base-primary);
   padding-top: 4px;
   padding-left: 6px;
@@ -801,7 +802,7 @@ body {
 
   /* section quote */
   .section-quote::before {
-    height: 98vh;
+    height: 102vh;
   }
   .section-quote {
     height: 80vh;
@@ -922,7 +923,7 @@ body {
   .section-contact__social-item {
     font-size: 2rem;
     grid-template-columns: 100px 1fr;
-    padding: calc(var(--gutter-desktop) / 5) 0;
+    padding: calc(var(--gutter-desktop) / 11) 0;
   }
   .form__email {
     height: 55px;
