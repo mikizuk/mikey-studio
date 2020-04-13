@@ -61,6 +61,11 @@ document.addEventListener('click', (e) => {
   }
 })
 
+/* *** HERO *** */
+
+const deviceHeight = ((window.innerHeight > 0) ? window.innerHeight * 0.01 : screen.height * 0.01);
+document.documentElement.style.setProperty('--vh', `${deviceHeight}px`);
+
 /* *** QUOTE *** */
 
 buttonQuote.addEventListener('click', () => {
@@ -81,7 +86,6 @@ const showNewQuote = (randomQuote) => {
 
   // character counter https://www.charactercountonline.com/
   // console.log('randomQuote.quote.length', randomQuote.quote.length);
-
   if (deviceWidth <= 767) {
     // mobile
     if (randomQuote.quote.length > 400) {
