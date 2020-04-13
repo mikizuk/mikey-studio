@@ -841,9 +841,12 @@ body {
   .section-project__hashtags {
     font-size: 1.2rem;
     grid-column: auto;
-    margin-right: 16px;
+    padding-top: calc(var(--gap-desktop) / 8);
     line-height: 26px;
     grid-area: 4 / 1 / 5 / 2;
+  }
+  .section-project__hashtag {
+    font-size: 1.4rem;
   }
   .section-project__title {
     font-size: 3.5rem;
@@ -862,7 +865,7 @@ body {
   }
   .section-project__buttons {
     grid-column: auto;
-    grid-area: 5 / 2 / 5 / 4;
+    grid-area: 4 / 2 / 5 / 4;
   }
   /* section about */
   .section-about__about-grid {
