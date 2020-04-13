@@ -530,6 +530,29 @@ body {
   color: var(--color-base-primary);
 }
 
+.color-palette {
+  display: flex; 
+}
+.color-palette__item {
+  height: 45px;
+  width: 65px;
+}
+.color-palette__item--base-primary {
+  background-color: var(--color-base-primary);
+}
+.color-palette__item--base-secondary {
+  background-color: var(--color-base-secondary);
+}
+.color-palette__item--alter-primary {
+  background-color: var(--color-alter-primary);
+}
+.color-palette__item--alter-secondary {
+  background-color: var(--color-alter-secondary);
+}
+.color-palette__item--accent {
+  background-color: var(--color-accent);
+}
+
 .form__email {
   font-size: 1rem;
   font-family: inherit;
