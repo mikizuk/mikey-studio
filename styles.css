@@ -540,6 +540,7 @@ body {
   margin: calc(var(--gutter-mobile) / 2) 0;
   background-color: transparent;
   border: 0;
+  font-size: 1rem;
   border: 2px solid var(--color-base-primary);
   padding-top: 4px;
   padding-left: 6px;
@@ -697,7 +698,7 @@ body {
   .form__email {
     height: 45px;
     font-size: 1.5rem;
-    text-indent: 10px;
+    text-indent: 6px;
   }
   .form__text-area {
     height: 300px; 
@@ -801,7 +802,7 @@ body {
 
   /* section quote */
   .section-quote::before {
-    height: 98vh;
+    height: 102vh;
   }
   .section-quote {
     height: 80vh;
@@ -841,9 +842,12 @@ body {
   .section-project__hashtags {
     font-size: 1.2rem;
     grid-column: auto;
-    margin-right: 16px;
+    padding-top: calc(var(--gap-desktop) / 8);
     line-height: 26px;
     grid-area: 4 / 1 / 5 / 2;
+  }
+  .section-project__hashtag {
+    font-size: 1.4rem;
   }
   .section-project__title {
     font-size: 3.5rem;
@@ -862,7 +866,7 @@ body {
   }
   .section-project__buttons {
     grid-column: auto;
-    grid-area: 5 / 2 / 5 / 4;
+    grid-area: 4 / 2 / 5 / 4;
   }
   /* section about */
   .section-about__about-grid {
@@ -892,6 +896,7 @@ body {
     grid-template-rows: repeat(9, 1fr);
   }
   .landscape2 {
+    display: unset;
     grid-row: 1/-1;
     background-repeat: no-repeat;
     background-size: cover;
@@ -918,7 +923,7 @@ body {
   .section-contact__social-item {
     font-size: 2rem;
     grid-template-columns: 100px 1fr;
-    padding: calc(var(--gutter-desktop) / 5) 0;
+    padding: calc(var(--gutter-desktop) / 11) 0;
   }
   .form__email {
     height: 55px;
