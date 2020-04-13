@@ -425,23 +425,7 @@ var showNewQuote = function showNewQuote(randomQuote) {
   var quoteLinkDom = document.querySelector('.section-quote__link'); // character counter https://www.charactercountonline.com/
   // console.log('randomQuote.quote.length', randomQuote.quote.length);
 
-  if (deviceWidth > 765) {
-    // tablet * desktop
-    if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '2.2rem';
-    } else if (randomQuote.quote.length > 300) {
-      quoteDom.style.fontSize = '2.6rem';
-    } else if (randomQuote.quote.length > 200) {
-      quoteDom.style.fontSize = '3.1rem';
-    } else if (randomQuote.quote.length > 150) {
-      quoteDom.style.fontSize = '3.4rem';
-    } else if (randomQuote.quote.length > 100) {
-      quoteDom.style.fontSize = '3.7rem';
-    } else {
-      quoteDom.style.fontSize = '4rem';
-    }
-  } else if (deviceWidth > 1440) {// 
-  } else {
+  if (deviceWidth <= 767) {
     // mobile
     if (randomQuote.quote.length > 400) {
       quoteDom.style.fontSize = '.7rem';
@@ -455,6 +439,51 @@ var showNewQuote = function showNewQuote(randomQuote) {
       quoteDom.style.fontSize = '1.9rem';
     } else {
       quoteDom.style.fontSize = '2.2rem';
+    }
+  } else if (deviceWidth < 1279) {
+    // laptop-md
+    if (randomQuote.quote.length > 400) {
+      quoteDom.style.fontSize = '2rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '2.2rem';
+    } else if (randomQuote.quote.length > 200) {
+      quoteDom.style.fontSize = '2.6rem';
+    } else if (randomQuote.quote.length > 150) {
+      quoteDom.style.fontSize = '3.1rem';
+    } else if (randomQuote.quote.length > 100) {
+      quoteDom.style.fontSize = '3.4rem';
+    } else {
+      quoteDom.style.fontSize = '3.7rem';
+    }
+  } else if (deviceWidth < 1439) {
+    // laptop-hd 
+    if (randomQuote.quote.length > 400) {
+      quoteDom.style.fontSize = '2.2rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '2.6rem';
+    } else if (randomQuote.quote.length > 200) {
+      quoteDom.style.fontSize = '3.1rem';
+    } else if (randomQuote.quote.length > 150) {
+      quoteDom.style.fontSize = '3.4rem';
+    } else if (randomQuote.quote.length > 100) {
+      quoteDom.style.fontSize = '3.7rem';
+    } else {
+      quoteDom.style.fontSize = '4rem';
+    }
+  } else {
+    // desktop-hd
+    if (randomQuote.quote.length > 400) {
+      quoteDom.style.fontSize = '3rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '3.3rem';
+    } else if (randomQuote.quote.length > 200) {
+      quoteDom.style.fontSize = '3.6rem';
+    } else if (randomQuote.quote.length > 150) {
+      quoteDom.style.fontSize = '3.9rem';
+    } else if (randomQuote.quote.length > 100) {
+      quoteDom.style.fontSize = '4.2rem';
+    } else {
+      quoteDom.style.fontSize = '4.7rem';
     }
   }
 
@@ -712,7 +741,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64994" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50463" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
