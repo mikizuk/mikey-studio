@@ -632,7 +632,7 @@ body {
     height: 80vh;
     padding-left: var(--gap-tablet);
     padding-right: var(--gap-tablet);
-    grid-row-gap: var(--gap-tablet);
+    grid-row-gap: calc(var(--gap-tablet) / 2);
   }
   .section-quote__author,
   .section-quote__link {
@@ -810,7 +810,7 @@ body {
     height: 80vh;
     padding-left: var(--gap-laptop-md);
     padding-right: var(--gap-laptop-md);
-    grid-row-gap: var(--gap-laptop-md);
+    grid-row-gap: calc(var(--gap-laptop-md) / 2);
   }
   .section-quote__author,
   .section-quote__link {
@@ -1030,7 +1030,7 @@ body {
     height: 80vh;
     padding-left: var(--gap-laptop-hd);
     padding-right: var(--gap-laptop-hd);
-    grid-row-gap: var(--gap-laptop-hd);
+    grid-row-gap: calc(var(--gap-laptop-hd) / 2);
   }
   .section-quote__author,
   .section-quote__link {
