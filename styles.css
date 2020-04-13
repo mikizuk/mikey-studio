@@ -283,17 +283,16 @@ body {
   color: var(--color-base-secondary);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 2fr auto 1.2fr;
+  grid-template-rows: 300px auto 1.2fr;
   margin-left: var(--gap-mobile);
   grid-column-gap: var(--gutter-mobile);
   grid-row-gap: var(--gap-mobile);
 }
 .section-hero__image {
-  /* height: 947px; */ /* TODO not needed because we should have that height in html... what about RWD? */
-  height: 344px;
+  height: 280px; /* TODO not needed because we should have that height in html... what about RWD? */
   object-position: -28px;
 }
-.section-hero__key-points  {
+.section-hero__key-points {
   grid-area: 1 / 1 / 2 / 2;
   align-self: end;
   justify-self: end;
@@ -614,7 +613,7 @@ body {
   .section-hero__image {
     height: 470px;
   }
-  .section-hero__key-points  {
+  .section-hero__key-points {
     font-size: 1.9rem;
   }
   .hero__title  {
@@ -632,7 +631,7 @@ body {
     height: 80vh;
     padding-left: var(--gap-tablet);
     padding-right: var(--gap-tablet);
-    grid-row-gap: var(--gap-tablet);
+    grid-row-gap: calc(var(--gap-tablet) / 2);
   }
   .section-quote__author,
   .section-quote__link {
@@ -810,7 +809,7 @@ body {
     height: 80vh;
     padding-left: var(--gap-laptop-md);
     padding-right: var(--gap-laptop-md);
-    grid-row-gap: var(--gap-laptop-md);
+    grid-row-gap: calc(var(--gap-laptop-md) / 2);
   }
   .section-quote__author,
   .section-quote__link {
@@ -1007,24 +1006,17 @@ body {
     grid-row-gap: var(--gap-laptop-hd);
   }
   .section-hero__key-points  {
-    grid-area: auto;
     font-size: 2rem;
-  }
-  .section-hero__image-wrapper {
-    grid-area: auto;
-    /* border: 3px solid red; */
   }
   .section-hero__image {
     height: 480px;
   }
   .hero__title  {
-    grid-area: auto;
     font-size: 4.6rem;
     height: 100%;
     text-align: end;
   }
   .hero__desc  {
-    grid-area: auto;
     font-size: 1.5rem;
     padding-right: var(--gap-laptop-hd);
   }
@@ -1037,7 +1029,7 @@ body {
     height: 80vh;
     padding-left: var(--gap-laptop-hd);
     padding-right: var(--gap-laptop-hd);
-    grid-row-gap: var(--gap-laptop-hd);
+    grid-row-gap: calc(var(--gap-laptop-hd) / 2);
   }
   .section-quote__author,
   .section-quote__link {
@@ -1059,41 +1051,35 @@ body {
     padding-bottom: calc(var(--gap-laptop-hd) * 3);
   }
   .section-project__project {
-    grid-gap: 0 var(--gap-laptop-hd);
+    grid-gap: calc(var(--gap-laptop-hd) / 3) var(--gap-laptop-hd);
     padding: var(--gap-laptop-hd);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
   }
   .section-project__image {
-    grid-column: auto;
     grid-area: 1 / 1 / 4 / 2;
     margin-top: inherit;
   }
   .section-project__hashtags {
-    grid-column: auto;
     padding-top: calc(var(--gap-laptop-hd) / 8);
     line-height: 26px;
     grid-area: 4 / 1 / 5 / 2;
   }
   .section-project__hashtag {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .section-project__title {
     font-size: 3.5rem;
-    grid-column: auto;
     grid-area: 1 / 2 / 2 / 4;
   }
   .section-project__header {
     font-size: 2.5rem;
-    grid-column: auto;
     grid-area: 2 / 2 / 3 / 4;
   }
   .section-project__description {
     font-size: 1.6rem;
-    grid-column: auto;
     grid-area: 3 / 2 / 4 / 4;
   }
   .section-project__buttons {
-    grid-column: auto;
     grid-area: 4 / 2 / 5 / 4;
   }
   /* section about */
@@ -1129,16 +1115,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .section-about__stack-grid i {
-    grid-area: auto;
-  }
   .section-about__stack-technology {
-    grid-area: auto;
     font-size: 3rem;
   }
   .section-about__stack-description {
     font-size: 1.8rem;
-    grid-area: auto;
   }
   /* section contact */
   .section-contact::before {
@@ -1233,7 +1214,7 @@ body {
     grid-column-gap: var(--gutter-desktop-hd);
     grid-row-gap: var(--gap-desktop-hd);
   }
-  .section-hero__key-points  {
+  .section-hero__key-points {
     grid-area: auto;
     font-size: 2.5rem;
   }

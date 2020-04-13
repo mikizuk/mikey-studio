@@ -127,6 +127,20 @@ const showNewQuote = (randomQuote) => {
     } else {
       quoteDom.style.fontSize = '4rem';
     }
+  } else if (deviceWidth < 1919) { 
+    if (randomQuote.quote.length > 400) {
+      quoteDom.style.fontSize = '2.3rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '2.6rem';
+    } else if (randomQuote.quote.length > 200) {
+      quoteDom.style.fontSize = '3.1rem';
+    } else if (randomQuote.quote.length > 150) {
+      quoteDom.style.fontSize = '3.4rem';
+    } else if (randomQuote.quote.length > 100) {
+      quoteDom.style.fontSize = '3.6rem';
+    } else {
+      quoteDom.style.fontSize = '3.9rem';
+    }
   } else {
     // desktop-hd
     if (randomQuote.quote.length > 400) {
