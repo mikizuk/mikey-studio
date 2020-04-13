@@ -49,6 +49,9 @@
   --gutter-laptop-hd: 80px;
   --gap-desktop-hd: 80px;
   --gutter-desktop-hd: 90px;
+  /* RWD viewport vh*/
+  /* --vh: ; */
+  
 }
 * {
   box-sizing: border-box;
@@ -232,7 +235,8 @@ body {
 }
 .section-hero::before {
   background-color: var(--color-base-primary);
-  height: 100vh;
+  /* height: 100vh; */
+  height: calc(var(--vh, 1vh) * 100);
 }
 .section-quote::before {
   background-color: var(--color-base-secondary);
@@ -277,7 +281,8 @@ body {
 /* ********* SECTION HERO ********* */
 
 .section-hero {
-  height: 100vh;
+  /* height: 100vh; */
+  height: calc(var(--vh, 1vh) * 100);
 }
 .section-hero__wrapper {
   height: 100%;

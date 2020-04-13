@@ -420,10 +420,14 @@ exports.getRandomQuote = getRandomQuote;
 
 var showNewQuote = function showNewQuote(randomQuote) {
   var deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
+  var deviceHeight = (window.innerHeight > 0 ? window.innerHeight : screen.height) * 0.01;
   var quoteDom = document.querySelector('.section-quote__text');
   var quoteAuthorDom = document.querySelector('.section-quote__author');
   var quoteLinkDom = document.querySelector('.section-quote__link'); // character counter https://www.charactercountonline.com/
   // console.log('randomQuote.quote.length', randomQuote.quote.length);
+
+  document.documentElement.style.setProperty('--vh', "".concat(deviceHeight, "px"));
+  console.log('deviceHeight', deviceHeight);
 
   if (deviceWidth <= 767) {
     // mobile
@@ -755,7 +759,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65081" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54089" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
