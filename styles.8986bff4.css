@@ -284,7 +284,7 @@ body {
   color: var(--color-base-secondary);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 280px auto 1fr;
+  grid-template-rows: 290px auto 1fr;
   margin-left: var(--gap-mobile);
   grid-column-gap: var(--gutter-mobile);
   grid-row-gap: var(--gap-mobile);
@@ -298,7 +298,7 @@ body {
   align-self: end;
   justify-self: end;
   text-align: end;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: var(--rokkitt-regular);
 }
 .section-hero__image-wrapper {
