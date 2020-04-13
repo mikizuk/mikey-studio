@@ -93,15 +93,16 @@ body {
   display: flex;
   text-decoration: none;
   color: var(--color-base-secondary);
-  border: 1px solid red;
-  min-width: 150px;
+
 }
 .navigation__title {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   padding-left: calc(var(--gap-mobile) / 2);
   font-weight: var(--rokkitt-extra-bold);
   text-transform: uppercase;
   align-self: center;
+  border: 1px solid red;
+  min-width: 180px;
 }
 .navigation__options {
   position: fixed; /* sticky absolute; */
