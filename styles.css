@@ -221,7 +221,7 @@ body {
   position: absolute;
   content: '';
   top: 0;
-  width: 100vw;
+  width: 100%;
   transform: skewY(-10deg);
   z-index: -1;
 }
@@ -235,7 +235,6 @@ body {
 }
 .section-projects::before {
   top: -86px;
-  width: 100vw;
   background-color: var(--color-base-secondary);
   height: 100%;
 }
@@ -552,7 +551,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 100%;
+  /* width: 100%; */
   color: var(--color-base-secondary);
   background-color: var(--color-base-primary);
   z-index: 1;
