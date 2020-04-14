@@ -179,7 +179,7 @@ body {
 }
 .navigation__options > .navigation__item > .navigation__link {
   pointer-events: auto;
-  transition:  300ms opacity, 300ms transform;
+  transition: 300ms opacity, 300ms transform;
 }
 
 /* ********* NAV ANIMATIONS ********* */
@@ -296,11 +296,25 @@ body {
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  transition: 300ms opacity, 300ms transform;
 }
 .button--alter {
   color: var(--color-base-secondary);
   background-color: var(--color-base-primary);
 }
+
+/* ********* BUTTON HOVER EFFECTS ********* */
+
+.button:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  opacity: 1;
+  transform: scale(1.1);
+}
+.button:active {
+  opacity: 0.5;
+}
+
 /* ********* SECTION HERO ********* */
 
 .section-hero {
@@ -372,9 +386,15 @@ body {
   grid-column: 1 / 3;
 }
 .section-quote__link {
-  color: var(--color-accent);
+  color: var(--color-base-primary);
   height: 50px;
   width: 90px;
+}
+
+/* ********* LINK HOVER EFFECTS ********* */
+
+.section-quote__link:hover {
+  color: var(--color-accent);
 }
 
 /* ********* SECTION LANDSCAPE ********* */
@@ -553,6 +573,12 @@ body {
   align-items: center;
   text-decoration: none;
   color: var(--color-base-primary);
+  transition: 300ms opacity, 300ms transform;
+}
+/* ********* LINK HOVER EFFECTS ********* */
+.section-contact__social-link:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 .color-palette {
@@ -813,16 +839,7 @@ body {
     color: var(--color-base-secondary);
     background-color: transparent;
     border: 2px solid var(--color-base-secondary);
-    /* border-bottom: 2px solid var(--color-base-secondary);
-    border-right: 2px solid var(--color-base-secondary);
-    border-left: 2px solid transparent;
-    border-top: 2px solid transparent; */
   }
-  /* .navigation__link:hover {
-    border-top: 2px solid var(--color-base-secondary);
-    border-left: 2px solid var(--color-base-secondary);
-    transition: 400ms;
-  } */
 
   /* section hero */
   .section-hero__wrapper {
@@ -1410,7 +1427,7 @@ body {
   }
   .section-contact__social-item {
     font-size: 2rem;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 110px 1fr;
     padding: calc(var(--gutter-desktop-hd) / 8) 0;
   }
   .form__email {
