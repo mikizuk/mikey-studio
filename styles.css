@@ -374,12 +374,12 @@ body {
   grid-template-columns: var(--main-wrapper-3cols);
   padding-left: var(--gap-mobile);
   padding-right: var(--gap-mobile);
-  grid-column-gap: var(--gutter-mobile);
 }
 .section-quote__text {
   /* font-size set in JavaScript */
   font-weight: var(--rokkitt-medium);
   grid-column: 1 / -1;
+  min-height: 259px; /* .... eee */
 }
 .section-quote__author {
   font-weight: var(--rokkitt-bold);
