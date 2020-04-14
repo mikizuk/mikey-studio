@@ -94,7 +94,6 @@ body {
   display: flex;
   text-decoration: none;
   color: var(--color-base-secondary);
-
 }
 .navigation__title {
   font-size: 1.3rem;
@@ -128,7 +127,6 @@ body {
   color: var(--color-base-primary);
   background-color: var(--color-base-secondary);
 }
-
 .button-menu {
   margin-left: auto;
   background-color: transparent;
@@ -158,7 +156,34 @@ body {
   position: absolute;
   left: 0;
 }
+
+/* ********* NAV BUTTONS HOVER EFFECTS ********* */
+
+.navigation__logo:hover {
+  color: var(--color-accent);
+}
+.navigation__options:hover > .navigation__item > .navigation__link {
+  opacity: 0.4;
+}
+.navigation__options:hover > .navigation__item:hover > .navigation__link {
+  opacity: 1;
+}
+.navigation__options:hover > .navigation__item:hover > .navigation__link:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}
+.navigation__options,
+.navigation__options .navigation__item {
+  pointer-events: none;
+}
+.navigation__options > .navigation__item > .navigation__link {
+  pointer-events: auto;
+  transition:  300ms opacity, 300ms transform;
+}
+
 /* ********* NAV ANIMATIONS ********* */
+
 @keyframes moveout {
   0% {
     -webkit-transform: translateX(0) }
