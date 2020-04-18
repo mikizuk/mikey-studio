@@ -1,7 +1,7 @@
 import * as firebase from './script-firebase-api.js';
 
 /* ************ DOM elements ************ */
-
+export const spinner = document.querySelector('.spinner');
 /* *** NAV *** */
 export const navButton = document.querySelector('.button-menu');
 export const navigationItems = document.getElementsByClassName('navigation__item');

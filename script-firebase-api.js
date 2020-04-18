@@ -19,6 +19,7 @@ const fetchFirebaseApi = () => {
     const firebaseDatabase = snap.val();
     // console.log('Firebase data loaded', firebaseDatabase);
     if (firebaseDatabase) {
+      turnLoadSpinnerOff();
       /* ********* HERO ********* */
       if (firebaseDatabase.hero && firebaseDatabase.hero.keyPoints) {
         firebaseDatabase.hero.keyPoints.forEach(word => {
@@ -138,6 +139,10 @@ const fetchFirebaseApi = () => {
     }
 
   });
+}
+
+function turnLoadSpinnerOff() {
+  domElement.spinner.classList.add('spinner--off');
 }
 
 export default { fetchFirebaseApi }
