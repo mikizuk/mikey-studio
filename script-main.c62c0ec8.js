@@ -163,7 +163,9 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
     var firebaseDatabase = snap.val(); // console.log('Firebase data loaded', firebaseDatabase);
 
     if (firebaseDatabase) {
+      turnLoadSpinnerOff();
       /* ********* HERO ********* */
+
       if (firebaseDatabase.hero && firebaseDatabase.hero.keyPoints) {
         firebaseDatabase.hero.keyPoints.forEach(function (word) {
           var keyItem = document.createElement('li');
@@ -305,6 +307,10 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
   });
 };
 
+function turnLoadSpinnerOff() {
+  domElement.spinner.classList.add('spinner--off');
+}
+
 var _default = {
   fetchFirebaseApi: fetchFirebaseApi
 };
@@ -315,7 +321,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = void 0;
+exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.spinner = void 0;
 
 var firebase = _interopRequireWildcard(require("./script-firebase-api.js"));
 
@@ -324,8 +330,10 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /* ************ DOM elements ************ */
-
+var spinner = document.querySelector('.spinner');
 /* *** NAV *** */
+
+exports.spinner = spinner;
 var navButton = document.querySelector('.button-menu');
 exports.navButton = navButton;
 var navigationItems = document.getElementsByClassName('navigation__item');
@@ -759,7 +767,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65125" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55101" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
