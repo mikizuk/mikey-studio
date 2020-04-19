@@ -131,7 +131,7 @@ body {
   font-weight: var(--rokkitt-extra-bold);
   text-transform: uppercase;
   align-self: center;
-  width: 100px;
+  /* width: 100px; */
 }
 .navigation__options {
   position: fixed; /* sticky absolute; */
@@ -158,7 +158,7 @@ body {
   background-color: var(--color-base-secondary);
 }
 .color-picker {
-  width: 80px;
+  width: 100px;
   margin: 0 10px 0 auto;
   align-self: center;
   height: 100%;
