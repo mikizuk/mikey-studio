@@ -3,7 +3,7 @@ import * as firebase from './script-firebase-api.js';
 /* ************ DOM elements ************ */
 export const spinner = document.querySelector('.spinner');
 /* *** NAV *** */
-export const colorPiker = document.querySelector('.color-picker');
+export const colorPicker = document.querySelector('.color-picker');
 export const navButton = document.querySelector('.button-menu');
 export const navigationItems = document.getElementsByClassName('navigation__item');
 /* *** HERO *** */
@@ -32,14 +32,14 @@ const inputMessage = document.getElementById('inputMessage');
 
 /* *** NAV *** */
 
-colorPiker.addEventListener('change', (e) => {
+colorPicker.addEventListener('change', (e) => {
   document.documentElement.setAttribute('data-theme', e.target.value);
   // const changeColorTransition = () => {
     document.documentElement.classList.add('color-transition');
     window.setTimeout(() => {
       document.documentElement.classList.remove('color-transition');
     }, 300)
-    console.log('colorPiker', colorPiker);
+    console.log('colorPicker', colorPicker);
   // }
 });
 
