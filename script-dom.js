@@ -39,6 +39,7 @@ colorPiker.addEventListener('change', (e) => {
     window.setTimeout(() => {
       document.documentElement.classList.remove('color-transition');
     }, 300)
+    console.log('colorPiker', colorPiker);
   // }
 });
 
@@ -100,9 +101,9 @@ const showNewQuote = (randomQuote) => {
   if (deviceWidth <= 767) {
     // mobile
     if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '.7rem';
-    } else if (randomQuote.quote.length > 300) {
       quoteDom.style.fontSize = '1rem';
+    } else if (randomQuote.quote.length > 300) {
+      quoteDom.style.fontSize = '1.1rem';
     } else if (randomQuote.quote.length > 200) {
       quoteDom.style.fontSize = '1.3rem';
     } else if (randomQuote.quote.length > 150) {
@@ -110,7 +111,7 @@ const showNewQuote = (randomQuote) => {
     } else if (randomQuote.quote.length > 100) {
       quoteDom.style.fontSize = '1.9rem';
     } else {
-      quoteDom.style.fontSize = '2.2rem';
+      quoteDom.style.fontSize = '2.1rem';
     }
   } else if (deviceWidth < 1279) {
     // laptop-md

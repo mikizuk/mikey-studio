@@ -85,7 +85,7 @@ const fetchFirebaseApi = () => {
           if (project.websiteLink) {
             const websiteLink = document.createElement('a');
             projectButtons.appendChild(websiteLink);
-            websiteLink.classList.add('button', 'button--alter');
+            websiteLink.classList.add('button');
             websiteLink.setAttribute('target', '_blank');
             websiteLink.innerText = 'Website';
             websiteLink.setAttribute('href', project.websiteLink);
@@ -93,7 +93,7 @@ const fetchFirebaseApi = () => {
           if (project.repoLink) {
             const repoLink = document.createElement('a');
             projectButtons.appendChild(repoLink);
-            repoLink.classList.add('button', 'button--alter');
+            repoLink.classList.add('button');
             repoLink.setAttribute('target', '_blank');
             repoLink.innerText = 'Repo'
             repoLink.setAttribute('href', project.repoLink)

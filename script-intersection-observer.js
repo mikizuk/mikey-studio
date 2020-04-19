@@ -12,10 +12,20 @@ const listenToObserver = () => {
       if (entry.intersectionRatio > 0 && sectionId) {
         sectionId.parentElement.classList.add('active');
         // 
-        if (entry.target.id === 'quote') {
-          navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
-          // navigation.style.background = '#FFCC88'; // TODO not always.... when theme changed...
-        }
+        
+        // console.log('??', document.documentElement.dataset.theme);
+        // if (entry.target.id === 'quote') {
+        //   document.documentElement.dataset.theme === 'monochrome'
+        //     ? navigation.style.background = '#2E2E2E'
+        //     : document.documentElement.dataset.theme === 'forestgreen'
+        //       ? navigation.style.background = '#FFCC88'
+        //       : document.documentElement.dataset.theme === 'morningglory'
+        //         ? navigation.style.background = '#99CCCC'
+        //         : document.documentElement.dataset.theme === 'pacificblue'
+        //           ? navigation.style.background = '#0F668D'
+        //           : '#2E2E2E'
+        //     // navigation.style.background = '#FFCC88';
+        // }
 
         // if (entry.target.id === 'hero') {
         //   navigation.style.background = 'initial';
