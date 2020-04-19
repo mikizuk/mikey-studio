@@ -323,7 +323,7 @@ body {
 }
 .section-quote::before {
   background-color: var(--color-base-secondary);
-  height: 73vh;
+  height: 76vh;
 }
 .section-projects::before {
   top: -86px;
@@ -427,11 +427,12 @@ body {
 /* ********* SECTION QUOTE ********* */
 
 .section-quote {
-  height: 68vh;
+  height: 71vh;
   position: relative;
   color: var(--color-base-primary);
 
   display: grid;
+  grid-gap: var(--gap-mobile);
   grid-template-columns: var(--main-wrapper-3cols);
   padding-left: var(--gap-mobile);
   padding-right: var(--gap-mobile);
@@ -440,7 +441,7 @@ body {
   /* font-size set in JavaScript */
   font-weight: var(--rokkitt-medium);
   grid-column: 1 / -1;
-  min-height: 259px; /* .... eee */
+  min-height: 179px; /* .... eee */
 }
 .section-quote__author {
   font-weight: var(--rokkitt-bold);
@@ -780,6 +781,9 @@ body {
     padding-left: var(--gap-tablet);
     padding-right: var(--gap-tablet);
     grid-row-gap: calc(var(--gap-tablet) / 2);
+  }
+  .section-quote__text {
+    min-height: 259px;
   }
   .section-quote__author,
   .section-quote__link {
