@@ -126,7 +126,7 @@ body {
   transition: all 0.3s ease;
 }
 .navigation__title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: calc(var(--gap-mobile) / 2);
   font-weight: var(--rokkitt-extra-bold);
   text-transform: uppercase;
@@ -159,7 +159,7 @@ body {
 }
 .color-picker {
   width: 110px;
-  margin: 0 15px 0 auto;
+  margin: 0 10px 0 auto;
   align-self: center;
   height: 100%;
   text-align-last: center;
@@ -201,8 +201,8 @@ body {
 .button-menu__burger::before,
 .button-menu__burger::after {
   display: inline-block;
-  width: 40px;
-  height: 6px;
+  width: 32px;
+  height: 5px;
   background-color: var(--color-base-secondary);
   border-radius: 4px;
 }
@@ -1324,10 +1324,6 @@ body {
   }
   .navigation__item {
     display: flex;
-  }
-  .navigation__options {
-    /* position: static;
-    display: flex; */
   }
   .navigation__link {
     font-size: 1.5rem;
