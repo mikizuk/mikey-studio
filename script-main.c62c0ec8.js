@@ -242,7 +242,7 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           if (project.websiteLink) {
             var websiteLink = document.createElement('a');
             projectButtons.appendChild(websiteLink);
-            websiteLink.classList.add('button', 'button--alter');
+            websiteLink.classList.add('button');
             websiteLink.setAttribute('target', '_blank');
             websiteLink.innerText = 'Website';
             websiteLink.setAttribute('href', project.websiteLink);
@@ -251,7 +251,7 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           if (project.repoLink) {
             var repoLink = document.createElement('a');
             projectButtons.appendChild(repoLink);
-            repoLink.classList.add('button', 'button--alter');
+            repoLink.classList.add('button');
             repoLink.setAttribute('target', '_blank');
             repoLink.innerText = 'Repo';
             repoLink.setAttribute('href', project.repoLink);
@@ -685,11 +685,20 @@ var listenToObserver = function listenToObserver() {
 
       if (entry.intersectionRatio > 0 && sectionId) {
         sectionId.parentElement.classList.add('active'); // 
-
-        if (entry.target.id === 'quote') {
-          navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
-          // navigation.style.background = '#FFCC88'; // TODO not always.... when theme changed...
-        } // if (entry.target.id === 'hero') {
+        // console.log('??', document.documentElement.dataset.theme);
+        // if (entry.target.id === 'quote') {
+        //   document.documentElement.dataset.theme === 'monochrome'
+        //     ? navigation.style.background = '#2E2E2E'
+        //     : document.documentElement.dataset.theme === 'forestgreen'
+        //       ? navigation.style.background = '#FFCC88'
+        //       : document.documentElement.dataset.theme === 'morningglory'
+        //         ? navigation.style.background = '#99CCCC'
+        //         : document.documentElement.dataset.theme === 'pacificblue'
+        //           ? navigation.style.background = '#0F668D'
+        //           : '#2E2E2E'
+        //     // navigation.style.background = '#FFCC88';
+        // }
+        // if (entry.target.id === 'hero') {
         //   navigation.style.background = 'initial';
         //   navigation.style.color = '#BE2200';
         // } else if (entry.target.id === 'quote') {
@@ -707,7 +716,6 @@ var listenToObserver = function listenToObserver() {
         //   navigation.style.background = 'green';
         //   navigation.style.color = 'brown';
         // }
-
       } else if (sectionId) {
         sectionId.parentElement.classList.remove('active');
       }
@@ -780,7 +788,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52624" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53875" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

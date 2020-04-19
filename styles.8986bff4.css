@@ -37,8 +37,8 @@ html[data-theme='monochrome'] {
   --color-base-primary: #2E2E2E;
   --color-base-secondary: #EFEFEF;
   --color-accent: #BE2200;
-  --color-alter-primary: #707070;
-  --color-alter-secondary: '';
+  --color-alter-primary: #EFEFEF;
+  --color-alter-secondary: #EFEFEF;
 }
 html[data-theme='forestgreen'] { 
   /* filter: sepia(1) hue-rotate(0deg) saturate(150%) brightness(194%) */
@@ -118,6 +118,7 @@ body {
   padding: var(--gap-mobile);
   color: var(--color-base-secondary);
   z-index: 1;
+  background-color: var(--color-base-primary);
 }
 .navigation__logo {
   display: flex;
@@ -345,7 +346,7 @@ body {
   height: 30px;
   width: 110px;
   font-family: var(--font-rokkitt);
-  color: var(--color-base-secondary);
+  color: var(--color-alter-primary);
   background-color: var(--color-base-primary);
   font-size: 1rem;
   font-weight: var(--rokkitt-black);
@@ -357,10 +358,6 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: 300ms opacity, 300ms transform;
-}
-.button--alter {
-  color: var(--color-base-secondary);
-  background-color: var(--color-base-primary);
 }
 
 /* ********* BUTTON HOVER EFFECTS ********* */
@@ -525,7 +522,10 @@ body {
   font-size: .9rem;
   font-weight: var(--rokkitt-medium);
   margin-right: 8px;
-  color: var(--color-base-primary);
+  color: var(--color-alter-secondary);
+  background-color: var(--color-alter-primary);
+  border-radius: 4px;
+  padding: 0 4px;
 }
 
 /* ********* SECTION ABOUT ********* */
@@ -594,12 +594,15 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
 }
+.section-about__stack-grid svg {
+  color: var(--color-alter-primary);
+}
 .section-about__stack-technology {
-  align-self: center;
+  align-self: flex-start;
   justify-self: left;
   font-size: 1.8rem;
   font-weight: var(--rokkitt-bold);
-
+  /* color: var(--color-alter-primary); */
 }
 .section-about__stack-description {
   grid-column: 2/-1;
@@ -624,6 +627,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+.section-contact__social-item svg {
+  color: var(--color-alter-primary);
 }
 .section-contact__social-item {
   display: grid;
@@ -668,12 +674,13 @@ body {
 }
 
 .form__email {
-  font-size: 1rem;
-  font-family: inherit;
   height: 30px;
   width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
   background-color: transparent;
   border: 0;
+  color: var(--color-base-primary);
   border: 2px solid var(--color-base-primary);
   text-indent: 6px;
   border-radius: 4px;  
@@ -681,11 +688,12 @@ body {
 
 .form__text-area {
   width: 100%;
+  font-size: 1rem;
   font-family: inherit;
   margin: calc(var(--gutter-mobile) / 2) 0;
   background-color: transparent;
   border: 0;
-  font-size: 1rem;
+  color: var(--color-base-primary);
   border: 2px solid var(--color-base-primary);
   padding-top: 4px;
   padding-left: 6px;
@@ -853,7 +861,7 @@ body {
   }
   .color-palette__item {
     height: 45px;
-    width: 35px;
+    width: 45px;
   }
   .form__email {
     height: 45px;
