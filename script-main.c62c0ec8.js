@@ -321,7 +321,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPiker = exports.spinner = void 0;
+exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = void 0;
 
 var firebase = _interopRequireWildcard(require("./script-firebase-api.js"));
 
@@ -334,8 +334,8 @@ var spinner = document.querySelector('.spinner');
 /* *** NAV *** */
 
 exports.spinner = spinner;
-var colorPiker = document.querySelector('.color-picker');
-exports.colorPiker = colorPiker;
+var colorPicker = document.querySelector('.color-picker');
+exports.colorPicker = colorPicker;
 var navButton = document.querySelector('.button-menu');
 exports.navButton = navButton;
 var navigationItems = document.getElementsByClassName('navigation__item');
@@ -383,14 +383,14 @@ var inputMessage = document.getElementById('inputMessage');
 
 /* *** NAV *** */
 
-colorPiker.addEventListener('change', function (e) {
+colorPicker.addEventListener('change', function (e) {
   document.documentElement.setAttribute('data-theme', e.target.value); // const changeColorTransition = () => {
 
   document.documentElement.classList.add('color-transition');
   window.setTimeout(function () {
     document.documentElement.classList.remove('color-transition');
   }, 300);
-  console.log('colorPiker', colorPiker); // }
+  console.log('colorPicker', colorPicker); // }
 });
 
 var toggleVisibilityMenuItems = function toggleVisibilityMenuItems(navigationItems, isNavButtonOpen) {
@@ -788,7 +788,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53875" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56892" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
