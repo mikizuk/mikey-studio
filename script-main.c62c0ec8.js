@@ -321,7 +321,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.spinner = void 0;
+exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPiker = exports.spinner = void 0;
 
 var firebase = _interopRequireWildcard(require("./script-firebase-api.js"));
 
@@ -334,6 +334,8 @@ var spinner = document.querySelector('.spinner');
 /* *** NAV *** */
 
 exports.spinner = spinner;
+var colorPiker = document.querySelector('.color-picker');
+exports.colorPiker = colorPiker;
 var navButton = document.querySelector('.button-menu');
 exports.navButton = navButton;
 var navigationItems = document.getElementsByClassName('navigation__item');
@@ -380,6 +382,15 @@ var inputMessage = document.getElementById('inputMessage');
 /* ************ DOM event listeners ************ */
 
 /* *** NAV *** */
+
+colorPiker.addEventListener('change', function (e) {
+  document.documentElement.setAttribute('data-theme', e.target.value); // const changeColorTransition = () => {
+
+  document.documentElement.classList.add('color-transition');
+  window.setTimeout(function () {
+    document.documentElement.classList.remove('color-transition');
+  }, 300); // }
+});
 
 var toggleVisibilityMenuItems = function toggleVisibilityMenuItems(navigationItems, isNavButtonOpen) {
   if (isNavButtonOpen) {
@@ -676,6 +687,7 @@ var listenToObserver = function listenToObserver() {
 
         if (entry.target.id === 'quote') {
           navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
+          // navigation.style.background = '#FFCC88'; // TODO not always.... when theme changed...
         } // if (entry.target.id === 'hero') {
         //   navigation.style.background = 'initial';
         //   navigation.style.color = '#BE2200';
@@ -767,7 +779,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55101" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52333" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
