@@ -14,6 +14,7 @@ const listenToObserver = () => {
         // 
         if (entry.target.id === 'quote') {
           navigation.style.background = '#2E2E2E'; // TODO not always.... when theme changed...
+          // navigation.style.background = '#FFCC88'; // TODO not always.... when theme changed...
         }
 
         // if (entry.target.id === 'hero') {

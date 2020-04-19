@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" data-theme="forestgreen">
+<html lang="en" data-theme="monochrome">
+<!-- <html lang="en" data-theme="forestgreen"> -->
 
 <head>
   <meta charset="utf-8">
@@ -19,8 +20,15 @@
   <nav class="navigation">
     <a class="navigation__logo" href="#hero">
       <img class="navigation__image" src="/mikey-logo-circle-small.ffb3eab2.png" height="35" alt="Avatar">
-      <div class="navigation__title">mikey studio</div>
+      <span class="navigation__title">mikey studio</span>
     </a>
+    <select class="color-picker" name="color">
+      <option value="" disabled="" selected="" hidden="">Theme</option>
+      <option value="monochrome">Monochrome</option>
+      <option value="forestgreen">Forest Green</option>
+      <option value="morningglory">Morning Glory</option>
+      <option value="pacificblue">Pacific Blue</option>
+    </select>
     <button class="button-menu">
       <span class="button-menu__burger"></span>
     </button>
