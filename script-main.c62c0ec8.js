@@ -389,7 +389,8 @@ colorPiker.addEventListener('change', function (e) {
   document.documentElement.classList.add('color-transition');
   window.setTimeout(function () {
     document.documentElement.classList.remove('color-transition');
-  }, 300); // }
+  }, 300);
+  console.log('colorPiker', colorPiker); // }
 });
 
 var toggleVisibilityMenuItems = function toggleVisibilityMenuItems(navigationItems, isNavButtonOpen) {
@@ -779,7 +780,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64424" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64673" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

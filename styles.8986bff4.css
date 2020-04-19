@@ -157,7 +157,11 @@ body {
   color: var(--color-base-primary);
   background-color: var(--color-base-secondary);
 }
+
 .color-picker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100px;
   margin: 0 10px 0 auto;
   align-self: center;
