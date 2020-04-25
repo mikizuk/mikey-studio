@@ -464,14 +464,14 @@ html[data-theme='pacificblue'] .theme-filter-image {
   position: absolute;
   height: 150px;
   width: 40px;
-  right: calc(var(--gap-mobile) - 15px); /* rwd related */
+  right: calc(var(--gap-mobile) - 15px);
 }
 .hero__arrow-down-1 {
   z-index: 1;
-  bottom: 4px; /* rwd related */
+  bottom: -21px;
 }
 .hero__arrow-down-2 {
-  bottom: 1px; /* rwd related */
+  bottom: -24px;
 }
 .hero__arrow-down-1::before,
 .hero__arrow-down-1::after,
@@ -883,10 +883,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .hero__arrow-down-1 {
     z-index: 1;
-    bottom: 10px;
+    bottom: -7px;
   }
   .hero__arrow-down-2 {
-    bottom: 7px;
+    bottom: -10px;
   }
   /* section quote */
   .section-quote::before {
@@ -1072,10 +1072,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .hero__arrow-down-1 {
     z-index: 1;
-    bottom: 35px;
+    bottom: 25px;
   }
   .hero__arrow-down-2 {
-    bottom: 32px;
+    bottom: 22px;
   }
 
   /* section quote */
@@ -1306,10 +1306,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .hero__arrow-down-1 {
     z-index: 1;
-    bottom: 50px;
+    bottom: 40px;
   }
   .hero__arrow-down-2 {
-    bottom: 47px;
+    bottom: 37px;
   }
   /* section quote */
   .section-quote::before {
