@@ -464,14 +464,14 @@ html[data-theme='pacificblue'] .theme-filter-image {
   position: absolute;
   height: 150px;
   width: 40px;
-  right: calc(var(--gap-laptop-hd) - 20px); /* rwd related */
+  right: calc(var(--gap-mobile) - 15px); /* rwd related */
 }
 .hero__arrow-down-1 {
   z-index: 1;
-  bottom: 80px; /* rwd related */
+  bottom: 4px; /* rwd related */
 }
 .hero__arrow-down-2 {
-  bottom: 77px; /* rwd related */
+  bottom: 1px; /* rwd related */
 }
 .hero__arrow-down-1::before,
 .hero__arrow-down-1::after,
@@ -876,6 +876,18 @@ html[data-theme='pacificblue'] .theme-filter-image {
     font-size: 1.5rem;
     padding-right: var(--gap-tablet);
   }
+  /* arrow down */
+  .hero__arrow-down-1,
+  .hero__arrow-down-2 {
+    right: calc(var(--gap-tablet) - 20px);
+  }
+  .hero__arrow-down-1 {
+    z-index: 1;
+    bottom: 10px;
+  }
+  .hero__arrow-down-2 {
+    bottom: 7px;
+  }
   /* section quote */
   .section-quote::before {
     height: 90vh;
@@ -1051,6 +1063,19 @@ html[data-theme='pacificblue'] .theme-filter-image {
     grid-area: auto;
     font-size: 1.4rem;
     padding-right: var(--gap-laptop-md);
+  }
+
+  /* arrow down */
+  .hero__arrow-down-1,
+  .hero__arrow-down-2 {
+    right: calc(var(--gap-laptop-md) - 20px);
+  }
+  .hero__arrow-down-1 {
+    z-index: 1;
+    bottom: 35px;
+  }
+  .hero__arrow-down-2 {
+    bottom: 32px;
   }
 
   /* section quote */
@@ -1281,10 +1306,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .hero__arrow-down-1 {
     z-index: 1;
-    bottom: 80px;
+    bottom: 50px;
   }
   .hero__arrow-down-2 {
-    bottom: 77px;
+    bottom: 47px;
   }
   /* section quote */
   .section-quote::before {
