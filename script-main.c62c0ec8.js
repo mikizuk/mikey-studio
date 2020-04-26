@@ -133,28 +133,28 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var listenToObserver = function listenToObserver() {
   var heightMargin = window.innerHeight / 5;
-  var leftSideElements = [domElement.heroTitle, domElement.pic1, domElement.pic4, domElement.pic5, domElement.landscape2, domElement.socials];
-  var rightSideElements = [domElement.heroDesc, domElement.pic2, domElement.pic3, domElement.pic6, domElement.stackGrid, domElement.form];
+  var elementsToTop = [domElement.heroTitle, domElement.heroDesc, domElement.pic1, domElement.pic2, domElement.pic3, domElement.pic4, domElement.pic5, domElement.landscape2];
+  var elementsToBottom = [domElement.pic6, domElement.stackGrid, domElement.socials, domElement.form];
   var observerOptions = {
     rootMargin: "-".concat(heightMargin, "px 0px -").concat(heightMargin, "px 0px")
   };
   var observer = new IntersectionObserver(function (entries) {
     return entries.forEach(function (entry) {
       if (entry.intersectionRatio > 0) {
-        if (isIntersected(leftSideElements, entry)) {
-          entry.target.classList.add('swipe-right');
-        } else if (isIntersected(rightSideElements, entry)) {
-          entry.target.classList.add('swipe-left');
+        if (isIntersected(elementsToTop, entry)) {
+          entry.target.classList.add('swipe-top');
+        } else if (isIntersected(elementsToBottom, entry)) {
+          entry.target.classList.add('swipe-bottom');
         }
       } else {
-        entry.target.classList.remove('swipe-right', 'swipe-left');
+        entry.target.classList.remove('swipe-top', 'swipe-bottom');
       }
     });
   }, observerOptions);
-  leftSideElements.forEach(function (elem) {
+  elementsToTop.forEach(function (elem) {
     return observer.observe(elem);
   });
-  rightSideElements.forEach(function (elem) {
+  elementsToBottom.forEach(function (elem) {
     return observer.observe(elem);
   });
 };
@@ -818,7 +818,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54555" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
