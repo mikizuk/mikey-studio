@@ -384,7 +384,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getRandomQuote = exports.form = exports.socials = exports.landscape2 = exports.stackGrid = exports.pic6 = exports.pic5 = exports.pic4 = exports.pic3 = exports.pic2 = exports.pic1 = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = void 0;
+exports.getRandomQuote = exports.form = exports.socials = exports.landscape2 = exports.stackGrid = exports.pic6 = exports.pic5 = exports.pic4 = exports.pic3 = exports.pic2 = exports.pic1 = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.quote = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = void 0;
 
 var firebase = _interopRequireWildcard(require("./script-firebase-api.js"));
 
@@ -421,6 +421,8 @@ var landscape = document.querySelector('.section-landscape');
 exports.landscape = landscape;
 var buttonQuote = document.querySelector('.button--quote');
 exports.buttonQuote = buttonQuote;
+var quote = document.querySelector('.section-quote__text');
+exports.quote = quote;
 var isNavButtonOpen = false;
 /* *** PROJECTS *** */
 
@@ -520,7 +522,13 @@ document.documentElement.style.setProperty('--vh', "".concat(deviceHeight, "px")
 /* *** QUOTE *** */
 
 buttonQuote.addEventListener('click', function () {
-  getRandomQuote(firebase.quotes);
+  quote.classList.add('fade-in-out');
+  window.setTimeout(function () {
+    return getRandomQuote(firebase.quotes);
+  }, 400);
+  window.setTimeout(function () {
+    return quote.classList.remove('fade-in-out');
+  }, 801);
 });
 
 var getRandomQuote = function getRandomQuote(quotes) {
@@ -818,7 +826,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64083" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64997" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
