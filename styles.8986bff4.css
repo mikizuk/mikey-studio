@@ -1661,6 +1661,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
 
 /* ********* INTERSECTION OBSERVER ANIMATIONS ********* */
 
+.color-picker--shaky {
+  animation: shake ease-in 6s 4;
+}
+
 .hero__title,
 .hero__desc,
 .pic-1,
@@ -1693,6 +1697,18 @@ html[data-theme='pacificblue'] .theme-filter-image {
   to { transform: rotate(360deg); -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); }
 }
 
+@keyframes shake {
+  80%
+    { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0); }
+  84%, 88%, 92%, 96%
+    { transform: translateX(5px); -webkit-transform: translateX(5px); -moz-transform: translateX(5px); }
+  82%, 86%, 90%
+    { transform: translateX(-25px); -webkit-transform: translateX(-25px); -moz-transform: translateX(-25px); }
+  94%, 100%
+    { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0); }
+}
+
+
 @keyframes moveout {
   from { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0) }
   to { transform: translateX(300px); -webkit-transform: translateX(300px); -moz-transform: translateX(300px) }
@@ -1717,9 +1733,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
 }
 
 @keyframes fadeOutIn {
-  0% { opacity:1; transform: translateY(0); }
-  50% { opacity:0; transform: translateY(5vh); }
-  100% { opacity:1; transform: translateY(0); }
+  0% { opacity:1; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); }
+  50% { opacity:0; transform: translateY(5vh); -webkit-transform: translateY(5vh); -moz-transform: translateY(5vh); }
+  100% { opacity:1; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); }
 }
 
 
