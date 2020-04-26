@@ -566,9 +566,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  z-index: -2;
   /*  */
   position: relative;
+  z-index: -2;
   /* background-attachment: fixed; */ /* TODO bug on mobile devices! However if parallax effect applied that shouldn't matter */
 }
 
