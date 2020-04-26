@@ -72,8 +72,8 @@ html.color-transition,
 html.color-transition *,
 html.color-transition *:before ,
 html.color-transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
+  transition: all 750ms;
+  transition-delay: 0;
 }
 
 html[data-theme='monochrome'] .theme-filter-landscape,
@@ -1687,23 +1687,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
 
 /* ********* INTERSECTION OBSERVER ANIMATIONS ********* */
 
-@keyframes animate-from-left {
-  from { transform: translateX(-20vh); opacity: 0; }
-  to  { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes animate-from-right {
-  from { transform: translateX(20vh); opacity: 0; }
-  to  { transform: translateX(0); opacity: 1; }
-}
-
-.swipe-left {
-  animation: animate-from-left 0.5s forwards ease-out;
-}
-.swipe-right {
-  animation: animate-from-right 0.5s forwards ease-out;
-}
-
+.hero__list,
 .hero__title,
 .hero__desc,
 .pic-1,
@@ -1717,4 +1701,21 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .section-contact__social-wrapper,
 #form {
   opacity: 0;
+}
+
+@keyframes animate-to-right {
+  from { transform: translateX(-20vh); opacity: 0; }
+  to  { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes animate-to-left {
+  from { transform: translateX(20vh); opacity: 0; }
+  to  { transform: translateX(0); opacity: 1; }
+}
+
+.swipe-right {
+  animation: animate-to-right 0.9s forwards ease-out;
+}
+.swipe-left {
+  animation: animate-to-left 0.9s forwards ease-out;
 }

@@ -7,9 +7,9 @@ export const colorPicker = document.querySelector('.color-picker');
 export const navButton = document.querySelector('.button-menu');
 export const navigationItems = document.getElementsByClassName('navigation__item');
 /* *** HERO *** */
-export const heroList = document.querySelector('.hero__list');
-export const heroTitle = document.querySelector('.hero__title');
-export const heroDesc = document.querySelector('.hero__desc');
+export const heroList = document.querySelector('.hero__list'); // intersection observer
+export const heroTitle = document.querySelector('.hero__title'); // intersection observer
+export const heroDesc = document.querySelector('.hero__desc'); // intersection observer
 /* *** LANDSCAPE *** */
 export const landscape = document.querySelector('.section-landscape');
 /* *** QUOTE *** */
@@ -21,22 +21,22 @@ export const projectWrapper = document.querySelector('.section-projects__wrapper
 export const aboutWrapper = document.querySelector('.section-about__about-grid');
 export const aboutImages = document.querySelectorAll('.section-about__images');
 
-export const pic1 = document.querySelector('.pic-1');
-export const pic2 = document.querySelector('.pic-2');
-export const pic3 = document.querySelector('.pic-3');
-export const pic4 = document.querySelector('.pic-4');
-export const pic5 = document.querySelector('.pic-5');
-export const pic6 = document.querySelector('.pic-6');
+export const pic1 = document.querySelector('.pic-1'); // intersection observer
+export const pic2 = document.querySelector('.pic-2'); // intersection observer
+export const pic3 = document.querySelector('.pic-3'); // intersection observer
+export const pic4 = document.querySelector('.pic-4'); // intersection observer
+export const pic5 = document.querySelector('.pic-5'); // intersection observer
+export const pic6 = document.querySelector('.pic-6'); // intersection observer
 
 /* *** STACK *** */
-export const stackGrid = document.querySelector('.section-about__stack-grid');
+export const stackGrid = document.querySelector('.section-about__stack-grid'); // intersection observer
 
-export const landscape2 = document.querySelector('.landscape2');
+export const landscape2 = document.querySelector('.landscape2'); // intersection observer
 
 
 /* *** CONTACT *** */
 
-export const socials = document.querySelector('.section-contact__social-wrapper');
+export const socials = document.querySelector('.section-contact__social-wrapper'); // intersection observer
 
 export const form = document.getElementById('form');
 const inputEmail = document.getElementById('inputEmail');
@@ -53,7 +53,7 @@ colorPicker.addEventListener('change', (e) => {
     window.setTimeout(() => {
       document.documentElement.classList.remove('color-transition');
     }, 300)
-    console.log('colorPicker', colorPicker);
+    // console.log('colorPicker', colorPicker);
   // }
 });
 

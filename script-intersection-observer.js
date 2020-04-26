@@ -1,49 +1,50 @@
 import * as domElement from './script-dom.js';
 
 // TODO parallax with observer
-// TODO code refactor
 
 const listenToObserver = () => {
-  const leftElemsObserved = [
+  const heightMargin = window.innerHeight / 5;
+  const leftSideElements = [
+    domElement.heroList,
     domElement.heroTitle,
     domElement.pic1,
-    domElement.pic3,
+    domElement.pic4,
     domElement.pic5,
     domElement.landscape2,
     domElement.socials,
   ];
-  const rightElemsObserved = [
+  const rightSideElements = [
     domElement.heroDesc,
     domElement.pic2,
-    domElement.pic4,
+    domElement.pic3,
     domElement.pic6,
     domElement.stackGrid,
     domElement.form,
   ];
- 
   const observerOptions = {
-    rootMargin: `-${window.innerHeight / 5}px 0px -${window.innerHeight / 5}px 0px`,
+    rootMargin: `-${heightMargin}px 0px -${heightMargin}px 0px`,
   };
 
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.intersectionRatio > 0) {
-      const left = leftElemsObserved.find(y => y.className === entry.target.className) && leftElemsObserved.find(y => y.className === entry.target.className).className;
-      const right = rightElemsObserved.find(y => y.className === entry.target.className) && rightElemsObserved.find(y => y.className === entry.target.className).className;
-      if (left) {
-        entry.target.classList.add('swipe-left');
-      } else if (right) {
+      const animateToRight = getDomElement(leftSideElements, entry);
+      const animateToLeft = getDomElement(rightSideElements, entry);
+      if (animateToRight) {
         entry.target.classList.add('swipe-right');
+      } else if (animateToLeft) {
+        entry.target.classList.add('swipe-left');
       }
-      // else {
-      //   entry.target.classList.remove('swipe-left', 'swipe-right');
-      // }
     } else {
-      entry.target.classList.remove('swipe-left', 'swipe-right');
+      entry.target.classList.remove('swipe-right', 'swipe-left');
     }
   }), observerOptions);
 
-  leftElemsObserved.forEach(elem => observer.observe(elem));
-  rightElemsObserved.forEach(elem => observer.observe(elem));
+  leftSideElements.forEach(elem => observer.observe(elem));
+  rightSideElements.forEach(elem => observer.observe(elem));
+}
+
+function getDomElement(elements, entry) {
+  return elements.find(y => y.className === entry.target.className) && elements.find(y => y.className === entry.target.className).className;
 }
 
 export default { listenToObserver }
