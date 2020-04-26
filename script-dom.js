@@ -14,6 +14,7 @@ export const heroDesc = document.querySelector('.hero__desc'); // intersection o
 export const landscape = document.querySelector('.section-landscape');
 /* *** QUOTE *** */
 export const buttonQuote = document.querySelector('.button--quote');
+export const quote = document.querySelector('.section-quote__text');
 export let isNavButtonOpen = false;
 /* *** PROJECTS *** */
 export const projectWrapper = document.querySelector('.section-projects__wrapper');
@@ -49,11 +50,11 @@ const inputMessage = document.getElementById('inputMessage');
 colorPicker.addEventListener('change', (e) => {
   document.documentElement.setAttribute('data-theme', e.target.value);
   // const changeColorTransition = () => {
-    document.documentElement.classList.add('color-transition');
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('color-transition');
-    }, 300)
-    // console.log('colorPicker', colorPicker);
+  document.documentElement.classList.add('color-transition');
+  window.setTimeout(() => {
+    document.documentElement.classList.remove('color-transition');
+  }, 300)
+  // console.log('colorPicker', colorPicker);
   // }
 });
 
@@ -95,7 +96,9 @@ document.documentElement.style.setProperty('--vh', `${deviceHeight}px`);
 /* *** QUOTE *** */
 
 buttonQuote.addEventListener('click', () => {
-  getRandomQuote(firebase.quotes);
+  quote.classList.add('fade-in-out');
+  window.setTimeout(() => getRandomQuote(firebase.quotes), 400)
+  window.setTimeout(() => quote.classList.remove('fade-in-out'), 801)
 })
 
 export const getRandomQuote = (quotes) => {
@@ -157,7 +160,7 @@ const showNewQuote = (randomQuote) => {
     } else {
       quoteDom.style.fontSize = '4rem';
     }
-  } else if (deviceWidth < 1919) { 
+  } else if (deviceWidth < 1919) {
     if (randomQuote.quote.length > 400) {
       quoteDom.style.fontSize = '2.3rem';
     } else if (randomQuote.quote.length > 300) {

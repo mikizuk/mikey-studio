@@ -29,14 +29,22 @@
 }
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth; /* TODO check if this works in all devices, before it was in html */
+}
+html {
+  scroll-behavior: smooth;
+}
+html.color-transition,
+html.color-transition *,
+html.color-transition *:before ,
+html.color-transition *:after {
+  transition: all 750ms;
+  transition-delay: 0;
 }
 body {
   font-family: var(--font-rokkitt);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-base-primary);
-  scroll-behavior: smooth; /* TODO does it makes better for chrome mobile */
 }
 
 /* ********* COLORS ********* */
@@ -67,13 +75,6 @@ html[data-theme='pacificblue'] {
   --color-accent: #FFFFFF;
   --color-alter-primary: #0A344A;
   --color-alter-secondary: #D8D0BD;
-}
-html.color-transition,
-html.color-transition *,
-html.color-transition *:before ,
-html.color-transition *:after {
-  transition: all 750ms;
-  transition-delay: 0;
 }
 
 html[data-theme='monochrome'] .theme-filter-landscape,
@@ -127,9 +128,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   border-top-color: var(--color-base-secondary);
   border-radius: 50%;
   animation: spinner 0.4s linear infinite;
-}
-@keyframes spinner {
-  to { transform: rotate(360deg); }
 }
 .spinner--off {
   display: none;
@@ -272,15 +270,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
 
 /* ********* NAV ANIMATIONS ********* */
 
-@keyframes moveout {
-  0% {
-    -webkit-transform: translateX(0) }
-  100% { -webkit-transform: translateX(300px) }
-}
-@keyframes movein {
-  0% { -webkit-transform: translateX(300px) }
-  100% { -webkit-transform: translateX(0) }
-}
 .navigation__item.navigation__item--movein {
   color: var(--color-base-primary);
   animation: movein .4s ease-in-out both;
@@ -395,9 +384,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
   opacity: 1;
   transform: scale(1.1);
 }
-.button:active {
+/* .button:active {
   opacity: 0.5;
-}
+} */
 
 /* ********* SECTION HERO ********* */
 
@@ -451,14 +440,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
 
 /* ********* ARROW DOWN ********* */
 
-@keyframes arrow {
-  0%, 100% {
-    top: 50px;
-  }
-  50% {
-    top: 80px;
-  }
-}
 .hero__arrow-down-1,
 .hero__arrow-down-2 {
   position: absolute;
@@ -1695,19 +1676,49 @@ html[data-theme='pacificblue'] .theme-filter-image {
   opacity: 0;
 }
 
-@keyframes animate-to-top {
-  from { transform: translateY(10vh); opacity: 0; }
-  to  { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes animate-to-bottom {
-  from { transform: translateY(-7vh); opacity: 0; }
-  to  { transform: translateX(0); opacity: 1; }
-}
-
 .swipe-top {
   animation: animate-to-top 0.9s forwards ease-out;
 }
 .swipe-bottom {
   animation: animate-to-bottom 0.9s forwards ease-out;
 }
+
+.fade-in-out {
+  animation: fadeOutIn .8s linear;
+}
+
+/* ********* KEYFRAMES ********* */
+
+@keyframes spinner {
+  to { transform: rotate(360deg); -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); }
+}
+
+@keyframes moveout {
+  from { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0) }
+  to { transform: translateX(300px); -webkit-transform: translateX(300px); -moz-transform: translateX(300px) }
+}
+@keyframes movein {
+  from { transform: translateX(300px); -webkit-transform: translateX(300px); -moz-transform: translateX(300px) }
+  to { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0) }
+}
+
+@keyframes arrow {
+  from, to { top: 45px; }
+  50% { top: 80px; }
+}
+
+@keyframes animate-to-top {
+  from { transform: translateY(10vh); -webkit-transform: translateY(10vh); -moz-transform: translateY(10vh); opacity: 0; }
+  to  { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0); opacity: 1; }
+}
+@keyframes animate-to-bottom {
+  from { transform: translateY(-7vh); -webkit-transform: translateY(-7vh); -moz-transform: translateY(-7vh); opacity: 0; }
+  to  { transform: translateX(0); -webkit-transform: translateX(0); -moz-transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOutIn {
+  0% { opacity:1; transform: translateY(0); }
+  50% { opacity:0; transform: translateY(5vh); }
+  100% { opacity:1; transform: translateY(0); }
+}
+
