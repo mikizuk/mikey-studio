@@ -561,12 +561,11 @@ html[data-theme='pacificblue'] .theme-filter-image {
   height: 60vh;
 }
 .section-landscape {
-  height: 90%;
-  position: relative;
+  height: 87%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */ /* TODO bug on mobile devices! However if parallax effect applied that shouldn't matter */
+  background-attachment: fixed;
   z-index: -2;
 }
 
@@ -1098,7 +1097,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
     height: 90vh;
   }
   .section-landscape {
-    height: 100%;
     background-attachment: fixed;
   }
   /* section projects */
@@ -1330,10 +1328,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   #landscape {
     height: 90vh;
   }
-  .section-landscape {
-    height: 100%;
-    background-attachment: fixed;
-  }
   /* section projects */
   .section-projects::before {
     top: -126px;
@@ -1560,7 +1554,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .section-landscape {
     height: 105%;
-    background-attachment: fixed;
   }
   /* section projects */
   .section-projects::before {
@@ -1687,7 +1680,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
 
 /* ********* INTERSECTION OBSERVER ANIMATIONS ********* */
 
-.hero__list,
 .hero__title,
 .hero__desc,
 .pic-1,

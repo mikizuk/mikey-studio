@@ -14,7 +14,7 @@ function fetchUnsplashApi() {
     9812689, // mikey-studio-about
     9522596, // mikey-studio-parallax
     9442978]; // mikey-studio-hero
-  const pageNo = 5;
+  const pageNo = 1;
   const perPage = 30;
   // const unsplashUser =  `https://api.unsplash.com/users/daxtersky?client_id=${client_id}`;
   const collentions = `https://api.unsplash.com/users/daxtersky/collections?client_id=${client_id}`; // GET /users/:username/collections

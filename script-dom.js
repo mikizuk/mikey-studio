@@ -7,7 +7,7 @@ export const colorPicker = document.querySelector('.color-picker');
 export const navButton = document.querySelector('.button-menu');
 export const navigationItems = document.getElementsByClassName('navigation__item');
 /* *** HERO *** */
-export const heroList = document.querySelector('.hero__list'); // intersection observer
+export const heroList = document.querySelector('.hero__list');
 export const heroTitle = document.querySelector('.hero__title'); // intersection observer
 export const heroDesc = document.querySelector('.hero__desc'); // intersection observer
 /* *** LANDSCAPE *** */

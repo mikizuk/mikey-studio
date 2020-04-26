@@ -1,11 +1,8 @@
 import * as domElement from './script-dom.js';
 
-// TODO parallax with observer
-
 const listenToObserver = () => {
   const heightMargin = window.innerHeight / 5;
   const leftSideElements = [
-    domElement.heroList,
     domElement.heroTitle,
     domElement.pic1,
     domElement.pic4,
@@ -23,27 +20,29 @@ const listenToObserver = () => {
   ];
   const observerOptions = {
     rootMargin: `-${heightMargin}px 0px -${heightMargin}px 0px`,
+
   };
 
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+
     if (entry.intersectionRatio > 0) {
-      const animateToRight = getDomElement(leftSideElements, entry);
-      const animateToLeft = getDomElement(rightSideElements, entry);
-      if (animateToRight) {
+
+      if (isIntersected(leftSideElements, entry)) {
         entry.target.classList.add('swipe-right');
-      } else if (animateToLeft) {
+      } else if (isIntersected(rightSideElements, entry)) {
         entry.target.classList.add('swipe-left');
       }
     } else {
       entry.target.classList.remove('swipe-right', 'swipe-left');
     }
+
   }), observerOptions);
 
   leftSideElements.forEach(elem => observer.observe(elem));
   rightSideElements.forEach(elem => observer.observe(elem));
 }
 
-function getDomElement(elements, entry) {
+function isIntersected(elements, entry) {
   return elements.find(y => y.className === entry.target.className) && elements.find(y => y.className === entry.target.className).className;
 }
 
