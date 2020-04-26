@@ -2,44 +2,43 @@ import * as domElement from './script-dom.js';
 
 const listenToObserver = () => {
   const heightMargin = window.innerHeight / 5;
-  const leftSideElements = [
+  const elementsToTop = [
     domElement.heroTitle,
+    domElement.heroDesc,
     domElement.pic1,
+    domElement.pic2,
+    domElement.pic3,
     domElement.pic4,
     domElement.pic5,
     domElement.landscape2,
-    domElement.socials,
   ];
-  const rightSideElements = [
-    domElement.heroDesc,
-    domElement.pic2,
-    domElement.pic3,
+  const elementsToBottom = [
     domElement.pic6,
     domElement.stackGrid,
+    domElement.socials,
     domElement.form,
   ];
   const observerOptions = {
     rootMargin: `-${heightMargin}px 0px -${heightMargin}px 0px`,
-
   };
 
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 
     if (entry.intersectionRatio > 0) {
 
-      if (isIntersected(leftSideElements, entry)) {
-        entry.target.classList.add('swipe-right');
-      } else if (isIntersected(rightSideElements, entry)) {
-        entry.target.classList.add('swipe-left');
+      if (isIntersected(elementsToTop, entry)) {
+        entry.target.classList.add('swipe-top');
+      } else if (isIntersected(elementsToBottom, entry)) {
+        entry.target.classList.add('swipe-bottom');
       }
     } else {
-      entry.target.classList.remove('swipe-right', 'swipe-left');
+      entry.target.classList.remove('swipe-top', 'swipe-bottom');
     }
 
   }), observerOptions);
 
-  leftSideElements.forEach(elem => observer.observe(elem));
-  rightSideElements.forEach(elem => observer.observe(elem));
+  elementsToTop.forEach(elem => observer.observe(elem));
+  elementsToBottom.forEach(elem => observer.observe(elem));
 }
 
 function isIntersected(elements, entry) {

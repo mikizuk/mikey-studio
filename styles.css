@@ -1695,19 +1695,19 @@ html[data-theme='pacificblue'] .theme-filter-image {
   opacity: 0;
 }
 
-@keyframes animate-to-right {
-  from { transform: translateX(-20vh); opacity: 0; }
+@keyframes animate-to-top {
+  from { transform: translateY(10vh); opacity: 0; }
   to  { transform: translateX(0); opacity: 1; }
 }
 
-@keyframes animate-to-left {
-  from { transform: translateX(20vh); opacity: 0; }
+@keyframes animate-to-bottom {
+  from { transform: translateY(-7vh); opacity: 0; }
   to  { transform: translateX(0); opacity: 1; }
 }
 
-.swipe-right {
-  animation: animate-to-right 0.9s forwards ease-out;
+.swipe-top {
+  animation: animate-to-top 0.9s forwards ease-out;
 }
-.swipe-left {
-  animation: animate-to-left 0.9s forwards ease-out;
+.swipe-bottom {
+  animation: animate-to-bottom 0.9s forwards ease-out;
 }
