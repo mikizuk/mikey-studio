@@ -132,7 +132,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var listenToObserver = function listenToObserver() {
-  var heightMargin = window.innerHeight / 5;
+  var heightMargin = window.innerHeight / 10;
   var elementsToTop = [domElement.heroTitle, domElement.heroDesc, domElement.pic1, domElement.pic2, domElement.pic3, domElement.pic4, domElement.pic5, domElement.landscape2];
   var elementsToBottom = [domElement.pic6, domElement.stackGrid, domElement.socials, domElement.form];
   var observerOptions = {
@@ -818,7 +818,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54555" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64083" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -29,14 +29,15 @@
 }
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth; /* TODO check if this works in all devices, before it was in html */
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   font-family: var(--font-rokkitt);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-base-primary);
-  scroll-behavior: smooth; /* TODO does it makes better for chrome mobile */
 }
 
 /* ********* COLORS ********* */
