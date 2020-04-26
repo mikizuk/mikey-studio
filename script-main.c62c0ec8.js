@@ -117,7 +117,61 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"script-firebase-api.js":[function(require,module,exports) {
+})({"script-intersection-observer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var domElement = _interopRequireWildcard(require("./script-dom.js"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var listenToObserver = function listenToObserver() {
+  var heightMargin = window.innerHeight / 5;
+  var leftSideElements = [domElement.heroTitle, domElement.pic1, domElement.pic4, domElement.pic5, domElement.landscape2, domElement.socials];
+  var rightSideElements = [domElement.heroDesc, domElement.pic2, domElement.pic3, domElement.pic6, domElement.stackGrid, domElement.form];
+  var observerOptions = {
+    rootMargin: "-".concat(heightMargin, "px 0px -").concat(heightMargin, "px 0px")
+  };
+  var observer = new IntersectionObserver(function (entries) {
+    return entries.forEach(function (entry) {
+      if (entry.intersectionRatio > 0) {
+        if (isIntersected(leftSideElements, entry)) {
+          entry.target.classList.add('swipe-right');
+        } else if (isIntersected(rightSideElements, entry)) {
+          entry.target.classList.add('swipe-left');
+        }
+      } else {
+        entry.target.classList.remove('swipe-right', 'swipe-left');
+      }
+    });
+  }, observerOptions);
+  leftSideElements.forEach(function (elem) {
+    return observer.observe(elem);
+  });
+  rightSideElements.forEach(function (elem) {
+    return observer.observe(elem);
+  });
+};
+
+function isIntersected(elements, entry) {
+  return elements.find(function (y) {
+    return y.className === entry.target.className;
+  }) && elements.find(function (y) {
+    return y.className === entry.target.className;
+  }).className;
+}
+
+var _default = {
+  listenToObserver: listenToObserver
+};
+exports.default = _default;
+},{"./script-dom.js":"script-dom.js"}],"script-firebase-api.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -126,6 +180,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = exports.quotes = void 0;
 
 var domElement = _interopRequireWildcard(require("./script-dom.js"));
+
+var _scriptIntersectionObserver = _interopRequireDefault(require("./script-intersection-observer.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -164,6 +222,7 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
 
     if (firebaseDatabase) {
       turnLoadSpinnerOff();
+      loadIntersectionObserver();
       /* ********* HERO ********* */
 
       if (firebaseDatabase.hero && firebaseDatabase.hero.keyPoints) {
@@ -311,17 +370,21 @@ function turnLoadSpinnerOff() {
   domElement.spinner.classList.add('spinner--off');
 }
 
+function loadIntersectionObserver() {
+  _scriptIntersectionObserver.default.listenToObserver();
+}
+
 var _default = {
   fetchFirebaseApi: fetchFirebaseApi
 };
 exports.default = _default;
-},{"./script-dom.js":"script-dom.js"}],"script-dom.js":[function(require,module,exports) {
+},{"./script-dom.js":"script-dom.js","./script-intersection-observer.js":"script-intersection-observer.js"}],"script-dom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getRandomQuote = exports.landscape2 = exports.stackGrid = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = void 0;
+exports.getRandomQuote = exports.form = exports.socials = exports.landscape2 = exports.stackGrid = exports.pic6 = exports.pic5 = exports.pic4 = exports.pic3 = exports.pic2 = exports.pic1 = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = void 0;
 
 var firebase = _interopRequireWildcard(require("./script-firebase-api.js"));
 
@@ -344,9 +407,11 @@ var navigationItems = document.getElementsByClassName('navigation__item');
 exports.navigationItems = navigationItems;
 var heroList = document.querySelector('.hero__list');
 exports.heroList = heroList;
-var heroTitle = document.querySelector('.hero__title');
+var heroTitle = document.querySelector('.hero__title'); // intersection observer
+
 exports.heroTitle = heroTitle;
-var heroDesc = document.querySelector('.hero__desc');
+var heroDesc = document.querySelector('.hero__desc'); // intersection observer
+
 /* *** LANDSCAPE *** */
 
 exports.heroDesc = heroDesc;
@@ -367,16 +432,40 @@ exports.projectWrapper = projectWrapper;
 var aboutWrapper = document.querySelector('.section-about__about-grid');
 exports.aboutWrapper = aboutWrapper;
 var aboutImages = document.querySelectorAll('.section-about__images');
+exports.aboutImages = aboutImages;
+var pic1 = document.querySelector('.pic-1'); // intersection observer
+
+exports.pic1 = pic1;
+var pic2 = document.querySelector('.pic-2'); // intersection observer
+
+exports.pic2 = pic2;
+var pic3 = document.querySelector('.pic-3'); // intersection observer
+
+exports.pic3 = pic3;
+var pic4 = document.querySelector('.pic-4'); // intersection observer
+
+exports.pic4 = pic4;
+var pic5 = document.querySelector('.pic-5'); // intersection observer
+
+exports.pic5 = pic5;
+var pic6 = document.querySelector('.pic-6'); // intersection observer
+
 /* *** STACK *** */
 
-exports.aboutImages = aboutImages;
-var stackGrid = document.querySelector('.section-about__stack-grid');
+exports.pic6 = pic6;
+var stackGrid = document.querySelector('.section-about__stack-grid'); // intersection observer
+
 exports.stackGrid = stackGrid;
-var landscape2 = document.querySelector('.landscape2');
+var landscape2 = document.querySelector('.landscape2'); // intersection observer
+
 /* *** CONTACT *** */
 
 exports.landscape2 = landscape2;
+var socials = document.querySelector('.section-contact__social-wrapper'); // intersection observer
+
+exports.socials = socials;
 var form = document.getElementById('form');
+exports.form = form;
 var inputEmail = document.getElementById('inputEmail');
 var inputMessage = document.getElementById('inputMessage');
 /* ************ DOM event listeners ************ */
@@ -389,8 +478,8 @@ colorPicker.addEventListener('change', function (e) {
   document.documentElement.classList.add('color-transition');
   window.setTimeout(function () {
     document.documentElement.classList.remove('color-transition');
-  }, 300);
-  console.log('colorPicker', colorPicker); // }
+  }, 300); // console.log('colorPicker', colorPicker);
+  // }
 });
 
 var toggleVisibilityMenuItems = function toggleVisibilityMenuItems(navigationItems, isNavButtonOpen) {
@@ -600,22 +689,33 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // https://unsplash.com/documentation
 function fetchUnsplashApi() {
   var client_id = 'c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  var unsplashcall = "https://api.unsplash.com/users/daxtersky/collections?client_id=".concat(client_id);
-  var unsplashUser = 'https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  var unsplashUserPhotos = 'https://api.unsplash.com/users/daxtersky/photos?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  var unsplashUserCollentions = 'https://api.unsplash.com/users/daxtersky/collections?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  var unsplashMyCollention = 'https://api.unsplash.com/users/daxtersky/collection/9522596?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  var collectionFirst = '9833482';
-  var collectionSecond = '9812689';
-  var collectionThird = '9522596';
-  var collectionFourth = '9442978';
-  var collentionPhotos = "https://api.unsplash.com/users/daxtersky/collection/".concat(collectionThird, "/photos?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0");
-  var firstCollention = "https://api.unsplash.com/users/daxtersky/collection/".concat(collectionThird, "?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0");
+  var collectionsList = [9833482, // mikey-studio-horizontal
+  9812689, // mikey-studio-about
+  9522596, // mikey-studio-parallax
+  9442978]; // mikey-studio-hero
+
+  var pageNo = 1;
+  var perPage = 30; // const unsplashUser =  `https://api.unsplash.com/users/daxtersky?client_id=${client_id}`;
+
+  var collentions = "https://api.unsplash.com/users/daxtersky/collections?client_id=".concat(client_id); // GET /users/:username/collections
+
+  var userPhotos = "https://api.unsplash.com/users/daxtersky/photos?page=".concat(pageNo, "&per_page=").concat(perPage, "&client_id=").concat(client_id);
+  var x = "https://api.unsplash.com/collections/".concat(collectionsList[1], "/photos/?page=").concat(pageNo, "&per_page=").concat(perPage, "&client_id=").concat(client_id); // GET /collections/:id
+
   var allUnsplashPhotos = [];
-  fetch(unsplashUserPhotos).then(function (resp) {
+  fetch(x).then(function (resp) {
+    return resp.json();
+  }).then(function (response) {// console.log('x', response);
+  }); // fetch(collentions)
+  //   .then(resp => resp.json())
+  //   .then(response => {
+  //     console.log('collentions', response);
+  //   })
+
+  fetch(userPhotos).then(function (resp) {
     return resp.json();
   }).then(function (response) {
-    // console.log('unsplashUserPhotos', response);
+    // console.log('userPhotos', response);
     var _iterator = _createForOfIteratorHelper(response),
         _step;
 
@@ -667,82 +767,16 @@ var _default = {
   fetchUnsplashApi: fetchUnsplashApi
 };
 exports.default = _default;
-},{"./script-dom.js":"script-dom.js"}],"script-intersection-observer.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var listenToObserver = function listenToObserver() {
-  // console.log('listenToObserver');
-  var navigation = document.querySelectorAll('.navigation')[0];
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      var id = entry.target.getAttribute('id');
-      var sectionId = document.querySelector("nav ul li a[href=\"#".concat(id, "\"]")); // console.log(entry);
-
-      if (entry.intersectionRatio > 0 && sectionId) {
-        sectionId.parentElement.classList.add('active'); // 
-        // console.log('??', document.documentElement.dataset.theme);
-        // if (entry.target.id === 'quote') {
-        //   document.documentElement.dataset.theme === 'monochrome'
-        //     ? navigation.style.background = '#2E2E2E'
-        //     : document.documentElement.dataset.theme === 'forestgreen'
-        //       ? navigation.style.background = '#FFCC88'
-        //       : document.documentElement.dataset.theme === 'morningglory'
-        //         ? navigation.style.background = '#99CCCC'
-        //         : document.documentElement.dataset.theme === 'pacificblue'
-        //           ? navigation.style.background = '#0F668D'
-        //           : '#2E2E2E'
-        //     // navigation.style.background = '#FFCC88';
-        // }
-        // if (entry.target.id === 'hero') {
-        //   navigation.style.background = 'initial';
-        //   navigation.style.color = '#BE2200';
-        // } else if (entry.target.id === 'quote') {
-        //   navigation.style.background = '#A70267';
-        // } else if (entry.target.id === 'landscape') {
-        //   navigation.style.color = 'pink';
-        //   navigation.style.background = 'yellow';
-        // } else if (entry.target.id === 'projects') {
-        //   navigation.style.color = 'green'
-        //   navigation.style.background = 'yellow';
-        // } else if (entry.target.id === 'about') {
-        //   navigation.style.background = 'white';
-        //   navigation.style.color = 'green';
-        // } else if (entry.target.id === 'contact') {
-        //   navigation.style.background = 'green';
-        //   navigation.style.color = 'brown';
-        // }
-      } else if (sectionId) {
-        sectionId.parentElement.classList.remove('active');
-      }
-    });
-  }, {
-    rootMargin: "".concat(window.innerHeight - 118, "px 0px -").concat(window.innerHeight - 120, "px 0px")
-  });
-  document.querySelectorAll('section[id]').forEach(function (section) {
-    return observer.observe(section);
-  });
-};
-
-var _default = {
-  listenToObserver: listenToObserver
-};
-exports.default = _default;
-},{}],"script-main.js":[function(require,module,exports) {
+},{"./script-dom.js":"script-dom.js"}],"script-main.js":[function(require,module,exports) {
 "use strict";
 
 var _scriptUnsplashApi = _interopRequireDefault(require("./script-unsplash-api.js"));
 
 var _scriptFirebaseApi = _interopRequireDefault(require("./script-firebase-api.js"));
 
-var _scriptIntersectionObserver = _interopRequireDefault(require("./script-intersection-observer.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import intersectionObserver from './script-intersection-observer.js';
 document.addEventListener("DOMContentLoaded", function () {
   var getFirebaseData = function getFirebaseData() {
     return _scriptFirebaseApi.default.fetchFirebaseApi();
@@ -750,17 +784,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var getUnsplashData = function getUnsplashData() {
     return _scriptUnsplashApi.default.fetchUnsplashApi();
-  };
+  }; // const getIntersectionObserver = () => intersectionObserver.listenToObserver();
 
-  var getIntersectionObserver = function getIntersectionObserver() {
-    return _scriptIntersectionObserver.default.listenToObserver();
-  };
 
   getFirebaseData();
-  getUnsplashData();
-  getIntersectionObserver();
+  getUnsplashData(); // getIntersectionObserver();
 });
-},{"./script-unsplash-api.js":"script-unsplash-api.js","./script-firebase-api.js":"script-firebase-api.js","./script-intersection-observer.js":"script-intersection-observer.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./script-unsplash-api.js":"script-unsplash-api.js","./script-firebase-api.js":"script-firebase-api.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -788,7 +818,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54817" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53920" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

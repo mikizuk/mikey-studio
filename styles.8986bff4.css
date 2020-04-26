@@ -72,8 +72,8 @@ html.color-transition,
 html.color-transition *,
 html.color-transition *:before ,
 html.color-transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
+  transition: all 750ms;
+  transition-delay: 0;
 }
 
 html[data-theme='monochrome'] .theme-filter-landscape,
@@ -411,7 +411,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   color: var(--color-base-secondary);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 230px auto 1fr;
+  grid-template-rows: 240px auto 1fr;
   margin-left: var(--gap-mobile);
   grid-column-gap: var(--gutter-mobile);
   grid-row-gap: var(--gap-mobile);
@@ -486,7 +486,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   height: 0;
   -webkit-animation: 1.5s arrow infinite ease;
   animation: 1.5s arrow infinite ease;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .hero__arrow-down-1::before {
   width: 1px;
@@ -514,9 +514,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .hero__arrow-down-2::after {
   top: 40px;
   bottom: 0;
+  border-radius: 3px;
   border-top: 26px solid var(--color-base-primary);
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
 }
 
 /* ********* SECTION QUOTE ********* */
@@ -560,12 +561,11 @@ html[data-theme='pacificblue'] .theme-filter-image {
   height: 60vh;
 }
 .section-landscape {
-  height: 90%;
-  position: relative;
+  height: 87%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */ /* TODO bug on mobile devices! However if parallax effect applied that shouldn't matter */
+  background-attachment: fixed;
   z-index: -2;
 }
 
@@ -725,7 +725,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   justify-content: flex-end;
 }
 .section-contact__social-item svg {
-  color: var(--color-alter-primary);
+  color: var(--color-base-primary);
 }
 .section-contact__social-item {
   display: grid;
@@ -1097,7 +1097,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
     height: 90vh;
   }
   .section-landscape {
-    height: 100%;
     background-attachment: fixed;
   }
   /* section projects */
@@ -1163,7 +1162,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   "pic-6 pic-6 pic-6 pic-6";
   }
   .section-about__description {
-  font-size: 2rem;
+    font-size: 2rem;
   }
   /* stack */
   .section-about__stack-grid {
@@ -1328,10 +1327,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   /* landscape */
   #landscape {
     height: 90vh;
-  }
-  .section-landscape {
-    height: 100%;
-    background-attachment: fixed;
   }
   /* section projects */
   .section-projects::before {
@@ -1559,7 +1554,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .section-landscape {
     height: 105%;
-    background-attachment: fixed;
   }
   /* section projects */
   .section-projects::before {
@@ -1683,5 +1677,40 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   /*  */
 }
+
+/* ********* INTERSECTION OBSERVER ANIMATIONS ********* */
+
+.hero__title,
+.hero__desc,
+.pic-1,
+.pic-2,
+.pic-3,
+.pic-4,
+.pic-5,
+.pic-6,
+.landscape2,
+.section-about__stack-grid,
+.section-contact__social-wrapper,
+#form {
+  opacity: 0;
+}
+
+@keyframes animate-to-right {
+  from { transform: translateX(-20vh); opacity: 0; }
+  to  { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes animate-to-left {
+  from { transform: translateX(20vh); opacity: 0; }
+  to  { transform: translateX(0); opacity: 1; }
+}
+
+.swipe-right {
+  animation: animate-to-right 0.9s forwards ease-out;
+}
+.swipe-left {
+  animation: animate-to-left 0.9s forwards ease-out;
+}
+
 
 /*# sourceMappingURL=/styles.8986bff4.css.map */
