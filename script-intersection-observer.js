@@ -1,7 +1,7 @@
 import * as domElement from './script-dom.js';
 
 const listenToObserver = () => {
-  const heightMargin = window.innerHeight / 5;
+  const heightMargin = window.innerHeight / 10;
   const elementsToTop = [
     domElement.heroTitle,
     domElement.heroDesc,
