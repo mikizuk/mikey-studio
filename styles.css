@@ -411,7 +411,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   color: var(--color-base-secondary);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 230px auto 1fr;
+  grid-template-rows: 240px auto 1fr;
   margin-left: var(--gap-mobile);
   grid-column-gap: var(--gutter-mobile);
   grid-row-gap: var(--gap-mobile);
@@ -1708,6 +1708,12 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .hero__desc,
 .pic-1,
 .pic-2,
+.pic-3,
+.pic-4,
+.pic-5,
+.pic-6,
+.landscape2,
+.section-about__stack-grid,
 .section-contact__social-wrapper,
 #form {
   opacity: 0;
