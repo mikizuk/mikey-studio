@@ -20,11 +20,14 @@ export const projectWrapper = document.querySelector('.section-projects__wrapper
 /* *** ABOUT *** */
 export const aboutWrapper = document.querySelector('.section-about__about-grid');
 export const aboutImages = document.querySelectorAll('.section-about__images');
+export const pic1 = document.querySelector('.pic-1');
+export const pic2 = document.querySelector('.pic-2');
 /* *** STACK *** */
 export const stackGrid = document.querySelector('.section-about__stack-grid');
 export const landscape2 = document.querySelector('.landscape2');
 /* *** CONTACT *** */
-const form = document.getElementById('form');
+export const socials = document.querySelector('.section-contact__social-wrapper');
+export const form = document.getElementById('form');
 const inputEmail = document.getElementById('inputEmail');
 const inputMessage = document.getElementById('inputMessage');
 

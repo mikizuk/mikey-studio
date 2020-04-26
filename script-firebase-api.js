@@ -1,6 +1,8 @@
 import * as domElement from './script-dom.js';
+import intersectionObserver from './script-intersection-observer.js';
 
 export let quotes = [];
+
 const fetchFirebaseApi = () => {
   const firebaseConfig = {
     apiKey: "AIzaSyCB7kZlwhT3XJodzViuuRRP9ggDysOqSxY",
@@ -20,6 +22,7 @@ const fetchFirebaseApi = () => {
     // console.log('Firebase data loaded', firebaseDatabase);
     if (firebaseDatabase) {
       turnLoadSpinnerOff();
+      loadIntersectionObserver();     
       /* ********* HERO ********* */
       if (firebaseDatabase.hero && firebaseDatabase.hero.keyPoints) {
         firebaseDatabase.hero.keyPoints.forEach(word => {
@@ -143,6 +146,10 @@ const fetchFirebaseApi = () => {
 
 function turnLoadSpinnerOff() {
   domElement.spinner.classList.add('spinner--off');
+}
+
+function loadIntersectionObserver() {
+  intersectionObserver.listenToObserver();
 }
 
 export default { fetchFirebaseApi }
