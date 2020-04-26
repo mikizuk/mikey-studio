@@ -561,11 +561,11 @@ html[data-theme='pacificblue'] .theme-filter-image {
   height: 60vh;
 }
 .section-landscape {
-  height: 87%;
+  height: 90%;
+  position: relative;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   z-index: -2;
 }
 
