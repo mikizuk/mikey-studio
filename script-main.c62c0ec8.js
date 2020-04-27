@@ -679,96 +679,66 @@ function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableTo
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-// TODO fetch data from Unsplash
-// https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-// https://api.unsplash.com/users/daxtersky/photos?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-// https://api.unsplash.com/users/daxtersky/collections?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-// TODO add referrals to image links: https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines
-// https://unsplash.com/documentation
+var client_id = 'c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
+var collections = {
+  LANDSCAPE_HORIZONTAL: 9522596,
+  // 60 photos
+  ABOUT: 9812689,
+  // 60 photos
+  ABOUT_VERTICAL: 9833482 // 30 photos
+
+};
+var imagesPerPage = 30;
+var pageNumber = getRandomPage();
+var neededImagesOnWebsite = 8;
+var landscapes = "https://api.unsplash.com/collections/".concat(collections.LANDSCAPE_HORIZONTAL, "/photos/?page=").concat(pageNumber, "&per_page=").concat(imagesPerPage, "&client_id=").concat(client_id);
+var abouts = "https://api.unsplash.com/collections/".concat(collections.ABOUT, "/photos/?page=").concat(pageNumber, "&per_page=").concat(imagesPerPage, "&client_id=").concat(client_id);
+var verticals = "https://api.unsplash.com/collections/".concat(collections.ABOUT_VERTICAL, "/photos/?page=", 1, "&per_page=").concat(imagesPerPage, "&client_id=").concat(client_id);
+
 function fetchUnsplashApi() {
-  var client_id = 'c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  var collectionsList = [9833482, // mikey-studio-horizontal
-  9812689, // mikey-studio-about
-  9522596, // mikey-studio-parallax
-  9442978]; // mikey-studio-hero
-
-  var pageNo = 1;
-  var perPage = 30; // const unsplashUser =  `https://api.unsplash.com/users/daxtersky?client_id=${client_id}`;
-
-  var collentions = "https://api.unsplash.com/users/daxtersky/collections?client_id=".concat(client_id); // GET /users/:username/collections
-
-  var userPhotos = "https://api.unsplash.com/users/daxtersky/photos?page=".concat(pageNo, "&per_page=").concat(perPage, "&client_id=").concat(client_id);
-  var x = "https://api.unsplash.com/collections/".concat(collectionsList[1], "/photos/?page=").concat(pageNo, "&per_page=").concat(perPage, "&client_id=").concat(client_id); // GET /collections/:id
-
-  var allUnsplashPhotos = [];
-  fetch(x).then(function (resp) {
-    return resp.json();
-  }).then(function (response) {// console.log('x', response);
-  }); // fetch(collentions)
-  //   .then(resp => resp.json())
-  //   .then(response => {
-  //     console.log('collentions', response);
-  //   })
-
-  fetch(userPhotos).then(function (resp) {
-    return resp.json();
-  }).then(function (response) {
-    // console.log('userPhotos', response);
-    var _iterator = _createForOfIteratorHelper(response),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var image = _step.value;
-        allUnsplashPhotos.push(image.urls.regular); // small, regular, full
-      } // console.log('allUnsplashPhotos', allUnsplashPhotos);
-
-      /* ********* LANDSCAPE ********* */
-
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    domElement.landscape.style.backgroundImage = "url(".concat(allUnsplashPhotos[0], ")");
-    domElement.landscape2.style.backgroundImage = "url(".concat(allUnsplashPhotos[0], ")");
-    /* ********* ABOUT ********* */
-
-    if (domElement.aboutImages.length > 0 && allUnsplashPhotos.length > 0) {
-      var randomIntegers = getRandomIntegers(domElement.aboutImages.length, allUnsplashPhotos.length);
-      showRandomImages(randomIntegers, allUnsplashPhotos);
-    }
+  var collections = [landscapes, abouts, verticals];
+  Promise.all(collections.map(function (collection) {
+    return fetch(collection).then(function (resp) {
+      return resp.json();
+    });
+  })).then(function (images) {
+    var landscapeImages = images[0];
+    var aboutImages = images[1];
+    var aboutVerticals = images[2];
+    var randomIntegers = getUniqueIntegers(imagesPerPage, neededImagesOnWebsite);
+    domElement.landscape.style.backgroundImage = "url(".concat(landscapeImages[randomIntegers[0]].urls.regular, ")");
+    domElement.pic1.style.backgroundImage = "url(".concat(aboutImages[randomIntegers[1]].urls.small, ")");
+    domElement.pic2.style.backgroundImage = "url(".concat(landscapeImages[randomIntegers[2]].urls.regular, ")");
+    domElement.pic3.style.backgroundImage = "url(".concat(aboutVerticals[randomIntegers[3]].urls.regular, ")");
+    domElement.pic4.style.backgroundImage = "url(".concat(landscapeImages[randomIntegers[4]].urls.regular, ")");
+    domElement.pic5.style.backgroundImage = "url(".concat(aboutVerticals[randomIntegers[5]].urls.regular, ")");
+    domElement.pic6.style.backgroundImage = "url(".concat(landscapeImages[randomIntegers[6]].urls.regular, ")");
+    domElement.landscape2.style.backgroundImage = "url(".concat(aboutVerticals[randomIntegers[7]].urls.regular, ")");
   }).catch(function (err) {
     console.log('error', err);
   });
 }
 
-function getRandomIntegers(imagesInDom, unsplashPhotos) {
-  var randomSetIntegers = new Set();
-
-  while (randomSetIntegers.size < imagesInDom) {
-    randomSetIntegers.add(Math.floor(Math.random() * unsplashPhotos));
-  }
-
-  return _toConsumableArray(randomSetIntegers);
+function getRandomPage() {
+  return Math.floor(Math.random() * 2) + 1;
 }
 
-function showRandomImages(randomIntegers, unsplashPhotos) {
-  for (var i = 0; i < randomIntegers.length; i++) {
-    var element = randomIntegers[i];
-    domElement.aboutImages[i].style.backgroundImage = "url(".concat(unsplashPhotos[element], ")");
+function getUniqueIntegers(maxInteger, neededIntegers) {
+  var randomIntegers = new Set();
+
+  while (randomIntegers.size < neededIntegers) {
+    randomIntegers.add(Math.floor(Math.random() * maxInteger));
   }
+
+  return _toConsumableArray(randomIntegers);
 }
 
 var _default = {
@@ -826,7 +796,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50339" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
