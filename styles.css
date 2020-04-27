@@ -203,13 +203,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
   cursor: pointer;
   transition: scale 0.3s ease;
 }
-.color-picker:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  transform: scale(1.1);
-}
 .color-picker option {
   color: var(--color-base-secondary);
+  font-weight: var(--rokkitt-medium);
   background-color: var(--color-base-primary);
 }
 .button-menu {
@@ -241,28 +237,13 @@ html[data-theme='pacificblue'] .theme-filter-image {
   left: 0;
 }
 
-/* ********* NAV BUTTONS HOVER EFFECTS ********* */
-
-.navigation__logo:hover {
-  color: var(--color-accent);
-}
-.navigation__options:hover > .navigation__item > .navigation__link {
-  opacity: 0.4;
-}
-.navigation__options:hover > .navigation__item:hover > .navigation__link {
-  opacity: 1;
-}
-.navigation__options:hover > .navigation__item:hover > .navigation__link:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  transform: scale(1.1);
-}
 .navigation__options,
 .navigation__options .navigation__item {
   pointer-events: none;
 }
 .navigation__options > .navigation__item > .navigation__link {
   pointer-events: auto;
+  will-change: opacity, transform;
   transition: 300ms opacity, 300ms transform;
 }
 
@@ -371,20 +352,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  will-change: opacity, transform;
   transition: 300ms opacity, 300ms transform;
 }
-
-/* ********* BUTTON HOVER EFFECTS ********* */
-
-.button:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  opacity: 1;
-  transform: scale(1.1);
-}
-/* .button:active {
-  opacity: 0.5;
-} */
 
 /* ********* SECTION HERO ********* */
 
@@ -518,7 +488,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   font-weight: var(--rokkitt-medium);
   grid-column: 1 / -1;
   min-height: 179px; /* .... eee */
-  will-change: transform, opacity;
 }
 .section-quote__author {
   font-weight: var(--rokkitt-bold);
@@ -526,14 +495,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
 }
 .section-quote__link {
   color: var(--color-base-primary);
-  height: 50px;
-  width: 90px;
-}
-
-/* ********* LINK HOVER EFFECTS ********* */
-
-.section-quote__link:hover {
-  color: var(--color-accent);
+  width: 43px;
+  will-change: opacity, transform;
+  transition: 300ms opacity, 300ms transform;
 }
 
 /* ********* SECTION LANDSCAPE ********* */
@@ -720,11 +684,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
   color: var(--color-base-primary);
   transition: 300ms opacity, 300ms transform;
 }
-/* ********* LINK HOVER EFFECTS ********* */
-.section-contact__social-link:hover {
-  color: var(--color-accent);
-  transform: scale(1.1);
-}
 
 .color-palette {
   display: flex;
@@ -782,15 +741,19 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 var(--gap-mobile);
   height: 40px;
-  /* width: 100%; */
   color: var(--color-base-secondary);
   background-color: var(--color-base-primary);
   z-index: 1;
-}
-.footer__size {
   font-weight: var(--rokkitt-medium);
+  font-size: 0.6rem;
+}
+.footer__credits-link {
+  text-decoration: none;
+  color: var(--color-base-secondary);
+  transition: 300ms color;
 }
 
 /* ********* RWD ********* */
@@ -963,6 +926,10 @@ html[data-theme='pacificblue'] .theme-filter-image {
     margin: calc(var(--gutter-tablet) / 1.5) 0;
     padding-top: 8px;
     padding-left: 10px;
+  }
+  .footer {
+    margin: 0 var(--gap-tablet);
+    font-size: 1rem;
   }
   /*  */
 }
@@ -1203,6 +1170,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .footer {
     height: 50px;
+    margin: 0 var(--gap-laptop-md);
   }
   /*  */
 }
@@ -1421,7 +1389,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
     padding-left: 10px;
   }
   .footer {
-    height: 50px;
+    margin: 0 var(--gap-laptop-hd);
   }
   /*  */
 }
@@ -1659,9 +1627,52 @@ html[data-theme='pacificblue'] .theme-filter-image {
     padding-left: 10px;
   }
   .footer {
-    height: 50px;
+    margin: 0 var(--gap-desktop-hd);
   }
   /*  */
+}
+
+/* ********* HOVER ********* */
+
+.button:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  opacity: 1;
+  transform: scale(1.1);
+}
+/* .button:active {
+  opacity: 0.5;
+} */
+
+.color-picker:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}
+.section-contact__social-link:hover,
+.section-quote__link:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.footer__credits-link:hover {
+  color: var(--color-accent);
+}
+
+.navigation__logo:hover {
+  color: var(--color-accent);
+}
+.navigation__options:hover > .navigation__item > .navigation__link {
+  opacity: 0.4;
+}
+.navigation__options:hover > .navigation__item:hover > .navigation__link {
+  opacity: 1;
+}
+.navigation__options:hover > .navigation__item:hover > .navigation__link:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  will-change: scale;
+  transform: scale(1.1);
 }
 
 /* ********* INTERSECTION OBSERVER ANIMATIONS ********* */
