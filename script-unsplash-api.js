@@ -1,72 +1,51 @@
 import * as domElement from './script-dom.js';
 
-// TODO fetch data from Unsplash
-// https://api.unsplash.com/users/daxtersky?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-// https://api.unsplash.com/users/daxtersky/photos?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-// https://api.unsplash.com/users/daxtersky/collections?client_id=c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0
-// TODO add referrals to image links: https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines
-// https://unsplash.com/documentation
+const client_id = 'c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
+const collections = {
+  LANDSCAPE_HORIZONTAL: 9522596, // 60 photos
+  ABOUT: 9812689,                // 60 photos
+  ABOUT_VERTICAL: 9833482,       // 30 photos
+}
+const imagesPerPage = 30;
+const pageNumber = getRandomPage();
+const neededImagesOnWebsite = 8;
+const landscapes = `https://api.unsplash.com/collections/${collections.LANDSCAPE_HORIZONTAL}/photos/?page=${pageNumber}&per_page=${imagesPerPage}&client_id=${client_id}`;
+const abouts = `https://api.unsplash.com/collections/${collections.ABOUT}/photos/?page=${pageNumber}&per_page=${imagesPerPage}&client_id=${client_id}`;
+const verticals = `https://api.unsplash.com/collections/${collections.ABOUT_VERTICAL}/photos/?page=${1}&per_page=${imagesPerPage}&client_id=${client_id}`;
 
 function fetchUnsplashApi() {
-  const client_id = 'c1462734c4e2f7d399a2724533d58445eecb3b969c50f37262cc96c7f7acedc0';
-  const collectionsList = [
-    9833482, // mikey-studio-horizontal
-    9812689, // mikey-studio-about
-    9522596, // mikey-studio-parallax
-    9442978]; // mikey-studio-hero
-  const pageNo = 1;
-  const perPage = 30;
-  // const unsplashUser =  `https://api.unsplash.com/users/daxtersky?client_id=${client_id}`;
-  const collentions = `https://api.unsplash.com/users/daxtersky/collections?client_id=${client_id}`; // GET /users/:username/collections
-  const userPhotos =  `https://api.unsplash.com/users/daxtersky/photos?page=${pageNo}&per_page=${perPage}&client_id=${client_id}`;
-  const x =  `https://api.unsplash.com/collections/${collectionsList[1]}/photos/?page=${pageNo}&per_page=${perPage}&client_id=${client_id}`; // GET /collections/:id
-  let allUnsplashPhotos = [];
+  const collections = [landscapes, abouts, verticals];
   
-  fetch(x)
-    .then(resp => resp.json())
-    .then(response => {
-      // console.log('x', response);
-    })
+  Promise.all(collections.map(collection => fetch(collection)
+  .then(resp => resp.json())))
+  .then(images => {
+      const landscapeImages = images[0];
+      const aboutImages = images[1];
+      const aboutVerticals = images[2];
+      const randomIntegers = getUniqueIntegers(imagesPerPage, neededImagesOnWebsite);
 
-  // fetch(collentions)
-  //   .then(resp => resp.json())
-  //   .then(response => {
-  //     console.log('collentions', response);
-  //   })
+      domElement.landscape.style.backgroundImage = `url(${landscapeImages[randomIntegers[0]].urls.regular})`;
+      domElement.pic1.style.backgroundImage = `url(${aboutImages[randomIntegers[1]].urls.small})`;
+      domElement.pic2.style.backgroundImage = `url(${landscapeImages[randomIntegers[2]].urls.regular})`;
+      domElement.pic3.style.backgroundImage = `url(${aboutVerticals[randomIntegers[3]].urls.regular})`;
+      domElement.pic4.style.backgroundImage = `url(${landscapeImages[randomIntegers[4]].urls.regular})`;
+      domElement.pic5.style.backgroundImage = `url(${aboutVerticals[randomIntegers[5]].urls.regular})`;
+      domElement.pic6.style.backgroundImage = `url(${landscapeImages[randomIntegers[6]].urls.regular})`;
+      domElement.landscape2.style.backgroundImage = `url(${aboutVerticals[randomIntegers[7]].urls.regular})`;
 
-  fetch(userPhotos)
-    .then(resp => resp.json())
-    .then(response => {
-      // console.log('userPhotos', response);
-      for (const image of response) {
-        allUnsplashPhotos.push(image.urls.regular); // small, regular, full
-      }
-      // console.log('allUnsplashPhotos', allUnsplashPhotos);
-      /* ********* LANDSCAPE ********* */
-      domElement.landscape.style.backgroundImage = `url(${allUnsplashPhotos[0]})`;
-      domElement.landscape2.style.backgroundImage = `url(${allUnsplashPhotos[0]})`;
-      /* ********* ABOUT ********* */
-      if (domElement.aboutImages.length > 0 && allUnsplashPhotos.length > 0) {
-        const randomIntegers = getRandomIntegers(domElement.aboutImages.length, allUnsplashPhotos.length);
-        showRandomImages(randomIntegers, allUnsplashPhotos);         
-      }
     }).catch(err => {
       console.log('error', err);
     })
-
 }
 
-function getRandomIntegers(imagesInDom, unsplashPhotos) {
-  const randomSetIntegers = new Set;
-  while (randomSetIntegers.size < imagesInDom) { randomSetIntegers.add(Math.floor(Math.random() * unsplashPhotos)) }
-  return [...randomSetIntegers];
+function getRandomPage() {
+  return Math.floor(Math.random() * 2) + 1;
 }
 
-function showRandomImages(randomIntegers, unsplashPhotos) {
-  for (let i = 0; i < randomIntegers.length; i++) {
-    const element = randomIntegers[i];
-    domElement.aboutImages[i].style.backgroundImage = `url(${unsplashPhotos[element]})`;
-  }
+function getUniqueIntegers(maxInteger, neededIntegers) {
+  const randomIntegers = new Set;
+  while (randomIntegers.size < neededIntegers) { randomIntegers.add(Math.floor(Math.random() * maxInteger)) }
+  return [...randomIntegers];
 }
 
 export default { fetchUnsplashApi };
