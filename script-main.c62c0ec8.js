@@ -132,7 +132,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var listenToObserver = function listenToObserver() {
-  var heightMargin = window.innerHeight / 10;
+  var heightMargin = domElement.deviceHeight / 10;
   var elementsToTop = [domElement.heroTitle, domElement.heroDesc, domElement.pic1, domElement.pic2, domElement.pic3, domElement.pic4, domElement.pic5, domElement.landscape2];
   var elementsToBottom = [domElement.pic6, domElement.stackGrid, domElement.socials, domElement.form];
   var observerOptions = {
@@ -335,28 +335,27 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
 
 
       if (firebaseDatabase.techStack) {
-        var svg = document.getElementsByTagName('svg');
-
         var _loop = function _loop(i) {
-          var svgItem = svg[i];
+          var techItem = domElement.techIcon[i];
 
-          var svgClasses = _toConsumableArray(svg[i].classList);
+          var svgClasses = _toConsumableArray(domElement.techIcon[i].classList);
 
+          console.log('svgClasses', svgClasses);
           firebaseDatabase.techStack.forEach(function (tech) {
             if (svgClasses.includes(tech.className)) {
-              var techItem = document.createElement('span');
-              techItem.classList.add('section-about__stack-technology');
+              var techSpan = document.createElement('span');
+              techSpan.classList.add('section-about__stack-technology');
               var techDescription = document.createElement('span');
               techDescription.classList.add('section-about__stack-description');
-              techItem.innerText = tech.technology;
+              techSpan.innerText = tech.technology;
               techDescription.innerText = tech.description;
-              svgItem.parentNode.insertBefore(techItem, svgItem.nextSibling);
-              techItem.parentNode.insertBefore(techDescription, techItem.nextSibling);
+              techItem.parentNode.insertBefore(techSpan, techItem.nextSibling);
+              techSpan.parentNode.insertBefore(techDescription, techSpan.nextSibling);
             }
           });
         };
 
-        for (var i = 0; i < svg.length; i++) {
+        for (var i = 0; i < domElement.techIcon.length; i++) {
           _loop(i);
         }
       }
@@ -384,7 +383,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getRandomQuote = exports.form = exports.socials = exports.landscape2 = exports.stackGrid = exports.pic6 = exports.pic5 = exports.pic4 = exports.pic3 = exports.pic2 = exports.pic1 = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.quote = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = void 0;
+exports.getRandomQuote = exports.form = exports.socials = exports.landscape2 = exports.techIcon = exports.stackGrid = exports.pic6 = exports.pic5 = exports.pic4 = exports.pic3 = exports.pic2 = exports.pic1 = exports.aboutImages = exports.aboutWrapper = exports.projectWrapper = exports.isNavButtonOpen = exports.quote = exports.buttonQuote = exports.landscape = exports.heroDesc = exports.heroTitle = exports.heroList = exports.navigationItems = exports.navButton = exports.colorPicker = exports.spinner = exports.deviceWidth = exports.deviceHeight = void 0;
 
 var firebase = _interopRequireWildcard(require("./script-firebase-api.js"));
 
@@ -392,7 +391,13 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+/* ************ device ************ */
+var deviceHeight = window.innerHeight > 0 ? window.innerHeight * 0.01 : screen.height * 0.01;
+exports.deviceHeight = deviceHeight;
+var deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
 /* ************ DOM elements ************ */
+
+exports.deviceWidth = deviceWidth;
 var spinner = document.querySelector('.spinner');
 /* *** NAV *** */
 
@@ -458,6 +463,8 @@ exports.pic6 = pic6;
 var stackGrid = document.querySelector('.section-about__stack-grid'); // intersection observer
 
 exports.stackGrid = stackGrid;
+var techIcon = document.getElementsByTagName('ion-icon');
+exports.techIcon = techIcon;
 var landscape2 = document.querySelector('.landscape2'); // intersection observer
 
 /* *** CONTACT *** */
@@ -517,7 +524,6 @@ document.addEventListener('click', function (e) {
 });
 /* *** HERO *** */
 
-var deviceHeight = window.innerHeight > 0 ? window.innerHeight * 0.01 : screen.height * 0.01;
 document.documentElement.style.setProperty('--vh', "".concat(deviceHeight, "px"));
 /* *** QUOTE *** */
 
@@ -540,7 +546,6 @@ var getRandomQuote = function getRandomQuote(quotes) {
 exports.getRandomQuote = getRandomQuote;
 
 var showNewQuote = function showNewQuote(randomQuote) {
-  var deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
   var quoteDom = document.querySelector('.section-quote__text');
   var quoteAuthorDom = document.querySelector('.section-quote__author');
   var quoteLinkDom = document.querySelector('.section-quote__link'); // character counter https://www.charactercountonline.com/
@@ -754,7 +759,6 @@ var _scriptFirebaseApi = _interopRequireDefault(require("./script-firebase-api.j
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import intersectionObserver from './script-intersection-observer.js';
 document.addEventListener("DOMContentLoaded", function () {
   var getFirebaseData = function getFirebaseData() {
     return _scriptFirebaseApi.default.fetchFirebaseApi();
@@ -762,11 +766,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var getUnsplashData = function getUnsplashData() {
     return _scriptUnsplashApi.default.fetchUnsplashApi();
-  }; // const getIntersectionObserver = () => intersectionObserver.listenToObserver();
-
+  };
 
   getFirebaseData();
-  getUnsplashData(); // getIntersectionObserver();
+  getUnsplashData();
 });
 },{"./script-unsplash-api.js":"script-unsplash-api.js","./script-firebase-api.js":"script-firebase-api.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -796,7 +799,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50246" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64919" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
