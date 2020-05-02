@@ -19,7 +19,6 @@
   "author": "Mikołaj Klarżuk",
   "license": "ISC",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
     "cssnano": "^4.1.10",
     "gh-pages": "^2.2.0"
   },

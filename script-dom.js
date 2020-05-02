@@ -1,5 +1,9 @@
 import * as firebase from './script-firebase-api.js';
 
+/* ************ device ************ */
+export const deviceHeight = ((window.innerHeight > 0) ? window.innerHeight * 0.01 : screen.height * 0.01);
+export const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
 /* ************ DOM elements ************ */
 export const spinner = document.querySelector('.spinner');
 /* *** NAV *** */
@@ -31,6 +35,7 @@ export const pic6 = document.querySelector('.pic-6'); // intersection observer
 
 /* *** STACK *** */
 export const stackGrid = document.querySelector('.section-about__stack-grid'); // intersection observer
+export const techIcon = document.getElementsByTagName('ion-icon');
 
 export const landscape2 = document.querySelector('.landscape2'); // intersection observer
 
@@ -90,7 +95,6 @@ document.addEventListener('click', (e) => {
 
 /* *** HERO *** */
 
-const deviceHeight = ((window.innerHeight > 0) ? window.innerHeight * 0.01 : screen.height * 0.01);
 document.documentElement.style.setProperty('--vh', `${deviceHeight}px`);
 
 /* *** QUOTE *** */
@@ -108,7 +112,6 @@ export const getRandomQuote = (quotes) => {
 }
 
 const showNewQuote = (randomQuote) => {
-  const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
   const quoteDom = document.querySelector('.section-quote__text');
   const quoteAuthorDom = document.querySelector('.section-quote__author');
   const quoteLinkDom = document.querySelector('.section-quote__link');

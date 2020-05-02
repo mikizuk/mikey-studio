@@ -182,6 +182,13 @@ html[data-theme='pacificblue'] .theme-filter-image {
   background-color: var(--color-base-secondary);
 }
 
+.color-picker,
+.color-picker option {
+  color: var(--color-base-secondary);
+  font-family: var(--font-rokkitt);
+  font-weight: var(--rokkitt-medium);
+  background-color: var(--color-base-primary);
+}
 .color-picker {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -191,22 +198,13 @@ html[data-theme='pacificblue'] .theme-filter-image {
   align-self: center;
   height: 100%;
   text-align-last: center;
-
-  font-family: var(--font-rokkitt);
-  color: var(--color-base-secondary);
-  background-color: inherit;
+  
   font-size: .85rem;
-  font-weight: var(--rokkitt-medium);
   border: 2px solid var(--color-base-secondary);
   border-radius: 6px;
   padding: 4px;
   cursor: pointer;
   transition: scale 0.3s ease;
-}
-.color-picker option {
-  color: var(--color-base-secondary);
-  font-weight: var(--rokkitt-medium);
-  background-color: var(--color-base-primary);
 }
 .button-menu {
   background-color: transparent;
@@ -635,8 +633,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
   display: grid;
   grid-template-columns: auto 1fr;
 }
-.section-about__stack-grid svg {
+.section-about_icon {
   color: var(--color-alter-primary);
+  font-size: 2rem;
 }
 .section-about__stack-technology {
   align-self: flex-start;
@@ -660,6 +659,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .section-contact__contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: auto 1fr; */
   grid-gap: var(--gutter-mobile);
   padding: var(--gap-mobile);
   font-weight: var(--rokkitt-bold);
@@ -669,12 +669,8 @@ html[data-theme='pacificblue'] .theme-filter-image {
   flex-direction: column;
   justify-content: flex-end;
 }
-.section-contact__social-item svg {
-  color: var(--color-base-primary);
-}
 .section-contact__social-item {
-  display: grid;
-  grid-template-columns: 60px 1fr;
+  width: max-content;
   padding: calc(var(--gutter-mobile) / 5) 0;
 }
 .section-contact__social-link {
@@ -684,14 +680,23 @@ html[data-theme='pacificblue'] .theme-filter-image {
   color: var(--color-base-primary);
   transition: 300ms opacity, 300ms transform;
 }
-
-.color-palette {
+.section-contact__social-icon {
+  font-size: 1.6rem;
+}
+.section-contact__social-text {
+  padding: 0 calc(var(--gap-mobile) / 2);
+}
+.section-contact__color-palette {
   display: flex;
   align-items: center;
+  padding: calc(var(--gap-mobile) / 5) 0;
+}
+.color-palette__item:first-of-type {
+  margin-left: calc(var(--gap-mobile) / 2);
 }
 .color-palette__item {
-  height: 24px;
-  width: 18px;
+  height: 20px;
+  width: 25px;
 }
 .color-palette__item--base-primary {
   background-color: var(--color-base-primary);
@@ -742,7 +747,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 var(--gap-mobile);
+  padding: 0 var(--gap-mobile);
   height: 40px;
   color: var(--color-base-secondary);
   background-color: var(--color-base-primary);
@@ -895,6 +900,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
     padding-bottom: calc(var(--gap-tablet) * 5);
     grid-gap: var(--gutter-tablet);
   }
+  .section-about_icon {
+    font-size: 3.5rem;
+  }
   .section-about__stack-technology {
     font-size: 3rem;
   }
@@ -908,8 +916,16 @@ html[data-theme='pacificblue'] .theme-filter-image {
   }
   .section-contact__social-item {
     font-size: 1.5rem;
-    grid-template-columns: 80px 1fr;
-    padding: calc(var(--gutter-tablet) / 4) 0;
+    padding: calc(var(--gap-tablet) / 4) 0;
+  }
+  .section-contact__social-icon {
+    font-size: 3rem;
+  }
+  .section-contact__social-text {
+    padding: 0 calc(var(--gap-tablet) / 2);
+  }
+  .color-palette__item:first-of-type {
+    margin-left: calc(var(--gap-tablet) / 2);
   }
   .color-palette__item {
     height: 45px;
@@ -1118,7 +1134,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
     grid-gap: var(--gutter-laptop-md);
     /* grid-template-columns: 1fr .1fr .4fr 4fr; */
     /* grid-template-columns: 1.5fr auto 1fr 1.5fr; */
-    grid-template-columns: 1fr auto 1fr 2fr;
+    grid-template-columns: 1fr auto auto 2fr;
     grid-template-rows: repeat(9, 1fr);
   }
   .landscape2 {
@@ -1127,9 +1143,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-  .section-about__stack-grid i {
-    grid-area: auto;
   }
   .section-about__stack-technology {
     grid-area: auto;
@@ -1148,9 +1161,17 @@ html[data-theme='pacificblue'] .theme-filter-image {
     padding: 0 var(--gap-laptop-md) calc(var(--gutter-laptop-md) / 2);
   }
   .section-contact__social-item {
-    font-size: 2rem;
-    grid-template-columns: 100px 1fr;
+    font-size: 2.1rem;
     padding: calc(var(--gutter-laptop-md) / 11) 0;
+  }
+  .section-contact__social-icon {
+    font-size: 3.3rem;
+  }
+  .section-contact__social-text {
+    padding: 0 calc(var(--gap-laptop-md) / 2);
+  }
+  .color-palette__item:first-of-type {
+    margin-left: calc(var(--gap-laptop-md) / 2);
   }
   .color-palette__item {
     height: 50px;
@@ -1344,8 +1365,11 @@ html[data-theme='pacificblue'] .theme-filter-image {
     padding: var(--gap-laptop-hd) var(--gap-laptop-hd) calc(var(--gap-laptop-hd) * 3) 0;
     grid-gap: var(--gutter-laptop-hd);
     /* grid-template-columns: 1fr .1fr .4fr 4fr; */
-    grid-template-columns: 1fr auto 1fr 2fr;
+    grid-template-columns: 1fr auto auto 2fr;
     grid-template-rows: repeat(9, 1fr);
+  }
+  .section-about_icon {
+    font-size: 5rem;
   }
   .landscape2 {
     display: unset;
@@ -1371,6 +1395,9 @@ html[data-theme='pacificblue'] .theme-filter-image {
     font-size: 2rem;
     grid-template-columns: 100px 1fr;
     padding: calc(var(--gutter-laptop-hd) / 11) 0;
+  }
+  .section-contact__social-icon {
+    font-size: 3.7rem;
   }
   .color-palette__item {
     height: 50px;
@@ -1577,17 +1604,15 @@ html[data-theme='pacificblue'] .theme-filter-image {
     padding: var(--gap-desktop-hd) var(--gap-desktop-hd) calc(var(--gap-desktop-hd) * 3) 0;
     grid-gap: var(--gutter-desktop-hd);
     /* grid-template-columns: 1fr .1fr .4fr 4fr; */
-    grid-template-columns: 1fr auto 1fr 2fr;
+    grid-template-columns: 1fr auto auto 2fr;
     grid-template-rows: repeat(9, 1fr);
   }
+  
   .landscape2 {
     display: unset;
     grid-row: 1/-1;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .section-about__stack-grid i {
-    grid-area: auto;
   }
   .section-about__stack-technology {
     grid-area: auto;

@@ -116,22 +116,20 @@ const fetchFirebaseApi = () => {
       }
       /* ********* STACK ********* */
       if (firebaseDatabase.techStack) {
-        const svg = document.getElementsByTagName('svg');
-        for (let i = 0; i < svg.length; i++) {
-          const svgItem = svg[i];
-          const svgClasses = [...svg[i].classList];
+        for (let i = 0; i < domElement.techIcon.length; i++) {
+          const techItem = domElement.techIcon[i];
+          const svgClasses = [...domElement.techIcon[i].classList];
+          console.log('svgClasses', svgClasses);
           firebaseDatabase.techStack.forEach(tech => {
             if (svgClasses.includes(tech.className)) {
-              const techItem = document.createElement('span');
-              techItem.classList.add('section-about__stack-technology');
+              const techSpan = document.createElement('span');
+              techSpan.classList.add('section-about__stack-technology');
               const techDescription = document.createElement('span');
               techDescription.classList.add('section-about__stack-description');
-              techItem.innerText = tech.technology;
+              techSpan.innerText = tech.technology;
               techDescription.innerText = tech.description;
-              svgItem.parentNode.insertBefore(techItem, svgItem.nextSibling);
-              techItem.parentNode.insertBefore(techDescription, techItem.nextSibling);
-
-
+              techItem.parentNode.insertBefore(techSpan, techItem.nextSibling);
+              techSpan.parentNode.insertBefore(techDescription, techSpan.nextSibling);
             }
           });
         }

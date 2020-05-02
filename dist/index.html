@@ -87,16 +87,15 @@
       <h2 id="tech-stack" class="section__header">Tech stack</h2>
       <div class="section-about__stack-grid">
         <div class="landscape2 theme-filter-image"></div>
-        <i class="stack-html fab fa-html5 fa-4x"></i>
-        <i class="stack-css fab fa-css3-alt fa-4x"></i>
-        <i class="stack-js fab fa-js-square fa-4x"></i>
-        <i class="stack-ts fab fa-js-square fa-4x"></i>
-        <i class="stack-react fab fa-react fa-4x"></i>
-        <i class="stack-angular fab fa-angular fa-4x"></i>
-        <i class="stack-git fab fa-git-square fa-4x"></i>
-        <!-- <i class="fab fa-git-alt"></i> -->
-        <i class="stack-wordpress fab fa-wordpress fa-4x"></i>
-        <i class="stack-backend fas fa-server fa-4x"></i>
+        <ion-icon class="section-about_icon section-about_icon-html" name="logo-html5"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-css" name="logo-css3"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-js" name="logo-javascript"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-ts" name="logo-javascript"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-react" name="logo-react"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-angular" name="logo-angular"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-git" name="git-branch"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-wordpress" name="logo-wordpress"></ion-icon>
+        <ion-icon class="section-about_icon section-about_icon-backend" name="server"></ion-icon>
       </div>
     </div>
   </section>
@@ -106,38 +105,48 @@
     <div class="section-contact__contact-grid">
       <div class="section-contact__social-wrapper">
         <div class="section-contact__social-item">
-          <i class="fab fa-github fa-2x"></i>
-          <a href="#" class="section-contact__social-link">Github</a>
+          <a href="https://github.com/daxtersky" class="section-contact__social-link" target="_blank">
+            <ion-icon class="section-contact__social-icon" name="logo-github"></ion-icon>
+            <span class="section-contact__social-text">Github</span>  
+          </a>
         </div>
         <div class="section-contact__social-item">
-          <i class="fab fa-linkedin fa-2x"></i>
-          <a href="#" class="section-contact__social-link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/mikolaj-klarzuk/" class="section-contact__social-link" target="_blank">
+            <ion-icon class="section-contact__social-icon" name="logo-linkedin"></ion-icon>
+            <span class="section-contact__social-text">LinkedIn</span>  
+          </a>
         </div>
         <div class="section-contact__social-item">
-          <i class="fab fa-codepen fa-2x"></i>
-          <a href="#" class="section-contact__social-link">Codepen</a>
+          <a href="https://stackoverflow.com/users/edit/8375861" class="section-contact__social-link" target="_blank">
+            <ion-icon class="section-contact__social-icon" name="logo-stackoverflow"></ion-icon>
+            <span class="section-contact__social-text">Stackoverflow</span>  
+          </a>
         </div>
         <div class="section-contact__social-item">
-          <i class="fab fa-stack-overflow fa-2x"></i>
-          <a href="#" class="section-contact__social-link">Stackoverflow</a>
+          <a href="https://stackblitz.com/@daxtersky" class="section-contact__social-link" target="_blank">
+            <ion-icon class="section-contact__social-icon" name="flash"></ion-icon>
+            <span class="section-contact__social-text">Stackblitx</span>  
+          </a>
         </div>
         <div class="section-contact__social-item">
-          <i class="fab fa-instagram fa-2x"></i>
-          <a href="#" class="section-contact__social-link">Instagram</a>
+          <a href="https://codepen.io/daxtersky" class="section-contact__social-link" target="_blank">
+            <ion-icon class="section-contact__social-icon" name="logo-codepen"></ion-icon>
+            <span class="section-contact__social-text">Codepen</span>  
+          </a>
         </div>
         <div class="section-contact__social-item">
-          <i class="fab fa-github-alt fa-2x"></i>
-          <a href="#" class="section-contact__social-link">GitHub</a>
+          <a href="https://www.instagram.com/daxtersky" class="section-contact__social-link" target="_blank">
+            <ion-icon class="section-contact__social-icon" name="logo-instagram"></ion-icon>
+            <span class="section-contact__social-text">Instagram</span>  
+          </a>
         </div>
-        <div class="section-contact__social-item">
-          <i class="fas fa-tint fa-2x"></i>
-          <div class="color-palette">
-            <div class="color-palette__item color-palette__item--accent"></div>
-            <div class="color-palette__item color-palette__item--base-secondary"></div>
-            <div class="color-palette__item color-palette__item--base-primary"></div>
-            <div class="color-palette__item color-palette__item--alter-primary"></div>
-            <div class="color-palette__item color-palette__item--alter-secondary"></div>
-          </div>
+        <div class="section-contact__color-palette">
+          <ion-icon class="section-contact__social-icon" name="color-palette"></ion-icon>
+          <div class="color-palette__item color-palette__item--accent"></div>
+          <div class="color-palette__item color-palette__item--base-secondary"></div>
+          <div class="color-palette__item color-palette__item--base-primary"></div>
+          <div class="color-palette__item color-palette__item--alter-primary"></div>
+          <div class="color-palette__item color-palette__item--alter-secondary"></div>
         </div>
       </div>
       <div class="section-contact__contact-wrapper">
@@ -168,7 +177,8 @@
   <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
 
-  <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 
   <script src="/script-main.c62c0ec8.js" type="module"></script>
 
