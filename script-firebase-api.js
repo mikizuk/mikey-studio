@@ -19,10 +19,13 @@ const fetchFirebaseApi = () => {
   firebase.analytics();
   firebase.database().ref().on('value', snap => {
     const firebaseDatabase = snap.val();
-    // console.log('Firebase data loaded', firebaseDatabase);
+
+    console.log('Firebase data loaded', firebaseDatabase);
+
     if (firebaseDatabase) {
       turnLoadSpinnerOff();
-      loadIntersectionObserver();     
+      loadIntersectionObserver();
+
       /* ********* HERO ********* */
       if (firebaseDatabase.hero && firebaseDatabase.hero.keyPoints) {
         firebaseDatabase.hero.keyPoints.forEach(word => {
@@ -33,12 +36,14 @@ const fetchFirebaseApi = () => {
       }
       domElement.heroDesc.innerText = firebaseDatabase.hero.intro;
       domElement.heroTitle.innerText = firebaseDatabase.hero.title;
+
       /* ********* QUOTE ********* */
       if (firebaseDatabase.quotes) {
         domElement.quotes = firebaseDatabase.quotes;
         quotes = firebaseDatabase.quotes;
         domElement.getRandomQuote(firebaseDatabase.quotes);
       }
+
       /* ********* PROJECTS ********* */
       if (firebaseDatabase.projects) {
         firebaseDatabase.projects.forEach(project => {
@@ -48,22 +53,22 @@ const fetchFirebaseApi = () => {
           const projectImage = document.createElement('img');
           projectImage.classList.add('section-project__image');
           if (project.id === 0) {
-            projectImage.setAttribute('src', './project-trop-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
+            projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
           } else if (project.id === 1) {
-            projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
+            projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
           } else if (project.id === 2) {
-            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
+            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
           }
           projectElem.appendChild(projectImage);
-          const projectTitle = document.createElement('div');
+          const projectTitle = document.createElement('h3');
           projectTitle.classList.add('section-project__title');
           projectTitle.innerText = project.title;
           projectElem.appendChild(projectTitle);
-          const projectHeader = document.createElement('div');
+          const projectHeader = document.createElement('h4');
           projectHeader.classList.add('section-project__header');
           projectHeader.innerText = project.header;
           projectElem.appendChild(projectHeader);
-          const projectDesc = document.createElement('div');
+          const projectDesc = document.createElement('p');
           projectDesc.classList.add('section-project__description');
           projectDesc.innerText = project.description;
           projectElem.appendChild(projectDesc);
@@ -78,7 +83,6 @@ const fetchFirebaseApi = () => {
               projectHashtagsDiv.appendChild(hashtagSpan);
               if ((i + 1) % 3 === 0) {
                 projectHashtagsDiv.appendChild(document.createElement('br'));
-                // projectHashtagsDiv.appendChild(document.createElement('br'));
               }
             };
           }
@@ -103,6 +107,7 @@ const fetchFirebaseApi = () => {
           }
         });
       }
+
       /* ********* ABOUT ********* */
       if (firebaseDatabase.aboutList) {
         (firebaseDatabase.aboutList).forEach(aboutItem => {
@@ -114,17 +119,17 @@ const fetchFirebaseApi = () => {
           domElement.aboutWrapper.appendChild(aboutSection);
         });
       }
+
       /* ********* STACK ********* */
       if (firebaseDatabase.techStack) {
         for (let i = 0; i < domElement.techIcon.length; i++) {
           const techItem = domElement.techIcon[i];
           const svgClasses = [...domElement.techIcon[i].classList];
-          console.log('svgClasses', svgClasses);
           firebaseDatabase.techStack.forEach(tech => {
             if (svgClasses.includes(tech.className)) {
               const techSpan = document.createElement('span');
               techSpan.classList.add('section-about__stack-technology');
-              const techDescription = document.createElement('span');
+              const techDescription = document.createElement('p');
               techDescription.classList.add('section-about__stack-description');
               techSpan.innerText = tech.technology;
               techDescription.innerText = tech.description;
@@ -134,8 +139,6 @@ const fetchFirebaseApi = () => {
           });
         }
       }
-
-      /* ********* - ********* */
 
     }
 

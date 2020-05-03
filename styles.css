@@ -565,7 +565,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   font-size: .9rem;
   font-weight: var(--rokkitt-medium);
   margin-right: 8px;
-  color: var(--color-alter-secondary);
+  color: var(--color-base-primary);
   background-color: var(--color-alter-primary);
   border-radius: 4px;
   padding: 0 4px;
