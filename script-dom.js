@@ -208,29 +208,31 @@ const showNewQuote = (randomQuote) => {
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  const sendEmailURL = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
-  const data = {
-    'param1': inputEmail.value,
-    'param2': inputMessage.value
-  };
-  // console.log('data', data);
+  if (inputEmail.validity.valid) {
+    const sendEmailURL = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
+    const data = {
+      'param1': inputEmail.value,
+      'param2': inputMessage.value
+    };
+    // console.log('data', data);
 
-  fetch(sendEmailURL, {
-    body: JSON.stringify(data),
-    method: "POST",
-    dataType: 'json',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/json',
-      "Access-Control-Allow-Origin": "*"
-    }
-  }).then(function (resp) {
-    // console.log('resp', resp);
-    alert('Hurray! Mail was sent successfully! =D');
-    return resp.json();
-  }).then(function (response) {
-    // console.log('response', response);
-  }).catch(function (err) {
-    // console.log('error', err);
-  });
+    fetch(sendEmailURL, {
+      body: JSON.stringify(data),
+      method: "POST",
+      dataType: 'json',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*"
+      }
+    }).then(function (resp) {
+      // console.log('resp', resp);
+      alert('Hurray! Mail was sent successfully! =D');
+      return resp.json();
+    }).then(function (response) {
+      // console.log('response', response);
+    }).catch(function (err) {
+      // console.log('error', err);
+    });
+  }
 });
