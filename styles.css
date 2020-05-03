@@ -205,12 +205,16 @@ html[data-theme='pacificblue'] .theme-filter-image {
   cursor: pointer;
   transition: scale 0.3s ease;
 }
+
 .button-menu {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   border: none;
   outline: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  /* border: 1px solid yellow; */
 }
 .button-menu__burger {
   position: relative;
@@ -223,7 +227,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .button-menu__burger::after {
   display: inline-block;
   width: 32px;
-  height: 5px;
+  height: 4px;
   background-color: var(--color-base-secondary);
   border-radius: 4px;
 }
@@ -232,6 +236,12 @@ html[data-theme='pacificblue'] .theme-filter-image {
   content: '';
   position: absolute;
   left: 0;
+}
+.button-menu__burger::before {
+  transform: translateY(-10px);
+}
+.button-menu__burger::after {
+  transform: translateY(10px);
 }
 
 .navigation__options,
@@ -245,6 +255,13 @@ html[data-theme='pacificblue'] .theme-filter-image {
 }
 
 /* ********* NAV ANIMATIONS ********* */
+
+.button-menu--opened .button-menu__burger::before {
+  transform: rotate(90deg)
+}
+.button-menu--opened .button-menu__burger::after {
+  transform: rotate(90deg)
+}
 
 .navigation__item.navigation__item--movein {
   color: var(--color-base-primary);
@@ -273,18 +290,6 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .navigation__item:nth-of-type(6),
 .navigation__item.navigation__item--hidden:nth-of-type(6) {
   animation-delay: 0.4s;
-}
-.button-menu__burger::before {
-  transform: translateY(-10px);
-}
-.button-menu__burger::after {
-  transform: translateY(10px);
-}
-.button-menu--opened .button-menu__burger::before {
-  transform: rotate(90deg)
-}
-.button-menu--opened .button-menu__burger::after {
-  transform: rotate(90deg)
 }
 
 /* ********* GENERAL ********* */
@@ -371,7 +376,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
   grid-row-gap: var(--gap-mobile);
 }
 .section-hero__image {
-  height: 280px; /* TODO not needed because we should have that height in html... what about RWD? */
+  height: 280px;
   object-position: -28px;
 }
 .section-hero__key-points {
