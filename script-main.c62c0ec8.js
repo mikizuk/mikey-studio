@@ -643,28 +643,31 @@ var showNewQuote = function showNewQuote(randomQuote) {
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  var sendEmailURL = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
-  var data = {
-    'param1': inputEmail.value,
-    'param2': inputMessage.value
-  }; // console.log('data', data);
 
-  fetch(sendEmailURL, {
-    body: JSON.stringify(data),
-    method: "POST",
-    dataType: 'json',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/json',
-      "Access-Control-Allow-Origin": "*"
-    }
-  }).then(function (resp) {
-    // console.log('resp', resp);
-    alert('Hurray! Mail was sent successfully! =D');
-    return resp.json();
-  }).then(function (response) {// console.log('response', response);
-  }).catch(function (err) {// console.log('error', err);
-  });
+  if (inputEmail.validity.valid) {
+    var sendEmailURL = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
+    var data = {
+      'param1': inputEmail.value,
+      'param2': inputMessage.value
+    }; // console.log('data', data);
+
+    fetch(sendEmailURL, {
+      body: JSON.stringify(data),
+      method: "POST",
+      dataType: 'json',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*"
+      }
+    }).then(function (resp) {
+      // console.log('resp', resp);
+      alert('Hurray! Mail was sent successfully! =D');
+      return resp.json();
+    }).then(function (response) {// console.log('response', response);
+    }).catch(function (err) {// console.log('error', err);
+    });
+  }
 });
 },{"./script-firebase-api.js":"script-firebase-api.js"}],"script-unsplash-api.js":[function(require,module,exports) {
 "use strict";
@@ -799,7 +802,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65210" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50494" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
