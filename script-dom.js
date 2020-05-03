@@ -37,7 +37,7 @@ export const pic6 = document.querySelector('.pic-6');
 export const stackGrid = document.querySelector('.section-about__stack-grid');
 export const techIcon = document.getElementsByTagName('ion-icon');
 
-export const landscape2 = document.querySelector('.landscape2');
+export const landscape2 = document.querySelector('.landscape-2');
 
 
 /* *** CONTACT *** */
