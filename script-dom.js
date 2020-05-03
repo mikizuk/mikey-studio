@@ -44,9 +44,9 @@ export const landscape2 = document.querySelector('.landscape2'); // intersection
 
 export const socials = document.querySelector('.section-contact__social-wrapper'); // intersection observer
 
-export const form = document.getElementById('form');
-const inputEmail = document.getElementById('inputEmail');
-const inputMessage = document.getElementById('inputMessage');
+export const form = document.querySelector('.form');
+const inputEmail = document.querySelector('.form__email');
+const inputMessage = document.querySelector('.form__text-area');
 
 /* ************ DOM event listeners ************ */
 
