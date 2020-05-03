@@ -7,7 +7,6 @@
   --rokkitt-regular: 400;
   --rokkitt-medium: 500;
   --rokkitt-bold: 700;
-  --rokkitt-extra-bold: 900;
   --rokkitt-black: 900;
   
   /* grid columns */
@@ -153,7 +152,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
 .navigation__title {
   font-size: 1rem;
   padding-left: calc(var(--gap-mobile) / 2);
-  font-weight: var(--rokkitt-extra-bold);
+  font-weight: var(--rokkitt-black);
   text-transform: uppercase;
   align-self: center;
 }
