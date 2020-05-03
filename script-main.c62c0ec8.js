@@ -218,7 +218,8 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   firebase.database().ref().on('value', function (snap) {
-    var firebaseDatabase = snap.val(); // console.log('Firebase data loaded', firebaseDatabase);
+    var firebaseDatabase = snap.val();
+    console.log('Firebase data loaded', firebaseDatabase);
 
     if (firebaseDatabase) {
       turnLoadSpinnerOff();
@@ -254,23 +255,23 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           projectImage.classList.add('section-project__image');
 
           if (project.id === 0) {
-            projectImage.setAttribute('src', './project-trop-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
+            projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
           } else if (project.id === 1) {
-            projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
+            projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
           } else if (project.id === 2) {
-            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg'); // pictures loaded by JavaScript have to be in /dist folder!
+            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
           }
 
           projectElem.appendChild(projectImage);
-          var projectTitle = document.createElement('div');
+          var projectTitle = document.createElement('h3');
           projectTitle.classList.add('section-project__title');
           projectTitle.innerText = project.title;
           projectElem.appendChild(projectTitle);
-          var projectHeader = document.createElement('div');
+          var projectHeader = document.createElement('h4');
           projectHeader.classList.add('section-project__header');
           projectHeader.innerText = project.header;
           projectElem.appendChild(projectHeader);
-          var projectDesc = document.createElement('div');
+          var projectDesc = document.createElement('p');
           projectDesc.classList.add('section-project__description');
           projectDesc.innerText = project.description;
           projectElem.appendChild(projectDesc);
@@ -287,7 +288,7 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
               projectHashtagsDiv.appendChild(hashtagSpan);
 
               if ((i + 1) % 3 === 0) {
-                projectHashtagsDiv.appendChild(document.createElement('br')); // projectHashtagsDiv.appendChild(document.createElement('br'));
+                projectHashtagsDiv.appendChild(document.createElement('br'));
               }
             }
 
@@ -324,8 +325,7 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
         firebaseDatabase.aboutList.forEach(function (aboutItem) {
           var aboutSection = document.createElement('div');
           var aboutDescription = document.createElement('p');
-          aboutSection.classList.add("section-about__description", "".concat(aboutItem.className)); // TODO move it to domelem js file!?!
-
+          aboutSection.classList.add("section-about__description", "".concat(aboutItem.className));
           aboutDescription.innerText = aboutItem.description;
           aboutSection.appendChild(aboutDescription);
           domElement.aboutWrapper.appendChild(aboutSection);
@@ -340,12 +340,11 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
 
           var svgClasses = _toConsumableArray(domElement.techIcon[i].classList);
 
-          console.log('svgClasses', svgClasses);
           firebaseDatabase.techStack.forEach(function (tech) {
             if (svgClasses.includes(tech.className)) {
               var techSpan = document.createElement('span');
               techSpan.classList.add('section-about__stack-technology');
-              var techDescription = document.createElement('span');
+              var techDescription = document.createElement('p');
               techDescription.classList.add('section-about__stack-description');
               techSpan.innerText = tech.technology;
               techDescription.innerText = tech.description;
@@ -359,8 +358,6 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           _loop(i);
         }
       }
-      /* ********* - ********* */
-
     }
   });
 };
@@ -412,11 +409,9 @@ var navigationItems = document.getElementsByClassName('navigation__item');
 exports.navigationItems = navigationItems;
 var heroList = document.querySelector('.hero__list');
 exports.heroList = heroList;
-var heroTitle = document.querySelector('.hero__title'); // intersection observer
-
+var heroTitle = document.querySelector('.hero__title');
 exports.heroTitle = heroTitle;
-var heroDesc = document.querySelector('.hero__desc'); // intersection observer
-
+var heroDesc = document.querySelector('.hero__desc');
 /* *** LANDSCAPE *** */
 
 exports.heroDesc = heroDesc;
@@ -440,55 +435,44 @@ var aboutWrapper = document.querySelector('.section-about__about-grid');
 exports.aboutWrapper = aboutWrapper;
 var aboutImages = document.querySelectorAll('.section-about__images');
 exports.aboutImages = aboutImages;
-var pic1 = document.querySelector('.pic-1'); // intersection observer
-
+var pic1 = document.querySelector('.pic-1');
 exports.pic1 = pic1;
-var pic2 = document.querySelector('.pic-2'); // intersection observer
-
+var pic2 = document.querySelector('.pic-2');
 exports.pic2 = pic2;
-var pic3 = document.querySelector('.pic-3'); // intersection observer
-
+var pic3 = document.querySelector('.pic-3');
 exports.pic3 = pic3;
-var pic4 = document.querySelector('.pic-4'); // intersection observer
-
+var pic4 = document.querySelector('.pic-4');
 exports.pic4 = pic4;
-var pic5 = document.querySelector('.pic-5'); // intersection observer
-
+var pic5 = document.querySelector('.pic-5');
 exports.pic5 = pic5;
-var pic6 = document.querySelector('.pic-6'); // intersection observer
-
+var pic6 = document.querySelector('.pic-6');
 /* *** STACK *** */
 
 exports.pic6 = pic6;
-var stackGrid = document.querySelector('.section-about__stack-grid'); // intersection observer
-
+var stackGrid = document.querySelector('.section-about__stack-grid');
 exports.stackGrid = stackGrid;
 var techIcon = document.getElementsByTagName('ion-icon');
 exports.techIcon = techIcon;
-var landscape2 = document.querySelector('.landscape2'); // intersection observer
-
+var landscape2 = document.querySelector('.landscape-2');
 /* *** CONTACT *** */
 
 exports.landscape2 = landscape2;
-var socials = document.querySelector('.section-contact__social-wrapper'); // intersection observer
-
+var socials = document.querySelector('.section-contact__social-wrapper');
 exports.socials = socials;
-var form = document.getElementById('form');
+var form = document.querySelector('.form');
 exports.form = form;
-var inputEmail = document.getElementById('inputEmail');
-var inputMessage = document.getElementById('inputMessage');
+var inputEmail = document.querySelector('.form__email');
+var inputMessage = document.querySelector('.form__text-area');
 /* ************ DOM event listeners ************ */
 
 /* *** NAV *** */
 
 colorPicker.addEventListener('change', function (e) {
-  document.documentElement.setAttribute('data-theme', e.target.value); // const changeColorTransition = () => {
-
+  document.documentElement.setAttribute('data-theme', e.target.value);
   document.documentElement.classList.add('color-transition');
   window.setTimeout(function () {
     document.documentElement.classList.remove('color-transition');
-  }, 300); // console.log('colorPicker', colorPicker);
-  // }
+  }, 300);
 });
 
 var toggleVisibilityMenuItems = function toggleVisibilityMenuItems(navigationItems, isNavButtonOpen) {
@@ -551,80 +535,42 @@ var showNewQuote = function showNewQuote(randomQuote) {
   var quoteLinkDom = document.querySelector('.section-quote__link'); // character counter https://www.charactercountonline.com/
   // console.log('randomQuote.quote.length', randomQuote.quote.length);
 
-  if (deviceWidth <= 767) {
-    // mobile
-    if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '1rem';
-    } else if (randomQuote.quote.length > 300) {
-      quoteDom.style.fontSize = '1.1rem';
-    } else if (randomQuote.quote.length > 200) {
-      quoteDom.style.fontSize = '1.3rem';
-    } else if (randomQuote.quote.length > 150) {
-      quoteDom.style.fontSize = '1.6rem';
-    } else if (randomQuote.quote.length > 100) {
-      quoteDom.style.fontSize = '1.9rem';
-    } else {
-      quoteDom.style.fontSize = '2.1rem';
-    }
-  } else if (deviceWidth < 1279) {
-    // laptop-md
-    if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '2rem';
-    } else if (randomQuote.quote.length > 300) {
-      quoteDom.style.fontSize = '2.2rem';
-    } else if (randomQuote.quote.length > 200) {
-      quoteDom.style.fontSize = '2.6rem';
-    } else if (randomQuote.quote.length > 150) {
-      quoteDom.style.fontSize = '3.1rem';
-    } else if (randomQuote.quote.length > 100) {
-      quoteDom.style.fontSize = '3.4rem';
-    } else {
-      quoteDom.style.fontSize = '3.7rem';
-    }
-  } else if (deviceWidth < 1439) {
-    // laptop-hd 
-    if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '2.2rem';
-    } else if (randomQuote.quote.length > 300) {
-      quoteDom.style.fontSize = '2.6rem';
-    } else if (randomQuote.quote.length > 200) {
-      quoteDom.style.fontSize = '3.1rem';
-    } else if (randomQuote.quote.length > 150) {
-      quoteDom.style.fontSize = '3.4rem';
-    } else if (randomQuote.quote.length > 100) {
-      quoteDom.style.fontSize = '3.7rem';
-    } else {
-      quoteDom.style.fontSize = '4rem';
-    }
-  } else if (deviceWidth < 1919) {
-    if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '2.3rem';
-    } else if (randomQuote.quote.length > 300) {
-      quoteDom.style.fontSize = '2.6rem';
-    } else if (randomQuote.quote.length > 200) {
-      quoteDom.style.fontSize = '3.1rem';
-    } else if (randomQuote.quote.length > 150) {
-      quoteDom.style.fontSize = '3.4rem';
-    } else if (randomQuote.quote.length > 100) {
-      quoteDom.style.fontSize = '3.6rem';
-    } else {
-      quoteDom.style.fontSize = '3.9rem';
-    }
+  if (randomQuote.quote.length > 400) {
+    quoteDom.style.fontSize = deviceWidth <= 767 ? '1rem' : // mobile
+    deviceWidth < 1279 ? '2rem' : // tablet 
+    deviceWidth < 1439 ? '2.2rem' : // laptop-md
+    deviceWidth < 1919 ? '2.3rem' : // laptop-hd
+    '3rem'; // desktop-hd
+  } else if (randomQuote.quote.length > 300) {
+    quoteDom.style.fontSize = deviceWidth <= 767 ? '1.1rem' : // mobile
+    deviceWidth < 1279 ? '2.2rem' : // tablet 
+    deviceWidth < 1439 ? '2.6rem' : // laptop-md
+    deviceWidth < 1919 ? '2.6rem' : // laptop-hd
+    '3.3rem'; // desktop-hd
+  } else if (randomQuote.quote.length > 200) {
+    quoteDom.style.fontSize = deviceWidth <= 767 ? '1.3rem' : // mobile
+    deviceWidth < 1279 ? '2.6rem' : // tablet 
+    deviceWidth < 1439 ? '3.1rem' : // laptop-md
+    deviceWidth < 1919 ? '3.1rem' : // laptop-hd
+    '3.6rem'; // desktop-hd
+  } else if (randomQuote.quote.length > 150) {
+    quoteDom.style.fontSize = deviceWidth <= 767 ? '1.6rem' : // mobile
+    deviceWidth < 1279 ? '3.1rem' : // tablet 
+    deviceWidth < 1439 ? '3.4rem' : // laptop-md
+    deviceWidth < 1919 ? '3.4rem' : // laptop-hd
+    '3.9rem'; // desktop-hd
+  } else if (randomQuote.quote.length > 100) {
+    quoteDom.style.fontSize = deviceWidth <= 767 ? '1.8rem' : // mobile
+    deviceWidth < 1279 ? '3.4rem' : // tablet 
+    deviceWidth < 1439 ? '3.5rem' : // laptop-md
+    deviceWidth < 1919 ? '3.6rem' : // laptop-hd
+    '4.2rem'; // desktop-hd
   } else {
-    // desktop-hd
-    if (randomQuote.quote.length > 400) {
-      quoteDom.style.fontSize = '3rem';
-    } else if (randomQuote.quote.length > 300) {
-      quoteDom.style.fontSize = '3.3rem';
-    } else if (randomQuote.quote.length > 200) {
-      quoteDom.style.fontSize = '3.6rem';
-    } else if (randomQuote.quote.length > 150) {
-      quoteDom.style.fontSize = '3.9rem';
-    } else if (randomQuote.quote.length > 100) {
-      quoteDom.style.fontSize = '4.2rem';
-    } else {
-      quoteDom.style.fontSize = '4.7rem';
-    }
+    quoteDom.style.fontSize = deviceWidth <= 767 ? '2.2rem' : // mobile
+    deviceWidth < 1279 ? '3.7rem' : // tablet 
+    deviceWidth < 1439 ? '4rem' : // laptop-md
+    deviceWidth < 1919 ? '4.2rem' : // laptop-hd
+    '4.7rem'; // desktop-hd
   }
 
   quoteDom.innerText = "\"".concat(randomQuote.quote, "\"");
@@ -649,8 +595,7 @@ form.addEventListener('submit', function (e) {
     var data = {
       'param1': inputEmail.value,
       'param2': inputMessage.value
-    }; // console.log('data', data);
-
+    };
     fetch(sendEmailURL, {
       body: JSON.stringify(data),
       method: "POST",
@@ -661,11 +606,10 @@ form.addEventListener('submit', function (e) {
         "Access-Control-Allow-Origin": "*"
       }
     }).then(function (resp) {
-      // console.log('resp', resp);
       alert('Hurray! Mail was sent successfully! =D');
       return resp.json();
-    }).then(function (response) {// console.log('response', response);
-    }).catch(function (err) {// console.log('error', err);
+    }).catch(function (err) {
+      console.log('error', err);
     });
   }
 });
@@ -802,7 +746,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50494" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57855" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
