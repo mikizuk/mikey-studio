@@ -255,11 +255,14 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
           projectImage.classList.add('section-project__image');
 
           if (project.id === 0) {
-            projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Mikey studio landing page');
           } else if (project.id === 1) {
             projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Wydawca.com.pl landing page');
           } else if (project.id === 2) {
-            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Trop landing page');
           }
 
           projectElem.appendChild(projectImage);
@@ -524,50 +527,57 @@ buttonQuote.addEventListener('click', function () {
 var getRandomQuote = function getRandomQuote(quotes) {
   var randomNumber = Math.floor(Math.random() * quotes.length);
   var randomQuote = quotes[randomNumber];
-  showNewQuote(randomQuote);
+  showQuote(randomQuote);
+
+  if (firebase.quotes.length > 0) {
+    removeQuote(randomQuote);
+  }
 };
 
 exports.getRandomQuote = getRandomQuote;
 
-var showNewQuote = function showNewQuote(randomQuote) {
+var removeQuote = function removeQuote(randomQuote) {
+  return firebase.quotes.splice(firebase.quotes.indexOf(randomQuote), 1);
+};
+
+var showQuote = function showQuote(randomQuote) {
   var quoteDom = document.querySelector('.section-quote__text');
   var quoteAuthorDom = document.querySelector('.section-quote__author');
-  var quoteLinkDom = document.querySelector('.section-quote__link'); // character counter https://www.charactercountonline.com/
-  // console.log('randomQuote.quote.length', randomQuote.quote.length);
+  var quoteLinkDom = document.querySelector('.section-quote__link');
 
   if (randomQuote.quote.length > 400) {
     quoteDom.style.fontSize = deviceWidth <= 767 ? '1rem' : // mobile
-    deviceWidth < 1279 ? '2rem' : // tablet 
+    deviceWidth < 1279 ? '2rem' : // tablet
     deviceWidth < 1439 ? '2.2rem' : // laptop-md
     deviceWidth < 1919 ? '2.3rem' : // laptop-hd
     '3rem'; // desktop-hd
   } else if (randomQuote.quote.length > 300) {
     quoteDom.style.fontSize = deviceWidth <= 767 ? '1.1rem' : // mobile
-    deviceWidth < 1279 ? '2.2rem' : // tablet 
+    deviceWidth < 1279 ? '2.2rem' : // tablet
     deviceWidth < 1439 ? '2.6rem' : // laptop-md
     deviceWidth < 1919 ? '2.6rem' : // laptop-hd
     '3.3rem'; // desktop-hd
   } else if (randomQuote.quote.length > 200) {
     quoteDom.style.fontSize = deviceWidth <= 767 ? '1.3rem' : // mobile
-    deviceWidth < 1279 ? '2.6rem' : // tablet 
+    deviceWidth < 1279 ? '2.6rem' : // tablet
     deviceWidth < 1439 ? '3.1rem' : // laptop-md
     deviceWidth < 1919 ? '3.1rem' : // laptop-hd
     '3.6rem'; // desktop-hd
   } else if (randomQuote.quote.length > 150) {
     quoteDom.style.fontSize = deviceWidth <= 767 ? '1.6rem' : // mobile
-    deviceWidth < 1279 ? '3.1rem' : // tablet 
+    deviceWidth < 1279 ? '3.1rem' : // tablet
     deviceWidth < 1439 ? '3.4rem' : // laptop-md
     deviceWidth < 1919 ? '3.4rem' : // laptop-hd
     '3.9rem'; // desktop-hd
   } else if (randomQuote.quote.length > 100) {
     quoteDom.style.fontSize = deviceWidth <= 767 ? '1.8rem' : // mobile
-    deviceWidth < 1279 ? '3.4rem' : // tablet 
+    deviceWidth < 1279 ? '3.4rem' : // tablet
     deviceWidth < 1439 ? '3.5rem' : // laptop-md
     deviceWidth < 1919 ? '3.6rem' : // laptop-hd
     '4.2rem'; // desktop-hd
   } else {
     quoteDom.style.fontSize = deviceWidth <= 767 ? '2.2rem' : // mobile
-    deviceWidth < 1279 ? '3.7rem' : // tablet 
+    deviceWidth < 1279 ? '3.7rem' : // tablet
     deviceWidth < 1439 ? '4rem' : // laptop-md
     deviceWidth < 1919 ? '4.2rem' : // laptop-hd
     '4.7rem'; // desktop-hd
@@ -746,7 +756,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57855" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58424" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
