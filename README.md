@@ -1,10 +1,10 @@
-**# Mikey Studio**
+**Mikey Studio**
 
-**## Intro - [link to Mikey Studio](https://mikey-studio.xyz)**
+**Intro - [link to Mikey Studio](https://mikey-studio.xyz)**
 
 Website was build with the basic tech stack: Vanilla JavaScript and CSS. All images, except the main one, are mine, stocked in [Unsplash](https://unsplash.com). The content is stored in [Firebase Database](firebase.google.com/). 'Send email from website' form is possible thanks to [AWS Lambda Functions](https://aws.amazon.com/lambda/).
 
-**## Tech stack / code conventions**
+**Tech stack / code conventions**
 
 1. GitHub Pages - [deployment procedure explained to my future me =D](README-GITHUB-PARCEL.md)
 
@@ -26,10 +26,10 @@ Website was build with the basic tech stack: Vanilla JavaScript and CSS. All ima
 
     * BEM
 
-**## Wanna run locally?**
+**Wanna run locally?**
 
 [Read here](README-GITHUB-PARCEL.md)
 
-**## Licence**
+**Licence**
 
 [MIT](https://choosealicense.com/licenses/mit/)

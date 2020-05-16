@@ -53,11 +53,11 @@ const fetchFirebaseApi = () => {
           const projectImage = document.createElement('img');
           projectImage.classList.add('section-project__image');
           if (project.id === 0) {
-            projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
           } else if (project.id === 1) {
             projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
           } else if (project.id === 2) {
-            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
           }
           projectElem.appendChild(projectImage);
           const projectTitle = document.createElement('h3');
