@@ -1684,3 +1684,12 @@ html[data-theme='pacificblue'] .theme-filter-image {
   from, to { opacity:1; transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); }
   50% { opacity:0; transform: translateY(2vh); -webkit-transform: translateY(2vh); -moz-transform: translateY(2vh); }
 }
+
+/* ********* ACCESSIBILITY ********* */
+
+.color-picker:focus,
+.button:focus,
+.section-quote__link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px lightskyblue;
+}

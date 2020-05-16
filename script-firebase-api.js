@@ -54,10 +54,13 @@ const fetchFirebaseApi = () => {
           projectImage.classList.add('section-project__image');
           if (project.id === 0) {
             projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Mikey studio landing page')
           } else if (project.id === 1) {
             projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Wydawca.com.pl landing page')
           } else if (project.id === 2) {
             projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Trop landing page')
           }
           projectElem.appendChild(projectImage);
           const projectTitle = document.createElement('h3');
