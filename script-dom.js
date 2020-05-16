@@ -105,20 +105,23 @@ buttonQuote.addEventListener('click', () => {
 export const getRandomQuote = (quotes) => {
   const randomNumber = Math.floor(Math.random() * quotes.length)
   const randomQuote = quotes[randomNumber];
-  showNewQuote(randomQuote);
+  showQuote(randomQuote);
+  if (firebase.quotes.length > 0) {
+    removeQuote(randomQuote);
+  }
 }
 
-const showNewQuote = (randomQuote) => {
+const removeQuote = (randomQuote) => firebase.quotes.splice(firebase.quotes.indexOf(randomQuote), 1);
+
+const showQuote = (randomQuote) => {
   const quoteDom = document.querySelector('.section-quote__text');
   const quoteAuthorDom = document.querySelector('.section-quote__author');
   const quoteLinkDom = document.querySelector('.section-quote__link');
 
-  // character counter https://www.charactercountonline.com/
-  // console.log('randomQuote.quote.length', randomQuote.quote.length);
   if (randomQuote.quote.length > 400) {
     quoteDom.style.fontSize =
       deviceWidth <= 767 ? '1rem' :    // mobile
-      deviceWidth < 1279 ? '2rem' :    // tablet 
+      deviceWidth < 1279 ? '2rem' :    // tablet
       deviceWidth < 1439 ? '2.2rem' :  // laptop-md
       deviceWidth < 1919 ? '2.3rem' :  // laptop-hd
                            '3rem';     // desktop-hd
@@ -126,35 +129,35 @@ const showNewQuote = (randomQuote) => {
     } else if (randomQuote.quote.length > 300) {
       quoteDom.style.fontSize =
         deviceWidth <= 767 ? '1.1rem' :  // mobile
-        deviceWidth < 1279 ? '2.2rem' :  // tablet 
+        deviceWidth < 1279 ? '2.2rem' :  // tablet
         deviceWidth < 1439 ? '2.6rem' :  // laptop-md
         deviceWidth < 1919 ? '2.6rem' :  // laptop-hd
                              '3.3rem';   // desktop-hd
     } else if (randomQuote.quote.length > 200) {
       quoteDom.style.fontSize =
         deviceWidth <= 767 ? '1.3rem' :  // mobile
-        deviceWidth < 1279 ? '2.6rem' :  // tablet 
+        deviceWidth < 1279 ? '2.6rem' :  // tablet
         deviceWidth < 1439 ? '3.1rem' :  // laptop-md
         deviceWidth < 1919 ? '3.1rem' :  // laptop-hd
                              '3.6rem';   // desktop-hd
     } else if (randomQuote.quote.length > 150) {
       quoteDom.style.fontSize =
         deviceWidth <= 767 ? '1.6rem' :  // mobile
-        deviceWidth < 1279 ? '3.1rem' :  // tablet 
+        deviceWidth < 1279 ? '3.1rem' :  // tablet
         deviceWidth < 1439 ? '3.4rem' :  // laptop-md
         deviceWidth < 1919 ? '3.4rem' :  // laptop-hd
                              '3.9rem';   // desktop-hd
     } else if (randomQuote.quote.length > 100) {
       quoteDom.style.fontSize =
         deviceWidth <= 767 ? '1.8rem' :  // mobile
-        deviceWidth < 1279 ? '3.4rem' :  // tablet 
+        deviceWidth < 1279 ? '3.4rem' :  // tablet
         deviceWidth < 1439 ? '3.5rem' :  // laptop-md
         deviceWidth < 1919 ? '3.6rem' :  // laptop-hd
                              '4.2rem';   // desktop-hd
     } else {
       quoteDom.style.fontSize =
         deviceWidth <= 767 ? '2.2rem' :  // mobile
-        deviceWidth < 1279 ? '3.7rem' :  // tablet 
+        deviceWidth < 1279 ? '3.7rem' :  // tablet
         deviceWidth < 1439 ? '4rem' :    // laptop-md
         deviceWidth < 1919 ? '4.2rem' :  // laptop-hd
                              '4.7rem';   // desktop-hd
