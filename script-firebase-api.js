@@ -61,6 +61,9 @@ const fetchFirebaseApi = () => {
           } else if (project.id === 2) {
             projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
             projectImage.setAttribute('alt', 'Trop landing page')
+          } else if (project.id === 3) {
+            projectImage.setAttribute('src', './project-ts-habit-app.png');
+            projectImage.setAttribute('alt', 'Habits app landing page')
           }
           projectElem.appendChild(projectImage);
           const projectTitle = document.createElement('h3');
