@@ -65,9 +65,9 @@ notes.md
 .cache/
 dist/*
 !dist/CNAME
-!dist/project-mikeystudio-1920x1088.jpg
-!dist/project-wydawca-1920x1088.jpg
-!dist/project-trop-1920x1088.jpg
-!dist/project-ts-habit-app.png
-
-
+# !dist/project-mikeystudio-1920x1088.png
+# !dist/project-wydawca-1920x1088.jpg
+# !dist/project-trop-1920x1088.jpg
+# !dist/project-ts-habit-app.png
+# !dist/project-indie-games.png
+# !dist/project-small-projects.png

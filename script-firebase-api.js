@@ -52,18 +52,24 @@ const fetchFirebaseApi = () => {
           domElement.projectWrapper.appendChild(projectElem);
           const projectImage = document.createElement('img');
           projectImage.classList.add('section-project__image');
-          if (project.id === 0) {
-            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.jpg');
-            projectImage.setAttribute('alt', 'Mikey studio landing page')
-          } else if (project.id === 1) {
-            projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
-            projectImage.setAttribute('alt', 'Wydawca.com.pl landing page')
-          } else if (project.id === 2) {
+          if (project.id === 1) {
             projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
             projectImage.setAttribute('alt', 'Trop landing page')
+          } else if (project.id === 2) {
+            projectImage.setAttribute('src', './project-wydawca-1920x1088.jpg');
+            projectImage.setAttribute('alt', 'Wydawca.com.pl landing page')
           } else if (project.id === 3) {
-            projectImage.setAttribute('src', './project-ts-habit-app.png');
+            projectImage.setAttribute('src', './project-mikeystudio-1920x1088.png');
+            projectImage.setAttribute('alt', 'Mikey studio landing page')
+          } else if (project.id === 4) {
+            projectImage.setAttribute('src', './project-ts-habit-app-1920x1088.jpg');
             projectImage.setAttribute('alt', 'Habits app landing page')
+          } else if (project.id === 5) {
+            projectImage.setAttribute('src', './project-indie-games.png');
+            projectImage.setAttribute('alt', 'Indie games landing page')
+          } else if (project.id === 6) {
+            projectImage.setAttribute('src', './project-small-projects.png');
+            projectImage.setAttribute('alt', 'Small projects landing page')
           }
           projectElem.appendChild(projectImage);
           const projectTitle = document.createElement('h3');
