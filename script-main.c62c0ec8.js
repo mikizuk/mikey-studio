@@ -264,13 +264,13 @@ var fetchFirebaseApi = function fetchFirebaseApi() {
             projectImage.setAttribute('src', './project-trop-1920x1088.jpg');
             projectImage.setAttribute('alt', 'Trop landing page');
           } else if (project.id === 3) {
-            projectImage.setAttribute('src', './project-ts-habit-app-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-ts-habit-app-1920x1088.png');
             projectImage.setAttribute('alt', 'Habits app landing page');
           } else if (project.id === 4) {
-            projectImage.setAttribute('src', './project-indie-games-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-indie-games-1920x1088.png');
             projectImage.setAttribute('alt', 'Indie games landing page');
           } else if (project.id === 5) {
-            projectImage.setAttribute('src', './project-small-projects-1920x1088.jpg');
+            projectImage.setAttribute('src', './project-small-projects-1920x1088.png');
             projectImage.setAttribute('alt', 'Small projects landing page');
           }
 
@@ -765,7 +765,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63565" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64208" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
