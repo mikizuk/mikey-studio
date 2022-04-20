@@ -64,6 +64,7 @@ notes.md
 # Parcel files
 .cache/
 dist/*
+dist/index.html
 !dist/CNAME
 # !dist/project-mikeystudio-1920x1088.png
 # !dist/project-wydawca-1920x1088.jpg

@@ -179,7 +179,10 @@ const showQuote = (randomQuote) => {
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  if (inputEmail.validity.valid) {
+
+  const captchaConfirmed = grecaptcha.getResponse()?.length > 0;
+
+  if (inputEmail.validity.valid && captchaConfirmed) {
     const sendEmailURL = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
     const data = {
       'param1': inputEmail.value,
@@ -195,9 +198,8 @@ form.addEventListener('submit', function (e) {
         'Content-Type': 'application/json',
         "Access-Control-Allow-Origin": "*"
       }
-    }).then(function (resp) {
-      alert('Hurray! Mail was sent successfully! =D');
-      return resp.json();
+    }).then(function () {
+      alert('Thank you! Your mail was sent successfully! =D');
     }).catch(function (err) {
       console.log('error', err);
     });

@@ -20,7 +20,7 @@ const fetchFirebaseApi = () => {
   firebase.database().ref().on('value', snap => {
     const firebaseDatabase = snap.val();
 
-    console.log('Firebase data loaded', firebaseDatabase);
+    // console.log('Firebase data loaded', firebaseDatabase);
 
     if (firebaseDatabase) {
       turnLoadSpinnerOff();
@@ -42,6 +42,7 @@ const fetchFirebaseApi = () => {
         domElement.quotes = firebaseDatabase.quotes;
         quotes = firebaseDatabase.quotes;
         domElement.getRandomQuote(firebaseDatabase.quotes);
+        // console.log('domElement', domElement);
       }
 
       /* ********* PROJECTS ********* */
