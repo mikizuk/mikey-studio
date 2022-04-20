@@ -63,6 +63,7 @@ notes.md
 
 # Parcel files
 .cache/
+dist/
 dist/*
 dist/index.html
 !dist/CNAME
@@ -72,4 +73,3 @@ dist/index.html
 # !dist/project-ts-habit-app.png
 # !dist/project-indie-games.png
 # !dist/project-small-projects.png
-dist/index.html
