@@ -357,6 +357,15 @@ html[data-theme='pacificblue'] .theme-filter-image {
   transition: 300ms opacity, 300ms transform;
 }
 
+.button:disabled {
+  background-color: unset;
+  color: var(--color-base-primary);
+  cursor: auto;
+  border: 2px solid var(--color-base-primary);
+  will-change: opacity, transform;
+  transition: 300ms opacity, 300ms transform;
+}
+
 /* ********* SECTION HERO ********* */
 
 .section-hero {
@@ -1575,7 +1584,7 @@ html[data-theme='pacificblue'] .theme-filter-image {
 
 /* ********* HOVER ********* */
 
-.button:hover {
+.button:not(:disabled):hover {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   opacity: 1;

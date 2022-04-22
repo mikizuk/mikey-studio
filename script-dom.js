@@ -47,6 +47,7 @@ export const socials = document.querySelector('.section-contact__social-wrapper'
 export const form = document.querySelector('.form');
 const inputEmail = document.querySelector('.form__email');
 const inputMessage = document.querySelector('.form__text-area');
+const submitButton = document.querySelector('.button--submit');
 
 /* ************ DOM event listeners ************ */
 
@@ -181,8 +182,9 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const captchaConfirmed = grecaptcha.getResponse()?.length > 0;
-
+ 
   if (inputEmail.validity.valid && captchaConfirmed) {
+    submitButton.disabled = true;
     const sendEmailURL = 'https://f9akte6bf8.execute-api.eu-west-1.amazonaws.com/default/mikeystudio_send_email' + ('?param1=' + inputEmail.value) + ('&param2=' + inputMessage.value);
     const data = {
       'param1': inputEmail.value,
@@ -200,6 +202,7 @@ form.addEventListener('submit', function (e) {
       }
     }).then(function () {
       alert('Thank you! Your mail was sent successfully! =D');
+      submitButton.disabled = false;
     }).catch(function (err) {
       console.log('error', err);
     });
