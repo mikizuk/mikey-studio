@@ -22,7 +22,7 @@
     "cssnano": "^5.1.7",
     "gh-pages": "^5.0.0",
     "parcel": "^2.4.1",
-    "postcss": "^8.4.12"
+    "postcss": "^8.5.3"
   },
   "repository": {
     "type": "git",
